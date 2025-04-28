@@ -1,40 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Clearview Healthcare Staffing Website
 
-## Getting Started
+A modern, responsive website for a healthcare staffing agency built with Next.js and Tailwind CSS.
 
-First, run the development server:
+## Features
+
+- Modern UI with glassmorphism and animations
+- Fully responsive design
+- Custom UI components system
+- SEO optimized with sitemap generation
+- Performance optimized
+
+## Tech Stack
+
+- **Framework**: Next.js 15
+- **Styling**: Tailwind CSS 4
+- **Icons**: Heroicons
+- **Fonts**: Inter and Outfit via Google Fonts
+- **Deployment**: Vercel
+
+## Development
+
+First, clone the repository:
+
+```bash
+git clone https://your-repo-url/clearview-staffing.git
+cd clearview-staffing
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Building for Production
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Build the application for production:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+```bash
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This will also generate a sitemap automatically.
 
-## Learn More
+## Deploying to Vercel
 
-To learn more about Next.js, take a look at the following resources:
+This project is optimized for deployment on Vercel. To deploy:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+1. Push your code to a GitHub repository
+2. Import your repository on [Vercel](https://vercel.com/import)
+3. Vercel will detect Next.js automatically and use the optimal settings
+4. Your site will be deployed and you'll get a URL to access it
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Environment Variables
 
-## Deploy on Vercel
+Copy `env.example` to `.env.local` for local development or add the environment variables in the Vercel dashboard for production deployment.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `SITE_URL`: Your production URL (for sitemap generation)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+## Project Structure
+
+- `components/` - All React components
+  - `ui/` - Reusable UI components (Button, Card, Badge, etc.)
+  - `home/` - Page-specific components for the home page
+- `pages/` - Next.js pages
+- `public/` - Static assets
+  - `images/` - Image files
+- `styles/` - Global styles and animations
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
