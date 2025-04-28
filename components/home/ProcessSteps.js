@@ -98,7 +98,7 @@ export default function ProcessSteps() {
               animate={{ opacity: [0.8, 1, 0.8] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
             >
-              Our streamlined process makes it easy to get started with our global talent solutions.
+              Our streamlined process makes it easy to get started with our remote staffing solutions.
             </motion.p>
           </motion.div>
         </div>
@@ -149,7 +149,7 @@ export default function ProcessSteps() {
                 className="text-sm sm:text-base text-gray-600"
                 variants={fadeInUpVariants}
               >
-                Initial strategic call to identify all the pain points in your operations and identify optimal solutions. 
+                Initial strategic call to identify all the pain points in your healthcare operations and identify optimal solutions. 
                 You receive a consultation (in-person, phone, or video call) to discuss the themes, scope of work, skill set requirements, 
                 preferred communication methods, and time zones.
               </motion.p>

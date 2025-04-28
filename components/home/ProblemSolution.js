@@ -210,10 +210,10 @@ export default function ProblemSolution() {
               Why Choose Us
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Global Staffing Solutions
+              Healthcare Staffing Challenges Solved
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Our innovative approach addresses the key challenges that organizations face with traditional hiring methods
+              Our innovative approach addresses the key challenges that healthcare organizations face with traditional hiring methods
             </p>
           </motion.div>
         </div>

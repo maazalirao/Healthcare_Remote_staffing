@@ -45,7 +45,7 @@ export default function Hero() {
             animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
             transition={{ duration: 0.7, delay: 0.4 }}
           >
-            Connect with top-tier <span className="font-semibold">international talent</span> at <span className="font-bold">80% less cost</span> than local professionals.
+            Connect with top-tier <span className="font-semibold">Industry professionals </span> at <span className="font-bold">80% less cost</span> than local equivalents.
           </motion.p>
           
           <motion.div 

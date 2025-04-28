@@ -88,8 +88,9 @@ export default function ServiceCards() {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
               What We Offer
             </h2>
-            <p className="mt-3 text-lg text-gray-600 max-w-2xl mx-auto">
-              We provide comprehensive global talent solutions to meet your organization's unique needs
+            <p className="mt-3 max-w-3xl mx-auto text-lg text-gray-500 sm:mt-4">
+              We offer specialized healthcare staffing solutions that help you optimize operations,
+              reduce costs, and focus on what matters most - providing excellent care.
             </p>
           </motion.div>
         </div>
