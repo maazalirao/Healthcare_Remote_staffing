@@ -146,7 +146,7 @@ export default function ProblemSolution() {
     },
     {
       title: "Cost-Effective Solution",
-      description: "Save on recruitment, training, and overhead costs with our streamlined approach to healthcare staffing. Up to 40% lower costs than traditional agencies.",
+      description: "Save on recruitment, training, and overhead costs with our streamlined approach to healthcare staffing. Up to 80% lower costs than US equivalents.",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -302,35 +302,6 @@ export default function ProblemSolution() {
             </div>
           </motion.div>
         </div>
-        
-        {/* Cost savings highlight */}
-        <motion.div 
-          className="max-w-4xl mx-auto bg-gradient-to-r from-blue-600 to-blue-500 rounded-xl p-5 text-white shadow-md"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.3 }}
-          viewport={{ once: true }}
-        >
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="flex-1">
-              <h3 className="text-xl font-bold mb-2">Significant Cost Savings</h3>
-              <p className="text-blue-100 text-sm md:text-base">
-                Our remote healthcare staffing solutions provide up to <span className="font-bold text-white">40% cost savings</span> compared to traditional staffing agencies, without compromising quality.
-              </p>
-            </div>
-            <div className="flex-shrink-0 mt-4 md:mt-0">
-              <Button 
-                variant="white" 
-                size="md" 
-                rounded 
-                className="font-medium text-blue-700" 
-                href="/services"
-              >
-                Learn More
-              </Button>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );
