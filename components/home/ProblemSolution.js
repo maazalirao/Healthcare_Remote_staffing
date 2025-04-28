@@ -42,8 +42,8 @@ export default function ProblemSolution() {
 
   const problems = [
     {
-      title: "High Turnover Rate",
-      description: "Healthcare facilities struggle with high staff turnover, leading to increased recruitment costs and decreased quality of care.",
+      title: "High Local Hiring Costs",
+      description: "Companies struggle with the high costs of local talent, including competitive salaries, benefits, and workplace accommodations.",
       icon: (
         <svg 
           xmlns="http://www.w3.org/2000/svg" 
@@ -63,7 +63,7 @@ export default function ProblemSolution() {
     },
     {
       title: "Talent Shortage",
-      description: "Finding qualified healthcare professionals is increasingly difficult, especially in specialized fields and rural areas.",
+      description: "Finding qualified professionals is increasingly difficult, especially for specialized roles and competitive industries.",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -81,8 +81,8 @@ export default function ProblemSolution() {
       )
     },
     {
-      title: "Cost Inefficiency",
-      description: "Traditional staffing methods are costly, with high agency fees, recruitment costs, and expenses related to staff turnover.",
+      title: "Scaling Challenges",
+      description: "Traditional hiring methods create bottlenecks when rapidly scaling teams, with lengthy recruitment processes and infrastructure costs.",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -106,8 +106,8 @@ export default function ProblemSolution() {
 
   const solutions = [
     {
-      title: "Remote Staffing Model",
-      description: "Our platform enables healthcare facilities to hire qualified remote professionals, reducing turnover and increasing staff satisfaction.",
+      title: "Global Talent Access",
+      description: "Our platform connects you with skilled professionals from around the world, giving you access to a diverse talent pool across all industries.",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -125,8 +125,8 @@ export default function ProblemSolution() {
       )
     },
     {
-      title: "Global Talent Pool",
-      description: "Access a diverse pool of healthcare professionals from around the world, finding the perfect match for specialized positions.",
+      title: "Flexible Team Building",
+      description: "Scale your team up or down quickly based on your business needs, without the lengthy processes of traditional hiring.",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -146,7 +146,7 @@ export default function ProblemSolution() {
     },
     {
       title: "Cost-Effective Solution",
-      description: "Save on recruitment, training, and overhead costs with our streamlined approach to healthcare staffing. Up to 80% lower costs than US equivalents.",
+      description: "Significantly reduce your staffing expenses with international talent that costs up to 80% less than local equivalents, without compromising quality.",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -210,10 +210,10 @@ export default function ProblemSolution() {
               Why Choose Us
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Healthcare Staffing Challenges Solved
+              Global Staffing Solutions
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Our innovative approach addresses the key challenges that healthcare organizations face with traditional staffing
+              Our innovative approach addresses the key challenges that organizations face with traditional hiring methods
             </p>
           </motion.div>
         </div>
@@ -235,7 +235,7 @@ export default function ProblemSolution() {
                     <line x1="12" y1="17" x2="12.01" y2="17"></line>
                   </svg>
                 </span>
-                Industry Challenges
+                Common Challenges
               </h3>
               <div className="space-y-4">
                 {problems.map((problem, index) => (

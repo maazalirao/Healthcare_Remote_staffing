@@ -229,8 +229,8 @@ export default function ProcessSteps() {
                 variants={fadeInUpVariants}
               >
                 With everything discussed and Virtual Assistant(s) in place, we send the contract to you for review and 
-                signature through DocuSign. We'll issue the invoice for the one-time initiation fee and have 
-                your VA(s) sign a Non-Disclosure Agreement (NDA) to protect your confidential information.
+                signature through DocuSign. We'll issue the invoice for the one-time initiation fee to begin
+                the onboarding process with your new team members.
               </motion.p>
             </div>
             <div className="hidden md:block md:w-1/3">

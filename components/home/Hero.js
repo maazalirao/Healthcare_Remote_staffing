@@ -36,7 +36,7 @@ export default function Hero() {
             animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            <span className="block mb-2">Your Remote Workforce</span>
+            <span className="block mb-2">Your Global Workforce</span>
           </motion.h1>
           
           <motion.p 
@@ -45,7 +45,7 @@ export default function Hero() {
             animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
             transition={{ duration: 0.7, delay: 0.4 }}
           >
-            Connect with top-tier <span className="font-semibold">global talent</span> at <span className="font-bold">80% less cost</span> than local hires.
+            Connect with top-tier <span className="font-semibold">international talent</span> at <span className="font-bold">80% less cost</span> than local professionals.
           </motion.p>
           
           <motion.div 

@@ -89,7 +89,7 @@ export default function ServiceCards() {
               What We Offer
             </h2>
             <p className="mt-3 text-lg text-gray-600 max-w-2xl mx-auto">
-              We provide specialized healthcare staffing solutions to meet your organization's unique needs
+              We provide comprehensive global talent solutions to meet your organization's unique needs
             </p>
           </motion.div>
         </div>
@@ -101,7 +101,7 @@ export default function ServiceCards() {
           initial="hidden" 
           animate={inView ? "visible" : "hidden"}
         >
-          {/* Calendar Management Card */}
+          {/* Professional Services Card */}
           <motion.div 
             className="relative group" 
             variants={cardVariants}
@@ -113,12 +113,12 @@ export default function ServiceCards() {
               <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-blue-100 text-blue-600 mb-5">
                 <Calendar size={22} />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Calendar Management</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Professional Services</h3>
               <p className="text-gray-600 text-sm flex-grow mb-5">
-                Manage your day-to-day responsibilities by scheduling and coordinating appointments, setting reminders, and handling travel arrangements.
+                Access skilled professionals in business analysis, marketing, finance, and specialized industry roles to support your core business functions.
               </p>
               <Link
-                href="/services/calendar-management"
+                href="/services/professional"
                 className="inline-flex items-center justify-center px-4 py-2 rounded-lg bg-blue-50 text-blue-700 font-medium transition-all duration-300 hover:bg-blue-100 mt-auto text-sm"
               >
                 Learn More
@@ -126,7 +126,7 @@ export default function ServiceCards() {
             </div>
           </motion.div>
 
-          {/* General Admin Card */}
+          {/* Technical Talent Card */}
           <motion.div 
             className="relative group" 
             variants={cardVariants}
@@ -144,12 +144,12 @@ export default function ServiceCards() {
               <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-blue-100 text-blue-600 mb-5">
                 <Users size={22} />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">General Administration</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Technical Talent</h3>
               <p className="text-gray-600 text-sm flex-grow mb-5">
-                Command all aspects of your administrative work by having our virtual assistants perform scheduling, record management, and documentation.
+                Build your technical team with experienced developers, engineers, and IT specialists who can deliver quality work remotely at a fraction of local costs.
               </p>
               <Link
-                href="/services/general-admin"
+                href="/services/technical"
                 className="inline-flex items-center justify-center px-4 py-2 rounded-lg bg-blue-50 text-blue-700 font-medium transition-all duration-300 hover:bg-blue-100 mt-auto text-sm"
               >
                 Learn More
@@ -157,7 +157,7 @@ export default function ServiceCards() {
             </div>
           </motion.div>
 
-          {/* Data Management Card */}
+          {/* Administrative Support Card */}
           <motion.div 
             className="relative group" 
             variants={cardVariants}
@@ -175,12 +175,12 @@ export default function ServiceCards() {
               <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-blue-100 text-blue-600 mb-5">
                 <BarChart3 size={22} />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Data Management</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Administrative Support</h3>
               <p className="text-gray-600 text-sm flex-grow mb-5">
-                Keep your healthcare data organized by consistently processing patient information, maintaining electronic health records, and generating reports.
+                Streamline your operations with virtual assistants, customer support representatives, and data entry specialists who handle day-to-day tasks efficiently.
               </p>
               <Link
-                href="/services/data-management"
+                href="/services/administrative"
                 className="inline-flex items-center justify-center px-4 py-2 rounded-lg bg-blue-50 text-blue-700 font-medium transition-all duration-300 hover:bg-blue-100 mt-auto text-sm"
               >
                 Learn More
@@ -198,9 +198,12 @@ export default function ServiceCards() {
           >
             <Link
               href="/services"
-              className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-blue-600 text-white font-medium transition-all duration-300 hover:bg-blue-700 shadow-sm"
+              className="inline-flex items-center justify-center px-5 py-3 rounded-lg bg-blue-600 text-white font-medium transition-all duration-300 hover:bg-blue-700"
             >
               View All Services
+              <svg className="ml-2 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+              </svg>
             </Link>
           </motion.div>
         </div>
