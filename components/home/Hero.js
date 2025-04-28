@@ -51,10 +51,8 @@ export default function Hero() {
       {/* Background with gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-indigo-900/70 z-10"></div>
       
-      {/* Background image */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-[url('/images/healthcare-hero.jpg')] bg-cover bg-center opacity-40"></div>
-      </div>
+      {/* Background color fallback */}
+      <div className="absolute inset-0 bg-blue-900 z-0"></div>
       
       {/* Decorative elements with floating animations */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-5">

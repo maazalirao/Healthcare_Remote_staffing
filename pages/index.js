@@ -6,6 +6,7 @@ import ProblemSolution from '../components/home/ProblemSolution';
 import ProcessSteps from '../components/home/ProcessSteps';
 import TrustBuilders from '../components/home/TrustBuilders';
 import FinalCta from '../components/home/FinalCta';
+import TestComponent from '../components/TestComponent';
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       
+      <TestComponent />
       <Hero />
       <Statistics />
       <ServiceCards />

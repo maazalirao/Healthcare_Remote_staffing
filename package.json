@@ -7,6 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "clean": "rm -rf .next && rm -rf node_modules/.cache",
+    "dev:clean": "npm run clean && npm run dev",
     "postbuild": "next-sitemap"
   },
   "dependencies": {
