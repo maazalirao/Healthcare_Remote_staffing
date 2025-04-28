@@ -201,7 +201,7 @@ export default function ServiceCards() {
           >
             <Link
               href="/services"
-              className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-blue-600 text-white font-medium hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+              className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl hover:from-blue-700 hover:to-indigo-700"
             >
               View All Services
             </Link>

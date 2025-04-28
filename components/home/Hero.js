@@ -1,285 +1,227 @@
-// Hero component with headline, subheadline, and CTA button
-import Link from 'next/link';
+// Hero component for the homepage
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import Button from '../ui/Button';
+import Image from 'next/image';
 
 export default function Hero() {
   const [isVisible, setIsVisible] = useState(false);
-
+  
   useEffect(() => {
     setIsVisible(true);
   }, []);
 
-  // Floating animation variants for decorative elements
-  const floatingAnimation = {
-    y: [0, -15, 0],
-    transition: {
-      duration: 6,
-      repeat: Infinity,
-      repeatType: "reverse",
-      ease: "easeInOut"
-    }
-  };
-
-  // Staggered content reveal animations
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        when: "beforeChildren",
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        ease: [0.16, 1, 0.3, 1]
-      }
-    }
-  };
-
   return (
-    <div className="relative min-h-screen flex items-center">
-      {/* Background with gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-indigo-900/70 z-10"></div>
-      
-      {/* Background color fallback */}
-      <div className="absolute inset-0 bg-blue-900 z-0"></div>
-      
-      {/* Decorative elements with floating animations */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-5">
-        <motion.div 
-          className="absolute top-[10%] right-[15%] w-64 h-64 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20"
-          animate={{ ...floatingAnimation, x: [0, 15, 0] }}
-        ></motion.div>
-        <motion.div 
-          className="absolute top-[40%] right-[25%] w-72 h-72 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20"
-          animate={{ ...floatingAnimation, x: [0, -20, 0] }}
-          transition={{ 
-            duration: 7, 
-            repeat: Infinity, 
-            repeatType: "reverse",
-            ease: "easeInOut",
-            delay: 1
-          }}
-        ></motion.div>
-        <motion.div 
-          className="absolute top-[20%] left-[20%] w-80 h-80 bg-indigo-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20"
-          animate={{ ...floatingAnimation, x: [0, 25, 0] }}
-          transition={{ 
-            duration: 8, 
-            repeat: Infinity, 
-            repeatType: "reverse",
-            ease: "easeInOut",
-            delay: 2
-          }}
-        ></motion.div>
-        <motion.div 
-          className="absolute bottom-[15%] left-[30%] w-60 h-60 bg-cyan-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20"
-          animate={{ ...floatingAnimation, x: [0, -15, 0] }}
-          transition={{ 
-            duration: 9, 
-            repeat: Infinity, 
-            repeatType: "reverse",
-            ease: "easeInOut",
-            delay: 1.5
-          }}
-        ></motion.div>
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+      {/* Background image with gradient overlay */}
+      <div className="absolute inset-0 w-full h-full">
+        {/* Image from Unsplash - high quality healthcare professional image */}
+        <img 
+          src="https://images.unsplash.com/photo-1584515979956-d9f6e5d90408?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" 
+          alt="Healthcare Professional" 
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/90 via-blue-800/70 to-indigo-700/40 backdrop-blur-[2px]"></div>
+        
+        {/* Abstract background animation */}
+        <motion.svg
+          className="absolute inset-0 w-full h-full opacity-20"
+          viewBox="0 0 100 100"
+          preserveAspectRatio="none"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.2 }}
+          transition={{ duration: 2 }}
+        >
+          <motion.path
+            d="M0,100 C30,70 70,30 100,100"
+            fill="none"
+            stroke="white"
+            strokeWidth="0.5"
+            initial={{ pathLength: 0 }}
+            animate={{ pathLength: 1 }}
+            transition={{ duration: 2, delay: 0.5 }}
+          />
+          <motion.path
+            d="M0,50 C20,60 50,30 100,50"
+            fill="none"
+            stroke="white"
+            strokeWidth="0.5"
+            initial={{ pathLength: 0 }}
+            animate={{ pathLength: 1 }}
+            transition={{ duration: 2, delay: 0.8 }}
+          />
+          <motion.path
+            d="M0,80 C40,90 60,70 100,80"
+            fill="none"
+            stroke="white"
+            strokeWidth="0.5"
+            initial={{ pathLength: 0 }}
+            animate={{ pathLength: 1 }}
+            transition={{ duration: 2, delay: 1.1 }}
+          />
+        </motion.svg>
       </div>
       
+      {/* Decorative Elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Animated circles */}
+        <motion.div 
+          className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-blue-400 mix-blend-overlay opacity-10"
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.1, 0.15, 0.1],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            repeatType: "reverse",
+          }}
+        />
+        
+        <motion.div 
+          className="absolute bottom-1/3 right-1/4 w-96 h-96 rounded-full bg-indigo-500 mix-blend-overlay opacity-10"
+          animate={{
+            scale: [1, 1.1, 1],
+            opacity: [0.1, 0.2, 0.1],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            repeatType: "reverse",
+            delay: 1,
+          }}
+        />
+        
+        {/* Floating icons */}
+        <motion.div 
+          className="absolute top-1/3 right-1/5 text-white opacity-20"
+          animate={{ y: [0, -15, 0], rotate: [0, 5, 0] }}
+          transition={{ duration: 6, repeat: Infinity, repeatType: "reverse" }}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+          </svg>
+        </motion.div>
+        
+        <motion.div 
+          className="absolute bottom-1/4 left-1/5 text-white opacity-20"
+          animate={{ y: [0, 20, 0], rotate: [0, -5, 0] }}
+          transition={{ duration: 7, repeat: Infinity, repeatType: "reverse", delay: 1 }}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+            <line x1="9" y1="9" x2="9.01" y2="9"/>
+            <line x1="15" y1="9" x2="15.01" y2="9"/>
+          </svg>
+        </motion.div>
+      </div>
+
       {/* Content */}
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-20 py-32 md:py-44">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-3xl">
           <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={containerVariants}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
+            transition={{ duration: 0.7 }}
           >
-            <motion.h1 
-              className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white"
-              variants={itemVariants}
+            <motion.span 
+              className="inline-block px-4 py-2 rounded-full text-sm font-semibold bg-white/15 text-white backdrop-blur-sm mb-4 border border-white/20"
+              animate={{
+                boxShadow: [
+                  '0 0 0 0 rgba(255, 255, 255, 0)',
+                  '0 0 0 10px rgba(255, 255, 255, 0.2)',
+                  '0 0 0 0 rgba(255, 255, 255, 0)'
+                ]
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                repeatDelay: 1
+              }}
             >
-              <span className="block">Specialized</span>
-              <span className="block mt-1 text-blue-200">Healthcare Staffing</span>
-              <span className="block mt-1 bg-gradient-to-r from-blue-200 to-indigo-200 bg-clip-text text-transparent">Solutions</span>
-            </motion.h1>
-            <motion.p 
-              className="mt-6 max-w-lg text-xl text-blue-100 leading-relaxed"
-              variants={itemVariants}
-            >
-              We connect top healthcare organizations with qualified remote professionals, ensuring quality care delivery while reducing administrative burdens.
-            </motion.p>
-            <motion.div 
-              className="mt-8 flex flex-wrap gap-4"
-              variants={itemVariants}
-            >
-              <Link
-                href="/intake"
-                className="group relative px-8 py-3 text-base font-medium rounded-full bg-white text-blue-700 overflow-hidden transition-all duration-300 transform hover:scale-105 hover:shadow-lg shadow-md"
-              >
-                <motion.span 
-                  className="absolute inset-0 w-0 bg-blue-100 transition-all duration-300 ease-out group-hover:w-full"
-                  initial={{ width: 0 }}
-                  whileHover={{ width: "100%" }}
-                />
-                <span className="relative z-10">Start Your Staffing Request</span>
-              </Link>
-              <Link
-                href="/services"
-                className="group relative px-8 py-3 text-base font-medium rounded-full text-white border border-blue-300 overflow-hidden transition-all duration-300 transform hover:scale-105"
-              >
-                <motion.span 
-                  className="absolute inset-0 bg-blue-700 bg-opacity-30 transition-all duration-300 ease-out group-hover:bg-opacity-50"
-                  initial={{ opacity: 0.3 }}
-                  whileHover={{ opacity: 0.5 }}
-                />
-                <span className="relative z-10">Explore Our Services</span>
-              </Link>
-            </motion.div>
+              Revolutionizing Healthcare Staffing
+            </motion.span>
           </motion.div>
           
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className="hidden lg:block"
+          <motion.h1 
+            className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
           >
-            <motion.div 
-              className="relative"
-              whileHover={{ y: -5, transition: { duration: 0.2 } }}
+            Connect With Elite <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-indigo-300">Healthcare Professionals</span> Remotely
+          </motion.h1>
+          
+          <motion.p 
+            className="text-xl md:text-2xl text-blue-100 mb-8"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
+            transition={{ duration: 0.7, delay: 0.4 }}
+          >
+            Streamline your healthcare staffing process with our platform that connects you to qualified remote professionals, saving time and resources.
+          </motion.p>
+          
+          <motion.div 
+            className="flex flex-wrap gap-4"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
+            transition={{ duration: 0.7, delay: 0.6 }}
+          >
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              <div className="absolute -top-4 -left-4 w-72 h-72 bg-indigo-500 rounded-lg opacity-10 blur-xl"></div>
-              <motion.div 
-                className="relative bg-white bg-opacity-10 backdrop-filter backdrop-blur-sm border border-white border-opacity-20 rounded-2xl p-8 shadow-xl"
-                initial={{ y: 20 }}
-                animate={{ y: 0 }}
-                transition={{ duration: 0.5, delay: 0.8 }}
+              <Button 
+                size="lg" 
+                variant="primary" 
+                className="font-semibold"
+                href="/start"
               >
-                <div className="flex items-center justify-between mb-8">
-                  <div className="flex items-center space-x-2">
-                    <motion.div 
-                      className="w-3 h-3 rounded-full bg-green-400"
-                      animate={{ 
-                        scale: [1, 1.2, 1],
-                        opacity: [1, 0.7, 1]
-                      }}
-                      transition={{ 
-                        duration: 2,
-                        repeat: Infinity,
-                        repeatType: "loop"
-                      }}
-                    ></motion.div>
-                    <span className="text-white font-medium">Available now</span>
-                  </div>
-                  <div className="px-3 py-1 rounded-full bg-blue-700 bg-opacity-30 text-blue-100 text-sm">
-                    Verified Partners
-                  </div>
-                </div>
-                
-                <div className="space-y-6">
-                  <motion.div 
-                    className="p-4 bg-white bg-opacity-5 rounded-xl group cursor-pointer"
-                    whileHover={{ 
-                      scale: 1.03, 
-                      backgroundColor: "rgba(255, 255, 255, 0.1)",
-                      transition: { duration: 0.2 }
-                    }}
-                    initial={{ x: -20, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 1.0 }}
-                  >
-                    <div className="flex items-center space-x-4">
-                      <motion.div 
-                        className="w-12 h-12 flex items-center justify-center bg-blue-600 rounded-full text-white font-bold"
-                        whileHover={{ 
-                          scale: 1.1,
-                          backgroundColor: "#4338ca",
-                        }}
-                      >RN</motion.div>
-                      <div>
-                        <div className="text-white font-semibold">Registered Nurses</div>
-                        <div className="text-blue-200 text-sm">240+ Available Professionals</div>
-                      </div>
-                    </div>
-                  </motion.div>
-                  
-                  <motion.div 
-                    className="p-4 bg-white bg-opacity-5 rounded-xl group cursor-pointer"
-                    whileHover={{ 
-                      scale: 1.03, 
-                      backgroundColor: "rgba(255, 255, 255, 0.1)",
-                      transition: { duration: 0.2 }
-                    }}
-                    initial={{ x: -20, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 1.2 }}
-                  >
-                    <div className="flex items-center space-x-4">
-                      <motion.div 
-                        className="w-12 h-12 flex items-center justify-center bg-indigo-600 rounded-full text-white font-bold"
-                        whileHover={{ 
-                          scale: 1.1,
-                          backgroundColor: "#6366f1",
-                        }}
-                      >PA</motion.div>
-                      <div>
-                        <div className="text-white font-semibold">Physician Assistants</div>
-                        <div className="text-blue-200 text-sm">120+ Available Professionals</div>
-                      </div>
-                    </div>
-                  </motion.div>
-                  
-                  <motion.div 
-                    className="p-4 bg-white bg-opacity-5 rounded-xl group cursor-pointer"
-                    whileHover={{ 
-                      scale: 1.03, 
-                      backgroundColor: "rgba(255, 255, 255, 0.1)",
-                      transition: { duration: 0.2 }
-                    }}
-                    initial={{ x: -20, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 1.4 }}
-                  >
-                    <div className="flex items-center space-x-4">
-                      <motion.div 
-                        className="w-12 h-12 flex items-center justify-center bg-purple-600 rounded-full text-white font-bold"
-                        whileHover={{ 
-                          scale: 1.1,
-                          backgroundColor: "#9333ea",
-                        }}
-                      >MA</motion.div>
-                      <div>
-                        <div className="text-white font-semibold">Medical Assistants</div>
-                        <div className="text-blue-200 text-sm">180+ Available Professionals</div>
-                      </div>
-                    </div>
-                  </motion.div>
-                </div>
-                
-                <motion.div 
-                  className="mt-8 text-center"
-                  whileHover={{ scale: 1.05 }}
+                Start Staffing Now
+                <svg className="ml-2 -mr-1 w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                </svg>
+              </Button>
+            </motion.div>
+            
+            <motion.div
+              whileHover={{ scale: 1.05, boxShadow: "0 0 25px rgba(255,255,255,0.5)" }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Button 
+                size="lg" 
+                variant="white" 
+                className="font-semibold text-blue-700 relative overflow-hidden"
+                href="/services"
+              >
+                <span className="relative z-10">Explore Our Services</span>
+                <motion.span 
+                  className="absolute inset-0 bg-gradient-to-r from-yellow-200 to-yellow-300 opacity-0"
                   initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.5, delay: 1.6 }}
-                >
-                  <Link href="/services" className="text-blue-200 hover:text-white transition-colors">
-                    View all specialties →
-                  </Link>
-                </motion.div>
-              </motion.div>
+                  whileHover={{ opacity: 0.9 }}
+                  transition={{ duration: 0.3 }}
+                />
+                <motion.div
+                  className="absolute -right-10 -top-10 w-20 h-20 bg-white/30 rounded-full"
+                  animate={{
+                    scale: [0.1, 1.5],
+                    opacity: [0.8, 0],
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    repeatType: "loop",
+                    repeatDelay: 1
+                  }}
+                />
+              </Button>
             </motion.div>
           </motion.div>
         </div>
       </div>
-    </div>
+    </section>
   );
 } 
