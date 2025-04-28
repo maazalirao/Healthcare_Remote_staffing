@@ -63,7 +63,7 @@ export default function ProblemSolution() {
     {
       id: 3,
       title: 'Specialized Matching',
-      description: 'Our proprietary algorithm ensures the perfect match between your requirements and candidates' skills and experience.',
+      description: "Our proprietary algorithm ensures the perfect match between your requirements and candidates' skills and experience.",
       icon: <CheckCircleIcon className="h-8 w-8 text-green-500" aria-hidden="true" />
     }
   ];
