@@ -1,7 +1,9 @@
 import Head from 'next/head';
 import Hero from '../components/home/Hero';
+import Statistics from '../components/home/Statistics';
+import ServiceCards from '../components/home/ServiceCards';
 import ProblemSolution from '../components/home/ProblemSolution';
-import HowItWorks from '../components/home/HowItWorks';
+import ProcessSteps from '../components/home/ProcessSteps';
 import TrustBuilders from '../components/home/TrustBuilders';
 import FinalCta from '../components/home/FinalCta';
 
@@ -16,8 +18,10 @@ export default function Home() {
       </Head>
       
       <Hero />
+      <Statistics />
+      <ServiceCards />
       <ProblemSolution />
-      <HowItWorks />
+      <ProcessSteps />
       <TrustBuilders />
       <FinalCta />
     </>

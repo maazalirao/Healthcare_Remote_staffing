@@ -1,6 +1,6 @@
 import "@/styles/globals.css";
 import Layout from '../components/Layout';
-import { Inter, Outfit } from '@next/font/google';
+import { Inter, Outfit } from 'next/font/google';
 
 const inter = Inter({
   subsets: ['latin'],
