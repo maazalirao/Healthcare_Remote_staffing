@@ -11,11 +11,11 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+    <section className="relative min-h-[85vh] flex items-center overflow-hidden">
       {/* Background with gradient */}
       <div className="absolute inset-0 w-full h-full">
         {/* Gradient background instead of image */}
-        <div className="absolute inset-0 bg-gradient-to-tr from-blue-900 via-blue-800 to-indigo-700"></div>
+        <div className="absolute inset-0 bg-gradient-to-tr from-blue-900 via-blue-800 to-blue-700"></div>
         
         {/* Abstract background animation */}
         <motion.svg
@@ -73,7 +73,7 @@ export default function Hero() {
         />
         
         <motion.div 
-          className="absolute bottom-1/3 right-1/4 w-96 h-96 rounded-full bg-indigo-500 mix-blend-overlay opacity-10"
+          className="absolute bottom-1/3 right-1/4 w-96 h-96 rounded-full bg-blue-500 mix-blend-overlay opacity-10"
           animate={{
             scale: [1, 1.1, 1],
             opacity: [0.1, 0.2, 0.1],
@@ -120,11 +120,11 @@ export default function Hero() {
             transition={{ duration: 0.7 }}
           >
             <motion.span 
-              className="inline-block px-4 py-2 rounded-full text-sm font-semibold bg-white/15 text-white backdrop-blur-sm mb-4 border border-white/20"
+              className="inline-block px-4 py-2 rounded-full text-sm font-medium bg-white/15 text-white backdrop-blur-sm mb-4 border border-white/20"
               animate={{
                 boxShadow: [
                   '0 0 0 0 rgba(255, 255, 255, 0)',
-                  '0 0 0 10px rgba(255, 255, 255, 0.2)',
+                  '0 0 0 10px rgba(255, 255, 255, 0.1)',
                   '0 0 0 0 rgba(255, 255, 255, 0)'
                 ]
               }}
@@ -139,16 +139,16 @@ export default function Hero() {
           </motion.div>
           
           <motion.h1 
-            className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-5"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            Connect With Elite <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-indigo-300">Healthcare Professionals</span> Remotely
+            Connect With Elite <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-blue-300">Healthcare Professionals</span> Remotely
           </motion.h1>
           
           <motion.p 
-            className="text-xl md:text-2xl text-blue-100 mb-8"
+            className="text-lg md:text-xl text-blue-100 mb-6"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
             transition={{ duration: 0.7, delay: 0.4 }}
@@ -156,22 +156,24 @@ export default function Hero() {
             Streamline your healthcare staffing process with our platform that connects you to qualified remote professionals, saving time and resources.
           </motion.p>
           
-          {/* Cost Savings Banner */}
+          {/* Cost Savings Banner - Redesigned */}
           <motion.div
-            className="mb-8 bg-gradient-to-r from-yellow-300 to-yellow-400 rounded-lg p-4 shadow-lg"
+            className="mb-8 bg-blue-700/50 backdrop-blur-sm border border-blue-400/30 rounded-lg p-4 shadow-md"
             initial={{ opacity: 0, y: 30, scale: 0.9 }}
             animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.5 }}
           >
             <div className="flex items-center">
-              <svg className="w-8 h-8 text-blue-900 mr-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="12" r="10"></circle>
-                <path d="M16 8l-8 8"></path>
-                <path d="M8 8l8 8"></path>
-              </svg>
-              <p className="font-semibold text-blue-900 text-lg">
-                Up to <span className="font-bold text-xl">40% lower costs</span> than traditional staffing agencies
-              </p>
+              <div className="flex-shrink-0 bg-blue-200/20 p-2 rounded-full mr-4">
+                <svg className="w-6 h-6 text-blue-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                </svg>
+              </div>
+              <div>
+                <p className="font-medium text-white text-base">
+                  Industry-leading savings of up to <span className="font-bold text-blue-200">40%</span> compared to traditional staffing solutions
+                </p>
+              </div>
             </div>
           </motion.div>
           
@@ -182,13 +184,13 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.6 }}
           >
             <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
             >
               <Button 
                 size="lg" 
                 variant="primary" 
-                className="font-semibold"
+                className="font-medium"
                 href="/start"
               >
                 Start Staffing Now
@@ -199,13 +201,13 @@ export default function Hero() {
             </motion.div>
             
             <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
             >
               <Button 
                 size="lg" 
                 variant="white" 
-                className="font-semibold text-blue-700 relative overflow-hidden"
+                className="font-medium text-blue-700 relative overflow-hidden"
                 href="/services"
               >
                 <span className="relative z-10">Explore Our Services</span>

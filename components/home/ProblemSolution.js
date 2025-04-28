@@ -48,7 +48,7 @@ export default function ProblemSolution() {
         <svg 
           xmlns="http://www.w3.org/2000/svg" 
           viewBox="0 0 24 24" 
-          className="w-10 h-10 text-red-500"
+          className="w-8 h-8 text-red-500"
           fill="none"
           stroke="currentColor"
           strokeWidth="2"
@@ -68,7 +68,7 @@ export default function ProblemSolution() {
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
-          className="w-10 h-10 text-red-500"
+          className="w-8 h-8 text-red-500"
           fill="none"
           stroke="currentColor"
           strokeWidth="2"
@@ -87,7 +87,7 @@ export default function ProblemSolution() {
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
-          className="w-10 h-10 text-red-500"
+          className="w-8 h-8 text-red-500"
           fill="none"
           stroke="currentColor"
           strokeWidth="2"
@@ -112,7 +112,7 @@ export default function ProblemSolution() {
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
-          className="w-10 h-10 text-green-500"
+          className="w-8 h-8 text-blue-600"
           fill="none"
           stroke="currentColor"
           strokeWidth="2"
@@ -131,7 +131,7 @@ export default function ProblemSolution() {
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
-          className="w-10 h-10 text-green-500"
+          className="w-8 h-8 text-blue-600"
           fill="none"
           stroke="currentColor"
           strokeWidth="2"
@@ -151,16 +151,14 @@ export default function ProblemSolution() {
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
-          className="w-10 h-10 text-green-500"
+          className="w-8 h-8 text-blue-600"
           fill="none"
           stroke="currentColor"
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
         >
-          <circle cx="12" cy="12" r="10"></circle>
-          <line x1="12" y1="8" x2="12" y2="16"></line>
-          <line x1="8" y1="12" x2="16" y2="12"></line>
+          <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
         </svg>
       )
     }
@@ -192,70 +190,70 @@ export default function ProblemSolution() {
     <section 
       id="problem-solution-section" 
       ref={sectionRef}
-      className="py-24 bg-gradient-to-b from-blue-50 to-white relative overflow-hidden"
+      className="py-20 bg-gradient-to-b from-blue-50 to-white relative overflow-hidden"
     >
       {/* Background Elements */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-100 rounded-full filter blur-3xl opacity-30 transform translate-x-1/2 -translate-y-1/2"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-100 rounded-full filter blur-3xl opacity-30 transform -translate-x-1/2 translate-y-1/2"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-100 rounded-full filter blur-3xl opacity-20 transform translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-100 rounded-full filter blur-3xl opacity-20 transform -translate-x-1/2 translate-y-1/2"></div>
       </div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <span className="inline-block px-3 py-1 text-xs font-semibold bg-blue-100 text-blue-600 rounded-full mb-4">
+            <span className="inline-block px-3 py-1 text-xs font-medium bg-blue-100 text-blue-600 rounded-full mb-3">
               Why Choose Us
             </span>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Problems We Solve
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Healthcare Staffing Challenges Solved
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Traditional healthcare staffing presents challenges that our innovative approach effectively addresses
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Our innovative approach addresses the key challenges that healthcare organizations face with traditional staffing
             </p>
           </motion.div>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-10 mb-16">
+        <div className="flex flex-col lg:flex-row gap-8 mb-12">
           <motion.div 
             className="w-full lg:w-1/2"
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.7 }}
             viewport={{ once: true }}
           >
-            <div className="relative bg-white p-8 rounded-2xl shadow-xl">
-              <h3 className="text-2xl font-bold text-red-600 mb-6 flex items-center">
-                <span className="mr-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <div className="relative bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+              <h3 className="text-xl font-bold text-gray-800 mb-5 flex items-center">
+                <span className="mr-2 text-red-500">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
                     <line x1="12" y1="9" x2="12" y2="13"></line>
                     <line x1="12" y1="17" x2="12.01" y2="17"></line>
                   </svg>
                 </span>
-                The Problems
+                Industry Challenges
               </h3>
-              <div className="space-y-6">
+              <div className="space-y-4">
                 {problems.map((problem, index) => (
                   <motion.div 
                     key={index}
-                    className="flex p-4 rounded-xl bg-red-50 border border-red-100"
-                    initial={{ opacity: 0, y: 20 }}
+                    className="flex p-3 rounded-lg bg-red-50/50 border border-red-100"
+                    initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.2, duration: 0.6 }}
+                    transition={{ delay: index * 0.1, duration: 0.5 }}
                     viewport={{ once: true }}
-                    whileHover={{ y: -5, transition: { duration: 0.2 } }}
+                    whileHover={{ y: -3, transition: { duration: 0.2 } }}
                   >
-                    <div className="flex-shrink-0 mr-4">
+                    <div className="flex-shrink-0 mr-3">
                       {problem.icon}
                     </div>
                     <div>
-                      <h4 className="text-xl font-semibold text-gray-900 mb-2">{problem.title}</h4>
-                      <p className="text-gray-600">{problem.description}</p>
+                      <h4 className="text-lg font-medium text-gray-900 mb-1">{problem.title}</h4>
+                      <p className="text-gray-600 text-sm">{problem.description}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -265,38 +263,38 @@ export default function ProblemSolution() {
           
           <motion.div 
             className="w-full lg:w-1/2"
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.7 }}
             viewport={{ once: true }}
           >
-            <div className="relative bg-white p-8 rounded-2xl shadow-xl">
-              <h3 className="text-2xl font-bold text-green-600 mb-6 flex items-center">
-                <span className="mr-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <div className="relative bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+              <h3 className="text-xl font-bold text-gray-800 mb-5 flex items-center">
+                <span className="mr-2 text-blue-600">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                     <polyline points="22 4 12 14.01 9 11.01"></polyline>
                   </svg>
                 </span>
                 Our Solutions
               </h3>
-              <div className="space-y-6">
+              <div className="space-y-4">
                 {solutions.map((solution, index) => (
                   <motion.div 
                     key={index}
-                    className="flex p-4 rounded-xl bg-green-50 border border-green-100"
-                    initial={{ opacity: 0, y: 20 }}
+                    className="flex p-3 rounded-lg bg-blue-50/50 border border-blue-100"
+                    initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.2, duration: 0.6 }}
+                    transition={{ delay: index * 0.1, duration: 0.5 }}
                     viewport={{ once: true }}
-                    whileHover={{ y: -5, transition: { duration: 0.2 } }}
+                    whileHover={{ y: -3, transition: { duration: 0.2 } }}
                   >
-                    <div className="flex-shrink-0 mr-4">
+                    <div className="flex-shrink-0 mr-3">
                       {solution.icon}
                     </div>
                     <div>
-                      <h4 className="text-xl font-semibold text-gray-900 mb-2">{solution.title}</h4>
-                      <p className="text-gray-600">{solution.description}</p>
+                      <h4 className="text-lg font-medium text-gray-900 mb-1">{solution.title}</h4>
+                      <p className="text-gray-600 text-sm">{solution.description}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -307,28 +305,28 @@ export default function ProblemSolution() {
         
         {/* Cost savings highlight */}
         <motion.div 
-          className="max-w-4xl mx-auto bg-gradient-to-r from-blue-600 to-blue-500 rounded-2xl p-6 text-white shadow-xl"
-          initial={{ opacity: 0, y: 30 }}
+          className="max-w-4xl mx-auto bg-gradient-to-r from-blue-600 to-blue-500 rounded-xl p-5 text-white shadow-md"
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          transition={{ duration: 0.7, delay: 0.3 }}
           viewport={{ once: true }}
         >
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex-1">
-              <h3 className="text-2xl font-bold mb-2">Significant Cost Savings</h3>
-              <p className="text-blue-100">
-                Our remote healthcare staffing solutions provide up to <span className="font-bold text-yellow-300">40% cost savings</span> compared to traditional staffing agencies, without compromising on quality or expertise.
+              <h3 className="text-xl font-bold mb-2">Significant Cost Savings</h3>
+              <p className="text-blue-100 text-sm md:text-base">
+                Our remote healthcare staffing solutions provide up to <span className="font-bold text-white">40% cost savings</span> compared to traditional staffing agencies, without compromising quality.
               </p>
             </div>
-            <div className="flex-shrink-0">
+            <div className="flex-shrink-0 mt-4 md:mt-0">
               <Button 
-                variant="warning" 
-                size="lg" 
+                variant="white" 
+                size="md" 
                 rounded 
-                className="font-semibold" 
+                className="font-medium text-blue-700" 
                 href="/services"
               >
-                See How We Save You Money
+                Learn More
               </Button>
             </div>
           </div>
