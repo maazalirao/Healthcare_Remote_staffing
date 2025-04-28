@@ -89,7 +89,7 @@ export default function ServiceCards() {
               What We Offer
             </h2>
             <p className="mt-3 max-w-3xl mx-auto text-lg text-gray-500 sm:mt-4">
-              We offer specialized healthcare staffing solutions that help you optimize operations,
+              We offer specialized industrial staffing solutions that help you optimize operations,
               reduce costs, and focus on what matters most - providing excellent care.
             </p>
           </motion.div>
