@@ -14,7 +14,7 @@ export default function ContactInfo() {
             </div>
             <div className="ml-3">
               <p className="text-lg font-medium text-gray-900">Email</p>
-              <p className="text-gray-600">info@clearviewstaffing.com</p>
+              <p className="text-gray-600">info@clearviewstaffinggrp.com</p>
             </div>
           </li>
           
@@ -35,9 +35,9 @@ export default function ContactInfo() {
             <div className="ml-3">
               <p className="text-lg font-medium text-gray-900">Office</p>
               <p className="text-gray-600">
-                5100 Main Street<br />
-                Suite 500<br />
-                Anytown, USA 12345
+                The W Mall & Business Center<br />
+                355 Flushing Ave, Suite 706b<br />
+                Brooklyn, NY 11205
               </p>
             </div>
           </li>

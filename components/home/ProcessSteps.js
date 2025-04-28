@@ -98,7 +98,7 @@ export default function ProcessSteps() {
               animate={{ opacity: [0.8, 1, 0.8] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
             >
-              Our streamlined process makes it easy to get started with our remote healthcare staffing solutions.
+              Our streamlined process makes it easy to get started with our global talent solutions.
             </motion.p>
           </motion.div>
         </div>
@@ -149,7 +149,7 @@ export default function ProcessSteps() {
                 className="text-sm sm:text-base text-gray-600"
                 variants={fadeInUpVariants}
               >
-                Initial strategic call to identify all the pain points in your healthcare operations and identify optimal solutions. 
+                Initial strategic call to identify all the pain points in your operations and identify optimal solutions. 
                 You receive a consultation (in-person, phone, or video call) to discuss the themes, scope of work, skill set requirements, 
                 preferred communication methods, and time zones.
               </motion.p>
@@ -307,9 +307,9 @@ export default function ProcessSteps() {
                 className="text-sm sm:text-base text-gray-600"
                 variants={fadeInUpVariants}
               >
-                An initial meeting with you and your Virtual Assistant to establish rapport and discuss primary job tasks and themes. 
-                Required paperwork is completed and access to all relevant VA tools, software, and systems is set up. 
-                Followed by VA orientation on your business, tools, and associated software.
+                An initial meeting with you and your team members to establish rapport and discuss primary job tasks and expectations. 
+                Required paperwork is completed and access to all relevant tools, software, and systems is set up. 
+                Followed by orientation on your business, tools, and associated software.
               </motion.p>
             </div>
             <div className="hidden md:block md:w-1/3">
