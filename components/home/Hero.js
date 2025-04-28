@@ -11,7 +11,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-[85vh] flex items-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background with gradient */}
       <div className="absolute inset-0 w-full h-full">
         {/* Gradient background instead of image */}
@@ -191,7 +191,7 @@ export default function Hero() {
                 size="lg" 
                 variant="primary" 
                 className="font-medium"
-                href="/start"
+                href="/intake"
               >
                 Start Staffing Now
                 <svg className="ml-2 -mr-1 w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
