@@ -45,110 +45,61 @@ export default function ProblemSolution() {
       title: "High Turnover Rate",
       description: "Healthcare facilities struggle with high staff turnover, leading to increased recruitment costs and decreased quality of care.",
       icon: (
-        <motion.svg 
+        <svg 
           xmlns="http://www.w3.org/2000/svg" 
           viewBox="0 0 24 24" 
-          className="w-14 h-14"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          whileHover={{ scale: 1.2, rotate: 5 }}
-          transition={{ duration: 0.3 }}
+          className="w-10 h-10 text-red-500"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         >
-          <motion.path 
-            d="M19 5L5 19M5.00001 5L19 19" 
-            stroke="rgb(220, 38, 38)" 
-            strokeWidth="3" 
-            strokeLinecap="round" 
-            strokeLinejoin="round"
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ duration: 0.8, ease: "easeInOut" }}
-          />
-          <motion.circle 
-            cx="12" 
-            cy="12" 
-            r="10" 
-            stroke="rgb(220, 38, 38)" 
-            strokeWidth="2" 
-            fill="none"
-            initial={{ pathLength: 0, opacity: 0 }}
-            animate={{ pathLength: 1, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          />
-        </motion.svg>
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="15" y1="9" x2="9" y2="15"></line>
+          <line x1="9" y1="9" x2="15" y2="15"></line>
+        </svg>
       )
     },
     {
       title: "Talent Shortage",
       description: "Finding qualified healthcare professionals is increasingly difficult, especially in specialized fields and rural areas.",
       icon: (
-        <motion.svg
+        <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
-          className="w-14 h-14"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          whileHover={{ scale: 1.2, rotate: -5 }}
-          transition={{ duration: 0.3 }}
+          className="w-10 h-10 text-red-500"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         >
-          <motion.path
-            d="M12 4v16m8-8H4"
-            stroke="rgb(220, 38, 38)"
-            strokeWidth="3"
-            strokeLinecap="round"
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
-          />
-          <motion.circle
-            cx="12"
-            cy="12"
-            r="10"
-            stroke="rgb(220, 38, 38)"
-            strokeWidth="2"
-            fill="none"
-            initial={{ pathLength: 0, opacity: 0 }}
-            animate={{ pathLength: 1, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          />
-        </motion.svg>
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="8" y1="12" x2="16" y2="12"></line>
+        </svg>
       )
     },
     {
       title: "Cost Inefficiency",
       description: "Traditional staffing methods are costly, with high agency fees, recruitment costs, and expenses related to staff turnover.",
       icon: (
-        <motion.svg
+        <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
-          className="w-14 h-14"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          whileHover={{ scale: 1.2, rotate: 5 }}
-          transition={{ duration: 0.3 }}
+          className="w-10 h-10 text-red-500"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         >
-          <motion.path
-            d="M15 5L5 15M7.5 5H15v7.5"
-            stroke="rgb(220, 38, 38)"
-            strokeWidth="3"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
-          />
-          <motion.circle
-            cx="12"
-            cy="12"
-            r="10"
-            stroke="rgb(220, 38, 38)"
-            strokeWidth="2"
-            fill="none"
-            initial={{ pathLength: 0, opacity: 0 }}
-            animate={{ pathLength: 1, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          />
-        </motion.svg>
+          <polyline points="23 7 23 1 17 1"></polyline>
+          <line x1="16" y1="8" x2="23" y2="1"></line>
+          <polyline points="1 17 1 23 7 23"></polyline>
+          <line x1="8" y1="16" x2="1" y2="23"></line>
+          <path d="M21 21H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9"></path>
+        </svg>
       )
     }
   ];
@@ -158,116 +109,59 @@ export default function ProblemSolution() {
       title: "Remote Staffing Model",
       description: "Our platform enables healthcare facilities to hire qualified remote professionals, reducing turnover and increasing staff satisfaction.",
       icon: (
-        <motion.svg
+        <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
-          className="w-14 h-14"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          whileHover={{ scale: 1.2, rotate: -5 }}
-          transition={{ duration: 0.3 }}
+          className="w-10 h-10 text-green-500"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         >
-          <motion.path
-            d="M5 12l5 5l10 -10"
-            stroke="#22c55e"
-            strokeWidth="3"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ duration: 0.8, ease: "easeInOut" }}
-          />
-          <motion.circle
-            cx="12"
-            cy="12"
-            r="10"
-            stroke="#22c55e"
-            strokeWidth="2"
-            fill="none"
-            initial={{ pathLength: 0, opacity: 0 }}
-            animate={{ pathLength: 1, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          />
-        </motion.svg>
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+          <polyline points="22 4 12 14.01 9 11.01"></polyline>
+        </svg>
       )
     },
     {
       title: "Global Talent Pool",
       description: "Access a diverse pool of healthcare professionals from around the world, finding the perfect match for specialized positions.",
       icon: (
-        <motion.svg
+        <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
-          className="w-14 h-14"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          whileHover={{ scale: 1.2, rotate: 5 }}
-          transition={{ duration: 0.3 }}
+          className="w-10 h-10 text-green-500"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         >
-          <motion.path
-            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
-            stroke="#22c55e"
-            strokeWidth="2"
-            fill="none"
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
-          />
-          <motion.path
-            d="M2 12h20"
-            stroke="#22c55e"
-            strokeWidth="2"
-            strokeLinecap="round"
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ duration: 0.5, delay: 0.3, ease: "easeInOut" }}
-          />
-        </motion.svg>
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="2" y1="12" x2="22" y2="12"></line>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+        </svg>
       )
     },
     {
       title: "Cost-Effective Solution",
-      description: "Save on recruitment, training, and overhead costs with our streamlined approach to healthcare staffing.",
+      description: "Save on recruitment, training, and overhead costs with our streamlined approach to healthcare staffing. Up to 40% lower costs than traditional agencies.",
       icon: (
-        <motion.svg
+        <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
-          className="w-14 h-14"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          whileHover={{ scale: 1.2, rotate: -5 }}
-          transition={{ duration: 0.3 }}
+          className="w-10 h-10 text-green-500"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         >
-          <motion.path
-            d="M12 8c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4z"
-            stroke="#22c55e"
-            strokeWidth="2"
-            fill="none"
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
-          />
-          <motion.path
-            d="M12 2v2M12 20v2M20 12h2M2 12h2"
-            stroke="#22c55e"
-            strokeWidth="2"
-            strokeLinecap="round"
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ duration: 0.5, delay: 0.3, ease: "easeInOut" }}
-          />
-          <motion.circle
-            cx="12"
-            cy="12"
-            r="10"
-            stroke="#22c55e"
-            strokeWidth="2"
-            fill="none"
-            initial={{ pathLength: 0, opacity: 0 }}
-            animate={{ pathLength: 1, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          />
-        </motion.svg>
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="8" x2="12" y2="16"></line>
+          <line x1="8" y1="12" x2="16" y2="12"></line>
+        </svg>
       )
     }
   ];
@@ -298,218 +192,145 @@ export default function ProblemSolution() {
     <section 
       id="problem-solution-section" 
       ref={sectionRef}
-      className="py-16 sm:py-24 relative overflow-hidden bg-gradient-to-b from-white to-blue-50"
+      className="py-24 bg-gradient-to-b from-blue-50 to-white relative overflow-hidden"
     >
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden opacity-30">
-        <motion.div 
-          className="absolute -bottom-16 -right-16 w-32 sm:w-48 md:w-64 h-32 sm:h-48 md:h-64 bg-blue-200 rounded-full"
-          animate={{
-            scale: [1, 1.1, 1],
-            rotate: [0, 5, 0],
-            opacity: [0.3, 0.4, 0.3],
-          }}
-          transition={{
-            duration: 12,
-            repeat: Infinity,
-            repeatType: "reverse",
-            ease: "easeInOut"
-          }}
-        />
-        <motion.div 
-          className="absolute top-32 -left-16 w-32 sm:w-48 md:w-64 h-32 sm:h-48 md:h-64 bg-indigo-200 rounded-full"
-          animate={{
-            scale: [1, 1.15, 1],
-            rotate: [0, -5, 0],
-            opacity: [0.3, 0.5, 0.3],
-          }}
-          transition={{
-            duration: 15,
-            repeat: Infinity,
-            repeatType: "reverse",
-            ease: "easeInOut"
-          }}
-        />
-        <motion.div 
-          className="absolute top-1/2 right-1/4 w-24 sm:w-32 md:w-48 h-24 sm:h-32 md:h-48 bg-purple-200 rounded-full"
-          animate={{
-            scale: [1, 1.05, 1],
-            y: [0, -15, 0],
-            opacity: [0.25, 0.4, 0.25],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            repeatType: "reverse",
-            ease: "easeInOut"
-          }}
-        />
-        <motion.div 
-          className="absolute bottom-1/3 left-1/4 w-16 sm:w-24 md:w-32 h-16 sm:h-24 md:h-32 bg-teal-200 rounded-full"
-          animate={{
-            scale: [1, 1.1, 1],
-            y: [0, 10, 0],
-            opacity: [0.2, 0.35, 0.2],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            repeatType: "reverse",
-            ease: "easeInOut"
-          }}
-        />
+      {/* Background Elements */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-100 rounded-full filter blur-3xl opacity-30 transform translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-100 rounded-full filter blur-3xl opacity-30 transform -translate-x-1/2 translate-y-1/2"></div>
       </div>
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <motion.div 
-          className="text-center transition-all duration-1000 transform"
-          initial={{ opacity: 0, y: 30 }}
-          animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-        >
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center mb-16">
           <motion.div
-            animate={pulseAnimation}
-          >
-            <Badge variant="primary" className="mb-3 sm:mb-4 text-xs sm:text-sm">Healthcare Staffing Challenges</Badge>
-          </motion.div>
-          <motion.h2 
-            className="text-2xl sm:text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-blue-700 to-indigo-700 bg-clip-text text-transparent mb-3 sm:mb-4"
             initial={{ opacity: 0, y: 20 }}
-            animate={isVisible ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.2 }}
-          >
-            Transforming Healthcare Staffing Challenges
-          </motion.h2>
-          <motion.p 
-            className="mt-3 sm:mt-4 max-w-2xl mx-auto text-base sm:text-lg text-gray-600"
-            initial={{ opacity: 0, y: 20 }}
-            animate={isVisible ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.4 }}
-          >
-            Healthcare organizations face unique challenges with remote staffing. Discover how our solutions address these pain points.
-          </motion.p>
-        </motion.div>
-
-        <Tab.Group onChange={setActiveTabIndex}>
-          <motion.div
-            className="flex justify-center mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <Tab.List className="inline-flex p-1 space-x-2 bg-blue-50 rounded-xl">
-              <Tab
-                className={({ selected }) =>
-                  `px-5 py-2.5 rounded-lg font-medium transition-all duration-200
-                  ${selected 
-                    ? 'bg-white text-blue-700 shadow-md' 
-                    : 'text-gray-600 hover:text-blue-600 hover:bg-white/[0.5]'
-                  }`
-                }
-              >
-                Problems
-              </Tab>
-              <Tab
-                className={({ selected }) =>
-                  `px-5 py-2.5 rounded-lg font-medium transition-all duration-200
-                  ${selected 
-                    ? 'bg-white text-blue-700 shadow-md' 
-                    : 'text-gray-600 hover:text-blue-600 hover:bg-white/[0.5]'
-                  }`
-                }
-              >
-                Solutions
-              </Tab>
-            </Tab.List>
-          </motion.div>
-          
-          <Tab.Panels className="mt-2">
-            <AnimatePresence mode="wait">
-              <Tab.Panel key={activeTabIndex}>
-                <motion.div
-                  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
-                  variants={containerVariants}
-                  initial="hidden"
-                  animate="visible"
-                >
-                  {(activeTabIndex === 0 ? problems : solutions).map((item, index) => (
-                    <motion.div
-                      key={index}
-                      variants={itemVariants}
-                      whileHover={{ 
-                        y: -10, 
-                        boxShadow: '0 15px 30px rgba(0, 0, 0, 0.1)' 
-                      }}
-                      className={`bg-white p-8 rounded-2xl shadow-md border transition-all duration-300 ${
-                        activeTabIndex === 0 
-                          ? 'border-red-100 hover:border-red-200' 
-                          : 'border-green-100 hover:border-green-200'
-                      }`}
-                    >
-                      <div className="mb-4">
-                        {item.icon}
-                      </div>
-                      <h3 className="text-xl font-bold mb-3 text-gray-900">{item.title}</h3>
-                      <p className="text-gray-600">{item.description}</p>
-                    </motion.div>
-                  ))}
-                </motion.div>
-              </Tab.Panel>
-            </AnimatePresence>
-          </Tab.Panels>
-        </Tab.Group>
-
-        <motion.div 
-          className="mt-10 sm:mt-12 md:mt-16 text-center"
-          initial={{ opacity: 0, y: 30 }}
-          animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.8 }}
-        >
-          <motion.h3 
-            className="text-xl sm:text-2xl font-bold text-blue-700 mb-3 sm:mb-4"
-            whileHover={{ scale: 1.02 }}
-          >
-            Ready to transform your healthcare staffing approach?
-          </motion.h3>
-          <motion.p 
-            className="max-w-2xl mx-auto text-base sm:text-lg text-gray-600 mb-6 sm:mb-8"
-            initial={{ opacity: 0.8 }}
-            whileInView={{ opacity: 1 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            Our comprehensive solution addresses the complex challenges of remote healthcare staffing, 
-            giving you access to qualified professionals while reducing administrative burden.
-          </motion.p>
-          <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-            >
+            <span className="inline-block px-3 py-1 text-xs font-semibold bg-blue-100 text-blue-600 rounded-full mb-4">
+              Why Choose Us
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Problems We Solve
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Traditional healthcare staffing presents challenges that our innovative approach effectively addresses
+            </p>
+          </motion.div>
+        </div>
+
+        <div className="flex flex-col lg:flex-row gap-10 mb-16">
+          <motion.div 
+            className="w-full lg:w-1/2"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <div className="relative bg-white p-8 rounded-2xl shadow-xl">
+              <h3 className="text-2xl font-bold text-red-600 mb-6 flex items-center">
+                <span className="mr-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                    <line x1="12" y1="9" x2="12" y2="13"></line>
+                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                  </svg>
+                </span>
+                The Problems
+              </h3>
+              <div className="space-y-6">
+                {problems.map((problem, index) => (
+                  <motion.div 
+                    key={index}
+                    className="flex p-4 rounded-xl bg-red-50 border border-red-100"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.2, duration: 0.6 }}
+                    viewport={{ once: true }}
+                    whileHover={{ y: -5, transition: { duration: 0.2 } }}
+                  >
+                    <div className="flex-shrink-0 mr-4">
+                      {problem.icon}
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-semibold text-gray-900 mb-2">{problem.title}</h4>
+                      <p className="text-gray-600">{problem.description}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+          
+          <motion.div 
+            className="w-full lg:w-1/2"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <div className="relative bg-white p-8 rounded-2xl shadow-xl">
+              <h3 className="text-2xl font-bold text-green-600 mb-6 flex items-center">
+                <span className="mr-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                  </svg>
+                </span>
+                Our Solutions
+              </h3>
+              <div className="space-y-6">
+                {solutions.map((solution, index) => (
+                  <motion.div 
+                    key={index}
+                    className="flex p-4 rounded-xl bg-green-50 border border-green-100"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.2, duration: 0.6 }}
+                    viewport={{ once: true }}
+                    whileHover={{ y: -5, transition: { duration: 0.2 } }}
+                  >
+                    <div className="flex-shrink-0 mr-4">
+                      {solution.icon}
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-semibold text-gray-900 mb-2">{solution.title}</h4>
+                      <p className="text-gray-600">{solution.description}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        </div>
+        
+        {/* Cost savings highlight */}
+        <motion.div 
+          className="max-w-4xl mx-auto bg-gradient-to-r from-blue-600 to-blue-500 rounded-2xl p-6 text-white shadow-xl"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          viewport={{ once: true }}
+        >
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="flex-1">
+              <h3 className="text-2xl font-bold mb-2">Significant Cost Savings</h3>
+              <p className="text-blue-100">
+                Our remote healthcare staffing solutions provide up to <span className="font-bold text-yellow-300">40% cost savings</span> compared to traditional staffing agencies, without compromising on quality or expertise.
+              </p>
+            </div>
+            <div className="flex-shrink-0">
               <Button 
-                href="/intake" 
+                variant="warning" 
                 size="lg" 
                 rounded 
-                withAnimation 
-                className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700"
+                className="font-semibold" 
+                href="/services"
               >
-                Start Staffing Now
+                See How We Save You Money
               </Button>
-            </motion.div>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <Button 
-                href="/services" 
-                variant="outline" 
-                size="lg" 
-                rounded 
-                withAnimation 
-                className="w-full sm:w-auto mt-3 sm:mt-0"
-              >
-                Explore Our Services
-              </Button>
-            </motion.div>
+            </div>
           </div>
         </motion.div>
       </div>

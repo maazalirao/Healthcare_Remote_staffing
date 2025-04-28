@@ -47,9 +47,9 @@ export default function ServiceCards() {
       {/* Background decorative elements */}
       <div className="absolute inset-0 z-0">
         <div className="absolute -top-20 -right-20 w-96 h-96 rounded-full bg-blue-100 opacity-30"></div>
-        <div className="absolute bottom-10 -left-20 w-80 h-80 rounded-full bg-indigo-100 opacity-30"></div>
+        <div className="absolute bottom-10 -left-20 w-80 h-80 rounded-full bg-blue-100 opacity-30"></div>
         <motion.div 
-          className="absolute top-1/3 right-1/4 w-8 h-8 rounded-full bg-indigo-400 opacity-20"
+          className="absolute top-1/3 right-1/4 w-8 h-8 rounded-full bg-blue-400 opacity-20"
           animate={{
             y: [0, -20, 0],
             x: [0, 10, 0]
@@ -109,7 +109,7 @@ export default function ServiceCards() {
             animate={inView ? floatingAnimation : {}}
             custom={0}
           >
-            <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl opacity-75 blur group-hover:opacity-100 transition duration-300"></div>
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-blue-500 rounded-2xl opacity-75 blur group-hover:opacity-100 transition duration-300"></div>
             <div className="relative bg-white p-8 rounded-2xl shadow-xl h-full flex flex-col">
               <div className="flex items-center justify-center h-14 w-14 rounded-xl bg-blue-100 text-blue-600 mb-6">
                 <Calendar size={28} />
@@ -141,9 +141,9 @@ export default function ServiceCards() {
             } : {}}
             custom={1}
           >
-            <div className="absolute -inset-0.5 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl opacity-75 blur group-hover:opacity-100 transition duration-300"></div>
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-blue-400 rounded-2xl opacity-75 blur group-hover:opacity-100 transition duration-300"></div>
             <div className="relative bg-white p-8 rounded-2xl shadow-xl h-full flex flex-col">
-              <div className="flex items-center justify-center h-14 w-14 rounded-xl bg-indigo-100 text-indigo-600 mb-6">
+              <div className="flex items-center justify-center h-14 w-14 rounded-xl bg-blue-100 text-blue-600 mb-6">
                 <Users size={28} />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-3">General Administration</h3>
@@ -152,14 +152,14 @@ export default function ServiceCards() {
               </p>
               <Link
                 href="/services/general-admin"
-                className="inline-flex items-center justify-center px-5 py-3 rounded-full bg-indigo-100 text-indigo-700 font-medium transition-all duration-300 hover:bg-indigo-200 mt-auto"
+                className="inline-flex items-center justify-center px-5 py-3 rounded-full bg-blue-100 text-blue-700 font-medium transition-all duration-300 hover:bg-blue-200 mt-auto"
               >
                 Learn More
               </Link>
             </div>
           </motion.div>
 
-          {/* Social Media Management Card */}
+          {/* Data Management Card */}
           <motion.div 
             className="relative group" 
             variants={cardVariants}
@@ -173,9 +173,9 @@ export default function ServiceCards() {
             } : {}}
             custom={2}
           >
-            <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl opacity-75 blur group-hover:opacity-100 transition duration-300"></div>
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-blue-400 rounded-2xl opacity-75 blur group-hover:opacity-100 transition duration-300"></div>
             <div className="relative bg-white p-8 rounded-2xl shadow-xl h-full flex flex-col">
-              <div className="flex items-center justify-center h-14 w-14 rounded-xl bg-purple-100 text-purple-600 mb-6">
+              <div className="flex items-center justify-center h-14 w-14 rounded-xl bg-blue-100 text-blue-600 mb-6">
                 <BarChart3 size={28} />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-3">Data Management</h3>
@@ -184,7 +184,7 @@ export default function ServiceCards() {
               </p>
               <Link
                 href="/services/data-management"
-                className="inline-flex items-center justify-center px-5 py-3 rounded-full bg-purple-100 text-purple-700 font-medium transition-all duration-300 hover:bg-purple-200 mt-auto"
+                className="inline-flex items-center justify-center px-5 py-3 rounded-full bg-blue-100 text-blue-700 font-medium transition-all duration-300 hover:bg-blue-200 mt-auto"
               >
                 Learn More
               </Link>
@@ -201,7 +201,7 @@ export default function ServiceCards() {
           >
             <Link
               href="/services"
-              className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl hover:from-blue-700 hover:to-indigo-700"
+              className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-gradient-to-r from-blue-600 to-blue-500 text-white font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl hover:from-blue-700 hover:to-blue-600"
             >
               View All Services
             </Link>

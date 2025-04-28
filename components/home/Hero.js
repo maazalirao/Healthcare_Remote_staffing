@@ -2,7 +2,6 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Button from '../ui/Button';
-import Image from 'next/image';
 
 export default function Hero() {
   const [isVisible, setIsVisible] = useState(false);
@@ -13,17 +12,10 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-      {/* Background image with gradient overlay */}
+      {/* Background with gradient */}
       <div className="absolute inset-0 w-full h-full">
-        {/* Image from Unsplash - high quality healthcare professional image */}
-        <img 
-          src="https://images.unsplash.com/photo-1584515979956-d9f6e5d90408?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" 
-          alt="Healthcare Professional" 
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        
-        {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/90 via-blue-800/70 to-indigo-700/40 backdrop-blur-[2px]"></div>
+        {/* Gradient background instead of image */}
+        <div className="absolute inset-0 bg-gradient-to-tr from-blue-900 via-blue-800 to-indigo-700"></div>
         
         {/* Abstract background animation */}
         <motion.svg
@@ -164,6 +156,25 @@ export default function Hero() {
             Streamline your healthcare staffing process with our platform that connects you to qualified remote professionals, saving time and resources.
           </motion.p>
           
+          {/* Cost Savings Banner */}
+          <motion.div
+            className="mb-8 bg-gradient-to-r from-yellow-300 to-yellow-400 rounded-lg p-4 shadow-lg"
+            initial={{ opacity: 0, y: 30, scale: 0.9 }}
+            animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30, scale: 1 }}
+            transition={{ duration: 0.7, delay: 0.5 }}
+          >
+            <div className="flex items-center">
+              <svg className="w-8 h-8 text-blue-900 mr-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M16 8l-8 8"></path>
+                <path d="M8 8l8 8"></path>
+              </svg>
+              <p className="font-semibold text-blue-900 text-lg">
+                Up to <span className="font-bold text-xl">40% lower costs</span> than traditional staffing agencies
+              </p>
+            </div>
+          </motion.div>
+          
           <motion.div 
             className="flex flex-wrap gap-4"
             initial={{ opacity: 0, y: 30 }}
@@ -188,7 +199,7 @@ export default function Hero() {
             </motion.div>
             
             <motion.div
-              whileHover={{ scale: 1.05, boxShadow: "0 0 25px rgba(255,255,255,0.5)" }}
+              whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               <Button 
@@ -198,25 +209,6 @@ export default function Hero() {
                 href="/services"
               >
                 <span className="relative z-10">Explore Our Services</span>
-                <motion.span 
-                  className="absolute inset-0 bg-gradient-to-r from-yellow-200 to-yellow-300 opacity-0"
-                  initial={{ opacity: 0 }}
-                  whileHover={{ opacity: 0.9 }}
-                  transition={{ duration: 0.3 }}
-                />
-                <motion.div
-                  className="absolute -right-10 -top-10 w-20 h-20 bg-white/30 rounded-full"
-                  animate={{
-                    scale: [0.1, 1.5],
-                    opacity: [0.8, 0],
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    repeatType: "loop",
-                    repeatDelay: 1
-                  }}
-                />
               </Button>
             </motion.div>
           </motion.div>
