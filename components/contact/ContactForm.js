@@ -25,70 +25,46 @@ export default function ContactForm() {
     setFormStatus('loading');
     setFormMessage('Sending...');
 
-    const formAction = "https://formsubmit.co/maazaltaf1027@gmail.com"; // Your FormSubmit endpoint
-
-    // Create FormData object for submission
-    const data = new FormData();
-    Object.keys(formData).forEach(key => data.append(key, formData[key]));
+    const apiUrl = "/api/submit-contact"; // Our backend endpoint
 
     try {
-      const response = await fetch(formAction, {
+      const response = await fetch(apiUrl, {
         method: 'POST',
-        body: data,
-        headers: {
+        headers: { 
+          'Content-Type': 'application/json',
           'Accept': 'application/json'
-        }
+        },
+        body: JSON.stringify(formData), // Send data as JSON
       });
 
-      // Check Content-Type before parsing
-      const contentType = response.headers.get("content-type");
-      let submissionSuccess = false;
-      let resultMessage = 'Submission failed. Please try again.'; // Default error
+      const result = await response.json();
 
-      if (contentType && contentType.indexOf("application/json") !== -1) {
-        const result = await response.json();
-        if (response.ok && result.success === "true") {
-          submissionSuccess = true;
-          resultMessage = result.message; // Use FormSubmit's success message
-        } else {
-          resultMessage = result.message || 'Submission failed according to server.';
-        }
-      } else {
-         if (response.ok) {
-             console.log('Received non-JSON response, assuming success after activation.');
-             submissionSuccess = true;
-             // Use a generic success message
-             resultMessage = "Message sent successfully! We will get back to you soon."; 
-         } else {
-             console.error('Received non-JSON error response:', await response.text());
-             resultMessage = `Submission failed with status: ${response.status}. Please try again.`;
-         }
+      if (!response.ok) {
+        throw new Error(result.message || `HTTP error! status: ${response.status}`);
       }
 
-      if (submissionSuccess) {
-        setFormStatus('success');
-        const successText = `${resultMessage} Alternatively, you can schedule a 30-minute call directly here: `;
-        const calendlyLink = "https://calendly.com/david-clearviewstaffinggrp/30min";
-        setFormMessage(
-          <>
-            {successText}
-            <a href={calendlyLink} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium">
-              Book a Call
-            </a>
-          </>
-        );
-        // Reset form
-        setFormData({
-          name: '',
-          email: '',
-          message: '',
-        });
-      } else {
-        throw new Error(resultMessage);
-      }
+      setFormStatus('success');
+      // Use the success message from the API
+      const successText = `${result.message} Alternatively, you can schedule a 30-minute call directly here: `;
+      const calendlyLink = "https://calendly.com/david-clearviewstaffinggrp/30min";
+      setFormMessage(
+        <>
+          {successText}
+          <a href={calendlyLink} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium">
+            Book a Call
+          </a>
+        </>
+      );
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        message: '',
+      });
 
     } catch (error) {
       setFormStatus('error');
+      // Use the error message from the caught error
       setFormMessage(error.message || 'Failed to send message. Please check your connection or try again later.');
       console.error('Contact form submission error:', error);
     } finally {

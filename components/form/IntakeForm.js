@@ -24,87 +24,59 @@ export default function IntakeForm() {
     });
   };
 
-  // Updated handleSubmit for FormSubmit
+  // Updated handleSubmit to use API route
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true); // Start loading
     setFormStatus('loading');
     setFormMessage('Submitting...');
 
-    const formAction = "https://formsubmit.co/maazaltaf1027@gmail.com"; // Your FormSubmit endpoint
-
-    // Create FormData object for submission
-    const data = new FormData();
-    Object.keys(formData).forEach(key => data.append(key, formData[key]));
-    // Add FormSubmit specific hidden fields if needed, handled by form attributes below
+    const apiUrl = "/api/submit-intake"; // Our backend endpoint
 
     try {
-      const response = await fetch(formAction, {
+      const response = await fetch(apiUrl, {
         method: 'POST',
-        body: data,
-        headers: { // Important for FormSubmit AJAX
-          'Accept': 'application/json'
-        }
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json' // Often good practice
+        },
+        body: JSON.stringify(formData), // Send data as JSON
       });
 
-      // Check Content-Type before parsing
-      const contentType = response.headers.get("content-type");
-      let submissionSuccess = false;
-      let resultMessage = 'Submission failed. Please try again.'; // Default error
+      // Get response body
+      const result = await response.json();
 
-      if (contentType && contentType.indexOf("application/json") !== -1) {
-         // We got JSON back
-        const result = await response.json();
-        if (response.ok && result.success === "true") {
-          submissionSuccess = true;
-          resultMessage = result.message; // Use FormSubmit's message if available
-        } else {
-          resultMessage = result.message || 'Submission failed according to server.';
-        }
-      } else {
-         // We got HTML (or something else) back. Assume success after activation, 
-         // but show a generic message as we can't parse details.
-         // You might adjust this logic based on testing after activation.
-         if (response.ok) {
-             console.log('Received non-JSON response, assuming success after activation.');
-             submissionSuccess = true;
-             // Use a generic success message since we couldn't parse the specific one
-             resultMessage = "Request submitted successfully! We will be in touch soon."; 
-         } else {
-             console.error('Received non-JSON error response:', await response.text());
-             resultMessage = `Submission failed with status: ${response.status}. Please try again.`;
-         }
+      if (!response.ok) {
+        // Use message from API response if available
+        throw new Error(result.message || `HTTP error! status: ${response.status}`);
       }
-
-      if (submissionSuccess) {
-        setFormStatus('success');
-        const successText = `${resultMessage} You can also schedule a 30-minute call directly here: `;
-        const calendlyLink = "https://calendly.com/david-clearviewstaffinggrp/30min";
-        setFormMessage(
-          <>
-            {successText}
-            <a href={calendlyLink} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium">
-              Book a Call
-            </a>
-          </>
-        );
-        // Reset form
-        setFormData({
-          orgName: '',
-          contactName: '',
-          email: '',
-          phone: '',
-          roleNeeded: '',
-          numPositions: '1',
-          details: '',
-        });
-      } else {
-         // Throw error based on FormSubmit response or generic message
-         throw new Error(resultMessage);
-      }
+      
+      // Use the success message from the API
+      setFormStatus('success');
+      const successText = `${result.message} You can also schedule a 30-minute call directly here: `;
+      const calendlyLink = "https://calendly.com/david-clearviewstaffinggrp/30min";
+      setFormMessage(
+        <>
+          {successText}
+          <a href={calendlyLink} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium">
+            Book a Call
+          </a>
+        </>
+      );
+      // Reset form
+      setFormData({
+        orgName: '',
+        contactName: '',
+        email: '',
+        phone: '',
+        roleNeeded: '',
+        numPositions: '1',
+        details: '',
+      });
 
     } catch (error) {
       setFormStatus('error');
+      // Use the error message from the caught error
       setFormMessage(error.message || 'Failed to submit request. Please check your connection or try again later.');
       console.error('Form submission error:', error);
     } finally {
