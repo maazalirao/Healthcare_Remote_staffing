@@ -7,6 +7,9 @@ export default function ContactForm() {
     email: '',
     message: '',
   });
+  const [formStatus, setFormStatus] = useState(''); // '', 'loading', 'success', 'error'
+  const [formMessage, setFormMessage] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false); // Explicit submitting state
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -16,10 +19,81 @@ export default function ContactForm() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Form submission will be implemented later
-    console.log('Contact form data:', formData);
+    setIsSubmitting(true);
+    setFormStatus('loading');
+    setFormMessage('Sending...');
+
+    const formAction = "https://formsubmit.co/maazaltaf1027@gmail.com"; // Your FormSubmit endpoint
+
+    // Create FormData object for submission
+    const data = new FormData();
+    Object.keys(formData).forEach(key => data.append(key, formData[key]));
+
+    try {
+      const response = await fetch(formAction, {
+        method: 'POST',
+        body: data,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      // Check Content-Type before parsing
+      const contentType = response.headers.get("content-type");
+      let submissionSuccess = false;
+      let resultMessage = 'Submission failed. Please try again.'; // Default error
+
+      if (contentType && contentType.indexOf("application/json") !== -1) {
+        const result = await response.json();
+        if (response.ok && result.success === "true") {
+          submissionSuccess = true;
+          resultMessage = result.message; // Use FormSubmit's success message
+        } else {
+          resultMessage = result.message || 'Submission failed according to server.';
+        }
+      } else {
+         if (response.ok) {
+             console.log('Received non-JSON response, assuming success after activation.');
+             submissionSuccess = true;
+             // Use a generic success message
+             resultMessage = "Message sent successfully! We will get back to you soon."; 
+         } else {
+             console.error('Received non-JSON error response:', await response.text());
+             resultMessage = `Submission failed with status: ${response.status}. Please try again.`;
+         }
+      }
+
+      if (submissionSuccess) {
+        setFormStatus('success');
+        const successText = `${resultMessage} Alternatively, you can schedule a 30-minute call directly here: `;
+        const calendlyLink = "https://calendly.com/david-clearviewstaffinggrp/30min";
+        setFormMessage(
+          <>
+            {successText}
+            <a href={calendlyLink} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium">
+              Book a Call
+            </a>
+          </>
+        );
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          message: '',
+        });
+      } else {
+        throw new Error(resultMessage);
+      }
+
+    } catch (error) {
+      setFormStatus('error');
+      setFormMessage(error.message || 'Failed to send message. Please check your connection or try again later.');
+      console.error('Contact form submission error:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -76,13 +150,28 @@ export default function ContactForm() {
             />
           </div>
 
+          {formMessage && formStatus !== 'loading' && (
+            <div
+              className={`p-4 rounded-md text-sm mt-4 ${
+                formStatus === 'success' ? 'bg-green-100 text-green-700' :
+                formStatus === 'error' ? 'bg-red-100 text-red-700' :
+                ''
+              }`}
+              role={formStatus === 'error' ? 'alert' : 'status'}
+            >
+              {formMessage}
+            </div>
+          )}
+
           <div className="flex justify-end">
             <button
               type="submit"
-              className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-              onClick={() => {}}
+              className={`inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white ${
+                isSubmitting ? 'bg-gray-400 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'
+              } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500`}
+              disabled={isSubmitting}
             >
-              Send Message
+              {isSubmitting ? 'Sending...' : 'Send Message'}
             </button>
           </div>
         </form>

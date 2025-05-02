@@ -11,8 +11,10 @@ export default function IntakeForm() {
     numPositions: '1', // Default to 1
     details: '',
   });
+  // Re-add formStatus and formMessage states
   const [formStatus, setFormStatus] = useState(''); // '', 'loading', 'success', 'error'
   const [formMessage, setFormMessage] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false); // Explicit submitting state
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,50 +24,106 @@ export default function IntakeForm() {
     });
   };
 
+  // Updated handleSubmit for FormSubmit
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true); // Start loading
     setFormStatus('loading');
-    setFormMessage('');
+    setFormMessage('Submitting...');
+
+    const formAction = "https://formsubmit.co/maazaltaf1027@gmail.com"; // Your FormSubmit endpoint
+
+    // Create FormData object for submission
+    const data = new FormData();
+    Object.keys(formData).forEach(key => data.append(key, formData[key]));
+    // Add FormSubmit specific hidden fields if needed, handled by form attributes below
 
     try {
-      const response = await fetch('/api/submit-intake', {
+      const response = await fetch(formAction, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
+        body: data,
+        headers: { // Important for FormSubmit AJAX
+          'Accept': 'application/json'
+        }
       });
 
-      const result = await response.json();
+      // Check Content-Type before parsing
+      const contentType = response.headers.get("content-type");
+      let submissionSuccess = false;
+      let resultMessage = 'Submission failed. Please try again.'; // Default error
 
-      if (!response.ok) {
-        throw new Error(result.message || 'Something went wrong');
+      if (contentType && contentType.indexOf("application/json") !== -1) {
+         // We got JSON back
+        const result = await response.json();
+        if (response.ok && result.success === "true") {
+          submissionSuccess = true;
+          resultMessage = result.message; // Use FormSubmit's message if available
+        } else {
+          resultMessage = result.message || 'Submission failed according to server.';
+        }
+      } else {
+         // We got HTML (or something else) back. Assume success after activation, 
+         // but show a generic message as we can't parse details.
+         // You might adjust this logic based on testing after activation.
+         if (response.ok) {
+             console.log('Received non-JSON response, assuming success after activation.');
+             submissionSuccess = true;
+             // Use a generic success message since we couldn't parse the specific one
+             resultMessage = "Request submitted successfully! We will be in touch soon."; 
+         } else {
+             console.error('Received non-JSON error response:', await response.text());
+             resultMessage = `Submission failed with status: ${response.status}. Please try again.`;
+         }
       }
 
-      setFormStatus('success');
-      setFormMessage(result.message);
-      // Optionally reset form
-      setFormData({
-        orgName: '',
-        contactName: '',
-        email: '',
-        phone: '',
-        roleNeeded: '',
-        numPositions: '1',
-        details: '',
-      });
+      if (submissionSuccess) {
+        setFormStatus('success');
+        const successText = `${resultMessage} You can also schedule a 30-minute call directly here: `;
+        const calendlyLink = "https://calendly.com/david-clearviewstaffinggrp/30min";
+        setFormMessage(
+          <>
+            {successText}
+            <a href={calendlyLink} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium">
+              Book a Call
+            </a>
+          </>
+        );
+        // Reset form
+        setFormData({
+          orgName: '',
+          contactName: '',
+          email: '',
+          phone: '',
+          roleNeeded: '',
+          numPositions: '1',
+          details: '',
+        });
+      } else {
+         // Throw error based on FormSubmit response or generic message
+         throw new Error(resultMessage);
+      }
 
     } catch (error) {
       setFormStatus('error');
-      setFormMessage(error.message || 'Failed to submit request. Please check your connection and try again.');
+      setFormMessage(error.message || 'Failed to submit request. Please check your connection or try again later.');
       console.error('Form submission error:', error);
+    } finally {
+       setIsSubmitting(false); // Stop loading regardless of outcome
     }
   };
+
 
   return (
     <div className="bg-white shadow-md rounded-lg overflow-hidden">
       <div className="px-6 py-8">
+        {/* Update form tag for FormSubmit if NOT using AJAX, but we are using AJAX (fetch) */}
         <form onSubmit={handleSubmit} className="space-y-6">
+          {/* Add hidden fields for FormSubmit (optional but good practice) */}
+          {/* <input type="hidden" name="_subject" value={`New Staffing Request: ${formData.orgName}`} /> */}
+          {/* <input type="hidden" name="_captcha" value="false" /> */}
+          {/* <input type="hidden" name="_next" value="YOUR_THANK_YOU_PAGE_URL" />  Optional redirect */}
+
+          {/* Form fields remain the same */}
           <div>
             <label htmlFor="orgName" className="block text-sm font-medium text-gray-700">
               Organization Name
@@ -185,13 +243,13 @@ export default function IntakeForm() {
             />
           </div>
 
-          {/* Form Status Messages */}
-          {formMessage && (
-            <div 
-              className={`p-4 rounded-md text-sm ${ 
-                formStatus === 'success' ? 'bg-green-100 text-green-700' : 
-                formStatus === 'error' ? 'bg-red-100 text-red-700' : 
-                'bg-blue-100 text-blue-700' // for loading or other messages
+          {/* Form Status Messages Re-added */}
+          {formMessage && formStatus !== 'loading' && ( // Show status only when not loading, or adjust logic as needed
+            <div
+              className={`p-4 rounded-md text-sm ${
+                formStatus === 'success' ? 'bg-green-100 text-green-700' :
+                formStatus === 'error' ? 'bg-red-100 text-red-700' :
+                '' // No background for loading if message shown separately
               }`}
               role={formStatus === 'error' ? 'alert' : 'status'}
             >
@@ -199,15 +257,17 @@ export default function IntakeForm() {
             </div>
           )}
 
+
           <div className="flex justify-end">
+             {/* Re-add loading state to button */}
             <button
               type="submit"
-              className={`inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white ${ 
-                formStatus === 'loading' ? 'bg-gray-400 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'
+              className={`inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white ${
+                isSubmitting ? 'bg-gray-400 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'
               } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500`}
-              disabled={formStatus === 'loading'}
+              disabled={isSubmitting}
             >
-              {formStatus === 'loading' ? 'Submitting...' : 'Submit Request'}
+              {isSubmitting ? 'Submitting...' : 'Submit Request'}
             </button>
           </div>
         </form>
