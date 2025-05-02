@@ -8,9 +8,11 @@ export default function IntakeForm() {
     email: '',
     phone: '',
     roleNeeded: '',
-    numPositions: '',
+    numPositions: '1', // Default to 1
     details: '',
   });
+  const [formStatus, setFormStatus] = useState(''); // '', 'loading', 'success', 'error'
+  const [formMessage, setFormMessage] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -20,10 +22,44 @@ export default function IntakeForm() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Form submission will be implemented later
-    console.log('Form data:', formData);
+    setFormStatus('loading');
+    setFormMessage('');
+
+    try {
+      const response = await fetch('/api/submit-intake', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.message || 'Something went wrong');
+      }
+
+      setFormStatus('success');
+      setFormMessage(result.message);
+      // Optionally reset form
+      setFormData({
+        orgName: '',
+        contactName: '',
+        email: '',
+        phone: '',
+        roleNeeded: '',
+        numPositions: '1',
+        details: '',
+      });
+
+    } catch (error) {
+      setFormStatus('error');
+      setFormMessage(error.message || 'Failed to submit request. Please check your connection and try again.');
+      console.error('Form submission error:', error);
+    }
   };
 
   return (
@@ -149,13 +185,29 @@ export default function IntakeForm() {
             />
           </div>
 
+          {/* Form Status Messages */}
+          {formMessage && (
+            <div 
+              className={`p-4 rounded-md text-sm ${ 
+                formStatus === 'success' ? 'bg-green-100 text-green-700' : 
+                formStatus === 'error' ? 'bg-red-100 text-red-700' : 
+                'bg-blue-100 text-blue-700' // for loading or other messages
+              }`}
+              role={formStatus === 'error' ? 'alert' : 'status'}
+            >
+              {formMessage}
+            </div>
+          )}
+
           <div className="flex justify-end">
             <button
               type="submit"
-              className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-              onClick={() => {}}
+              className={`inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white ${ 
+                formStatus === 'loading' ? 'bg-gray-400 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'
+              } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500`}
+              disabled={formStatus === 'loading'}
             >
-              Submit Request
+              {formStatus === 'loading' ? 'Submitting...' : 'Submit Request'}
             </button>
           </div>
         </form>

@@ -1,307 +1,134 @@
 // ProblemSolution component displaying common problems and our solution
 import { useEffect, useState, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import Card, { CardHeader, CardTitle, CardContent } from '../ui/Card';
-import Badge from '../ui/Badge';
-import Button from '../ui/Button';
-import { Tab } from '@headlessui/react';
+import { motion } from 'framer-motion';
+import { CheckCircleIcon, ExclamationTriangleIcon } from '@heroicons/react/24/outline';
 
 export default function ProblemSolution() {
-  const [activeTabIndex, setActiveTabIndex] = useState(0);
-  const [hoveredCard, setHoveredCard] = useState(null);
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
-  // Define the missing pulseAnimation
-  const pulseAnimation = {
-    scale: [1, 1.05, 1],
-    opacity: [0.9, 1, 0.9],
-    transition: {
-      duration: 2,
-      repeat: Infinity,
-      repeatType: "reverse",
-    }
-  };
-
   useEffect(() => {
-    const handleScroll = () => {
-      const element = document.getElementById('problem-solution-section');
-      if (element) {
-        const position = element.getBoundingClientRect();
-        if (position.top < window.innerHeight * 0.75) {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
           setIsVisible(true);
+          observer.unobserve(entry.target); // Stop observing once visible
         }
+      },
+      {
+        threshold: 0.1, // Trigger when 10% of the element is visible
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
       }
     };
-    
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Check initial position
-    
-    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const problems = [
-    {
-      title: "High Local Hiring Costs",
-      description: "Companies struggle with the high costs of local talent, including competitive salaries, benefits, and workplace accommodations.",
-      icon: (
-        <svg 
-          xmlns="http://www.w3.org/2000/svg" 
-          viewBox="0 0 24 24" 
-          className="w-8 h-8 text-red-500"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <circle cx="12" cy="12" r="10"></circle>
-          <line x1="15" y1="9" x2="9" y2="15"></line>
-          <line x1="9" y1="9" x2="15" y2="15"></line>
-        </svg>
-      )
-    },
-    {
-      title: "Talent Shortage",
-      description: "Finding qualified professionals is increasingly difficult, especially for specialized roles and competitive industries.",
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          className="w-8 h-8 text-red-500"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <circle cx="12" cy="12" r="10"></circle>
-          <line x1="8" y1="12" x2="16" y2="12"></line>
-        </svg>
-      )
-    },
-    {
-      title: "Scaling Challenges",
-      description: "Traditional hiring methods create bottlenecks when rapidly scaling teams, with lengthy recruitment processes and infrastructure costs.",
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          className="w-8 h-8 text-red-500"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <polyline points="23 7 23 1 17 1"></polyline>
-          <line x1="16" y1="8" x2="23" y2="1"></line>
-          <polyline points="1 17 1 23 7 23"></polyline>
-          <line x1="8" y1="16" x2="1" y2="23"></line>
-          <path d="M21 21H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9"></path>
-        </svg>
-      )
-    }
+    "Tired of turnover and understaffing?",
+    "Need remote medical support without the overhead?",
+    "Struggling to find qualified admin help?"
   ];
 
-  const solutions = [
-    {
-      title: "Global Talent Access",
-      description: "Our platform connects you with skilled professionals from around the world, giving you access to a diverse talent pool across all industries.",
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          className="w-8 h-8 text-blue-600"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-          <polyline points="22 4 12 14.01 9 11.01"></polyline>
-        </svg>
-      )
-    },
-    {
-      title: "Flexible Team Building",
-      description: "Scale your team up or down quickly based on your business needs, without the lengthy processes of traditional hiring.",
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          className="w-8 h-8 text-blue-600"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <circle cx="12" cy="12" r="10"></circle>
-          <line x1="2" y1="12" x2="22" y2="12"></line>
-          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-        </svg>
-      )
-    },
-    {
-      title: "Cost-Effective Solution",
-      description: "Significantly reduce your staffing expenses with international talent that costs up to 80% less than local equivalents, without compromising quality.",
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          className="w-8 h-8 text-blue-600"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-        </svg>
-      )
-    }
-  ];
+  const solution = "We recruit and deliver fully trained remote healthcare staff — vetted, experienced, and HIPAA-compliant — so you can focus on patient care, not staffing headaches.";
 
-  // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1
-      }
-    }
+        staggerChildren: 0.15,
+        delayChildren: 0.2,
+      },
+    },
   };
-  
+
   const itemVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+      },
+    },
+  };
+
+  const solutionVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.5
-      }
-    }
+        duration: 0.6,
+        delay: 0.5, // Delay slightly after problems appear
+      },
+    },
   };
 
   return (
     <section 
       id="problem-solution-section" 
       ref={sectionRef}
-      className="py-20 bg-gradient-to-b from-blue-50 to-white relative overflow-hidden"
+      className="py-20 bg-gradient-to-b from-white to-blue-50 relative overflow-hidden"
     >
-      {/* Background Elements */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-100 rounded-full filter blur-3xl opacity-20 transform translate-x-1/2 -translate-y-1/2"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-100 rounded-full filter blur-3xl opacity-20 transform -translate-x-1/2 translate-y-1/2"></div>
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 z-0 opacity-50">
+        <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-blue-100 rounded-full filter blur-3xl animate-blob animation-delay-2000"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-72 h-72 bg-indigo-100 rounded-full filter blur-3xl animate-blob animation-delay-4000"></div>
       </div>
-      
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-12">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <span className="inline-block px-3 py-1 text-xs font-medium bg-blue-100 text-blue-600 rounded-full mb-3">
-              Why Choose Us
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Healthcare Staffing Challenges Solved
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Our innovative approach addresses the key challenges that healthcare organizations face with traditional hiring methods
-            </p>
-          </motion.div>
-        </div>
 
-        <div className="flex flex-col lg:flex-row gap-8 mb-12">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate={isVisible ? "visible" : "hidden"}
+          className="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 items-center"
+        >
+          {/* Problems Section */}
+          <div className="space-y-6">
+            <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center md:text-left">
+              Facing Staffing Hurdles?
+            </h2>
+            {problems.map((problem, index) => (
+              <motion.div 
+                key={index} 
+                className="flex items-start p-4 bg-red-50 rounded-lg shadow-sm border border-red-100"
+                variants={itemVariants}
+              >
+                <ExclamationTriangleIcon className="h-6 w-6 text-red-500 flex-shrink-0 mr-3 mt-1" />
+                <p className="text-lg text-gray-700">{problem}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Solution Section */}
           <motion.div 
-            className="w-full lg:w-1/2"
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
+            className="bg-blue-600 text-white p-8 rounded-xl shadow-lg relative overflow-hidden"
+            variants={solutionVariants}
           >
-            <div className="relative bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-              <h3 className="text-xl font-bold text-gray-800 mb-5 flex items-center">
-                <span className="mr-2 text-red-500">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
-                    <line x1="12" y1="9" x2="12" y2="13"></line>
-                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
-                  </svg>
-                </span>
-                Common Challenges
-              </h3>
-              <div className="space-y-4">
-                {problems.map((problem, index) => (
-                  <motion.div 
-                    key={index}
-                    className="flex p-3 rounded-lg bg-red-50/50 border border-red-100"
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1, duration: 0.5 }}
-                    viewport={{ once: true }}
-                    whileHover={{ y: -3, transition: { duration: 0.2 } }}
-                  >
-                    <div className="flex-shrink-0 mr-3">
-                      {problem.icon}
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-medium text-gray-900 mb-1">{problem.title}</h4>
-                      <p className="text-gray-600 text-sm">{problem.description}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
+            {/* Decorative overlay */}
+            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-600 to-blue-700 opacity-80 z-0"></div>
+            
+            <div className="relative z-10">
+              <CheckCircleIcon className="h-12 w-12 text-white mb-4 mx-auto md:mx-0" />
+              <h2 className="text-3xl font-bold mb-4 text-center md:text-left">
+                Our Solution
+              </h2>
+              <p className="text-xl text-blue-100 leading-relaxed">
+                {solution}
+              </p>
             </div>
           </motion.div>
-          
-          <motion.div 
-            className="w-full lg:w-1/2"
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
-          >
-            <div className="relative bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-              <h3 className="text-xl font-bold text-gray-800 mb-5 flex items-center">
-                <span className="mr-2 text-blue-600">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                  </svg>
-                </span>
-                Our Solutions
-              </h3>
-              <div className="space-y-4">
-                {solutions.map((solution, index) => (
-                  <motion.div 
-                    key={index}
-                    className="flex p-3 rounded-lg bg-blue-50/50 border border-blue-100"
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1, duration: 0.5 }}
-                    viewport={{ once: true }}
-                    whileHover={{ y: -3, transition: { duration: 0.2 } }}
-                  >
-                    <div className="flex-shrink-0 mr-3">
-                      {solution.icon}
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-medium text-gray-900 mb-1">{solution.title}</h4>
-                      <p className="text-gray-600 text-sm">{solution.description}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </motion.div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

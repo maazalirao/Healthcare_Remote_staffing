@@ -5,22 +5,22 @@ export default function CoreValues() {
   const values = [
     {
       name: 'Healthcare First',
-      description: 'We prioritize patient care in all our staffing decisions, ensuring that the professionals we place have the skills and commitment to deliver quality healthcare services.',
+      description: 'We know the industry’s urgency.',
       icon: HeartIcon,
     },
     {
       name: 'Security',
-      description: 'We maintain the highest standards of data protection, privacy, and compliance with healthcare regulations to ensure the security of sensitive information.',
+      description: 'HIPAA awareness is non-negotiable.',
       icon: ShieldCheckIcon,
     },
     {
       name: 'Speed',
-      description: 'We understand the critical nature of healthcare staffing needs and strive to match organizations with qualified professionals quickly and efficiently.',
+      description: 'Your staffing gaps are our priority.',
       icon: ClockIcon,
     },
     {
       name: 'Quality',
-      description: 'We are committed to providing top-tier remote healthcare professionals who meet the specific needs and standards of each organization we work with.',
+      description: 'We screen heavily so you don’t waste time.',
       icon: StarIcon,
     },
   ];

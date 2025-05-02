@@ -75,23 +75,28 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4">Our Services</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/services#nurses" className="text-blue-100 hover:text-white transition-colors inline-block py-1 hover-lift">
-                  Registered Nurses
+                <Link href="/services" className="text-blue-100 hover:text-white transition-colors inline-block py-1 hover-lift">
+                  Remote Medical Billing
                 </Link>
               </li>
               <li>
-                <Link href="/services#physicians" className="text-blue-100 hover:text-white transition-colors inline-block py-1 hover-lift">
-                  Physician Staffing
+                <Link href="/services" className="text-blue-100 hover:text-white transition-colors inline-block py-1 hover-lift">
+                  Remote Patient Coordinators
                 </Link>
               </li>
               <li>
-                <Link href="/services#assistants" className="text-blue-100 hover:text-white transition-colors inline-block py-1 hover-lift">
-                  Medical Assistants
+                <Link href="/services" className="text-blue-100 hover:text-white transition-colors inline-block py-1 hover-lift">
+                  Remote Insurance Verification
                 </Link>
               </li>
               <li>
-                <Link href="/services#admin" className="text-blue-100 hover:text-white transition-colors inline-block py-1 hover-lift">
-                  Administrative Staff
+                <Link href="/services" className="text-blue-100 hover:text-white transition-colors inline-block py-1 hover-lift">
+                  Remote Medical Scribes
+                </Link>
+              </li>
+              <li>
+                <Link href="/services" className="text-blue-100 hover:text-white transition-colors inline-block py-1 hover-lift">
+                  Custom Staffing Solutions
                 </Link>
               </li>
             </ul>
@@ -112,13 +117,13 @@ export default function Footer() {
                 <svg className="h-6 w-6 text-blue-300 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                <span>info@clearviewstaffinggrp.com</span>
+                <a href="mailto:gitty@clearviewstaffinggrp.com" className="hover:text-white hover:underline transition-colors">gitty@clearviewstaffinggrp.com</a>
               </li>
               <li className="flex items-start space-x-3">
                 <svg className="h-6 w-6 text-blue-300 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                <span>(123) 456-7890</span>
+                <a href="tel:+1-555-123-4567" className="hover:text-white hover:underline transition-colors">(555) 123-4567</a>
               </li>
             </ul>
           </div>

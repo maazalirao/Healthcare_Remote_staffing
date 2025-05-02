@@ -1,39 +1,39 @@
 import Head from 'next/head';
 import ServiceCard from '../components/services/ServiceCard';
-import { UserGroupIcon, ClipboardDocumentCheckIcon, AcademicCapIcon, PhoneIcon, ClockIcon } from '@heroicons/react/24/outline';
+import { 
+  CurrencyDollarIcon,
+  ChatBubbleLeftRightIcon,
+  ShieldCheckIcon,
+  PencilSquareIcon,
+  QuestionMarkCircleIcon
+} from '@heroicons/react/24/outline';
 import Link from 'next/link';
 
 export default function Services() {
   const services = [
     {
       id: 1,
-      title: 'Remote Administrative Support',
-      description: 'Qualified professionals who handle administrative tasks, medical records management, and scheduling for healthcare organizations.',
-      icon: ClipboardDocumentCheckIcon,
+      title: 'Remote Medical Billing',
+      description: 'Experienced billers who understand claims, coding, and collections.',
+      icon: CurrencyDollarIcon,
     },
     {
       id: 2,
-      title: 'Medical Billing & Coding',
-      description: 'Certified remote billing and coding specialists who ensure accurate claims processing and revenue cycle management.',
-      icon: AcademicCapIcon,
+      title: 'Remote Patient Coordinators',
+      description: 'Friendly, organized staff to manage patient communication.',
+      icon: ChatBubbleLeftRightIcon,
     },
     {
       id: 3,
-      title: 'Telehealth Support',
-      description: 'Staff that facilitate telehealth appointments, patient outreach, and virtual care coordination.',
-      icon: PhoneIcon,
+      title: 'Remote Insurance Verification',
+      description: 'Professionals who ensure coverage before services are rendered.',
+      icon: ShieldCheckIcon,
     },
     {
       id: 4,
-      title: 'Healthcare IT Roles',
-      description: 'Skilled IT professionals specifically trained in healthcare systems, EHR management, and HIPAA-compliant technology solutions.',
-      icon: UserGroupIcon,
-    },
-    {
-      id: 5,
-      title: 'Remote Case Management',
-      description: 'Experienced case managers who coordinate patient care, follow-up, and care plan implementation from remote locations.',
-      icon: ClockIcon,
+      title: 'Remote Medical Scribes',
+      description: 'Trained scribes to handle EHR documentation during appointments.',
+      icon: PencilSquareIcon,
     },
   ];
 
@@ -57,7 +57,7 @@ export default function Services() {
       
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
             {services.map((service) => (
               <ServiceCard 
                 key={service.id}
@@ -73,7 +73,7 @@ export default function Services() {
               <h2 className="text-2xl font-bold text-gray-900">Need a custom staffing solution?</h2>
               <p className="mt-4 text-lg text-gray-600">
                 We understand that every healthcare organization has unique staffing needs. 
-                Contact us to discuss your specific requirements and how we can help.
+                Need something else? We source specialized roles too.
               </p>
               <div className="mt-6">
                 <Link

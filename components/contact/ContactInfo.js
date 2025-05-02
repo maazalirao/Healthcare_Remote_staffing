@@ -14,7 +14,7 @@ export default function ContactInfo() {
             </div>
             <div className="ml-3">
               <p className="text-lg font-medium text-gray-900">Email</p>
-              <p className="text-gray-600">info@clearviewstaffinggrp.com</p>
+              <a href="mailto:gitty@clearviewstaffinggrp.com" className="text-blue-600 hover:text-blue-800 hover:underline">gitty@clearviewstaffinggrp.com</a>
             </div>
           </li>
           
@@ -24,7 +24,8 @@ export default function ContactInfo() {
             </div>
             <div className="ml-3">
               <p className="text-lg font-medium text-gray-900">Phone</p>
-              <p className="text-gray-600">(555) 123-4567</p>
+              {/* Placeholder phone number - update when available */}
+              <a href="tel:+1-555-123-4567" className="text-blue-600 hover:text-blue-800 hover:underline">(555) 123-4567</a>
             </div>
           </li>
           

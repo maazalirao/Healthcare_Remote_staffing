@@ -60,7 +60,7 @@ export default function Hero() {
               className="font-medium text-xl py-5 px-14 rounded-full shadow-xl hover:transform hover:scale-105 transition-all bg-blue-500 border-0"
               href="/intake"
             >
-              Hire Now
+              Request Staff Now
             </Button>
             
             <Button 
