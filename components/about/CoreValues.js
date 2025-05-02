@@ -1,26 +1,26 @@
 // CoreValues component listing core company values
-import { HeartIcon, ShieldCheckIcon, ClockIcon, StarIcon } from '@heroicons/react/24/outline';
+import { BriefcaseIcon, ShieldCheckIcon, ClockIcon, StarIcon } from '@heroicons/react/24/outline';
 
 export default function CoreValues() {
   const values = [
     {
-      name: 'Healthcare First',
-      description: 'We know the industry’s urgency.',
-      icon: HeartIcon,
+      name: 'Industry Expertise',
+      description: 'We understand specialized business needs.',
+      icon: BriefcaseIcon,
     },
     {
       name: 'Security',
-      description: 'HIPAA awareness is non-negotiable.',
+      description: 'Data protection and privacy at all times.',
       icon: ShieldCheckIcon,
     },
     {
-      name: 'Speed',
-      description: 'Your staffing gaps are our priority.',
+      name: 'Efficiency',
+      description: 'Your staffing needs are our priority.',
       icon: ClockIcon,
     },
     {
       name: 'Quality',
-      description: 'We screen heavily so you don’t waste time.',
+      description: 'We screen thoroughly so you don't waste time.',
       icon: StarIcon,
     },
   ];

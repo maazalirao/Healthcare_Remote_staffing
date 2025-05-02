@@ -107,7 +107,7 @@ export default function IntakeForm() {
               value={formData.orgName}
               onChange={handleChange}
               className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-              placeholder="Healthcare Organization Name"
+              placeholder="Your Company Name"
               required
             />
           </div>
@@ -175,11 +175,11 @@ export default function IntakeForm() {
               required
             >
               <option value="">Select a role</option>
-              <option value="administrative">Remote Administrative Support</option>
-              <option value="billing">Medical Billing & Coding</option>
-              <option value="telehealth">Telehealth Support</option>
-              <option value="it">Healthcare IT</option>
-              <option value="case">Remote Case Management</option>
+              <option value="administrative">Administrative Support</option>
+              <option value="professional">Professional Services</option>
+              <option value="technical">Technical Talent</option>
+              <option value="consulting">Business Consulting</option>
+              <option value="customer">Customer Support</option>
               <option value="other">Other (specify in details)</option>
             </select>
           </div>

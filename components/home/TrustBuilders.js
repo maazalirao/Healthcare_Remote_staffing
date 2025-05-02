@@ -1,10 +1,10 @@
 // TrustBuilders component with bullet points highlighting trust factors
-import { ShieldCheckIcon, GlobeAltIcon, BriefcaseIcon } from '@heroicons/react/24/solid';
+import { ShieldCheckIcon, GlobeAltIcon, BriefcaseIcon, LightBulbIcon, ClipboardDocumentCheckIcon } from '@heroicons/react/24/solid';
 
 export default function TrustBuilders() {
   const trustPoints = [
     {
-      text: "All Candidates HIPAA-Aware and Compliant",
+      text: "All Candidates Thoroughly Vetted for Security & Privacy",
       icon: ShieldCheckIcon
     },
     {
@@ -12,20 +12,20 @@ export default function TrustBuilders() {
       icon: GlobeAltIcon
     },
     {
-      text: "Specialized Only in Healthcare Admin and Support Roles",
+      text: "Specialized Talent Across Multiple Industries",
       icon: BriefcaseIcon
     },
     {
-      text: "Thorough Background Checks for Every Professional",
+      text: "Comprehensive Background Checks for Every Professional",
       icon: ShieldCheckIcon
     },
     {
-      text: "Credential Verification Guaranteed",
-      icon: ShieldCheckIcon
+      text: "Skill & Qualification Verification Guaranteed",
+      icon: ClipboardDocumentCheckIcon
     },
     {
-      text: "Ongoing Performance Monitoring",
-      icon: ShieldCheckIcon // Consider a different icon if appropriate
+      text: "Ongoing Performance Monitoring & Support",
+      icon: LightBulbIcon
     }
   ];
 
@@ -37,7 +37,7 @@ export default function TrustBuilders() {
             Scale Smarter with Remote Staff You Can Trust
           </h2>
           <p className="mt-4 max-w-3xl mx-auto text-xl text-blue-100">
-            We ensure quality, compliance, and reliability through rigorous vetting and specialized focus.
+            We ensure quality, expertise, and reliability through rigorous vetting and industry-specific focus.
           </p>
         </div>
 

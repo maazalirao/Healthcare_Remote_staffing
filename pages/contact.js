@@ -7,7 +7,7 @@ export default function Contact() {
     <>
       <Head>
         <title>Contact Us | Clearview Staffing Group</title>
-        <meta name="description" content="Contact Clearview Staffing Group for specialized healthcare remote staffing solutions." />
+        <meta name="description" content="Contact Clearview Staffing Group for specialized remote outsourcing staffing solutions." />
       </Head>
       
       <div className="bg-blue-600 py-16">
@@ -16,7 +16,7 @@ export default function Contact() {
             Contact Us
           </h1>
           <p className="mt-4 max-w-2xl mx-auto text-xl text-blue-100 text-center">
-            We're here to answer your questions about our healthcare staffing solutions.
+            We're here to answer your questions about our outsourcing staffing solutions.
           </p>
         </div>
       </div>
@@ -35,7 +35,7 @@ export default function Contact() {
                 
                 <div className="space-y-6">
                   <div>
-                    <h3 className="text-lg font-medium text-gray-900">How quickly can you fill remote healthcare positions?</h3>
+                    <h3 className="text-lg font-medium text-gray-900">How quickly can you fill remote positions?</h3>
                     <p className="mt-2 text-gray-600">
                       Our average placement time is 2-3 weeks, depending on the specificity of the role and requirements. 
                       For urgent needs, we can often expedite the process.
@@ -50,10 +50,10 @@ export default function Contact() {
                   </div>
                   
                   <div>
-                    <h3 className="text-lg font-medium text-gray-900">How do you ensure HIPAA compliance for remote staff?</h3>
+                    <h3 className="text-lg font-medium text-gray-900">How do you ensure data security for remote staff?</h3>
                     <p className="mt-2 text-gray-600">
-                      All our candidates undergo thorough HIPAA training and certification. We also verify their remote work environment 
-                      meets security standards for handling protected health information.
+                      All our candidates undergo thorough security training and verification. We also verify their remote work environment 
+                      meets security standards for handling sensitive information.
                     </p>
                   </div>
                   

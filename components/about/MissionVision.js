@@ -14,10 +14,10 @@ export default function MissionVision() {
           <p className="text-gray-700 text-lg md:text-xl leading-relaxed text-center mb-6">
             Clearview Staffing Group was created with one clear goal:
             <br className="hidden md:block"/>
-            To help healthcare providers run more efficiently by delivering specialized remote staffing solutions — saving them time, money, and frustration.
+            To help organizations run more efficiently by delivering specialized remote staffing solutions — saving them time, money, and resources.
           </p>
           <p className="text-gray-600 text-lg md:text-xl leading-relaxed text-center">
-            With healthcare demands rising and in-house hiring costs soaring, remote staffing is the future. We're here to make it seamless, secure, and reliable.
+            With business demands evolving and in-house hiring costs soaring, remote staffing is the future. We're here to make it seamless, efficient, and reliable.
           </p>
         </div>
       </div>

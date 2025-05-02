@@ -68,7 +68,7 @@ export default function ProcessSteps() {
             animate={inView ? { opacity: 1 } : {}}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Our simple 3-step process connects you with elite remote healthcare staff quickly.
+            Our simple 3-step process connects you with elite remote professionals quickly.
           </motion.p>
         </div>
 

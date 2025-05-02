@@ -7,7 +7,7 @@ export default function About() {
     <>
       <Head>
         <title>About Us | Clearview Staffing Group</title>
-        <meta name="description" content="Learn about Clearview Staffing Group's mission, vision, and core values in healthcare remote staffing solutions." />
+        <meta name="description" content="Learn about Clearview Staffing Group's mission, vision, and core values in remote outsourcing staffing solutions across various industries." />
       </Head>
       
       <div className="bg-blue-600 py-16">
@@ -16,8 +16,8 @@ export default function About() {
             About Clearview Staffing Group
           </h1>
           <p className="mt-4 max-w-2xl mx-auto text-xl text-blue-100 text-center">
-            We're revolutionizing healthcare staffing with specialized remote solutions
-            tailored to the unique needs of healthcare organizations.
+            We're revolutionizing outsourcing staffing with specialized remote solutions
+            tailored to the unique needs of organizations across all industries.
           </p>
         </div>
       </div>
@@ -33,14 +33,14 @@ export default function About() {
                 Our Story
               </h2>
               <p className="mt-4 text-lg text-gray-500">
-                Founded by healthcare professionals who recognized the growing need 
-                for specialized remote staffing solutions in the healthcare industry, 
+                Founded by industry professionals who recognized the growing need 
+                for specialized remote staffing solutions across multiple sectors, 
                 Clearview Staffing Group was established to bridge the gap between 
-                healthcare organizations and qualified remote professionals.
+                organizations and qualified remote professionals.
               </p>
               <p className="mt-4 text-lg text-gray-500">
-                With years of experience in healthcare recruitment and staffing, our team 
-                understands the unique challenges faced by healthcare organizations when it 
+                With years of experience in recruitment and staffing, our team 
+                understands the unique challenges faced by organizations when it 
                 comes to finding and retaining qualified staff, especially for remote positions.
               </p>
             </div>
@@ -49,14 +49,14 @@ export default function About() {
                 Our Expertise
               </h2>
               <p className="mt-4 text-lg text-gray-500">
-                We specialize in remote healthcare staffing across various disciplines, 
-                including administrative support, medical billing and coding, telehealth 
-                positions, healthcare IT roles, and case management.
+                We specialize in remote staffing across various disciplines, 
+                including professional services, technical talent, administrative support,
+                business consulting, and specialized industry-specific roles.
               </p>
               <p className="mt-4 text-lg text-gray-500">
                 Our rigorous vetting process ensures that all professionals we place are 
                 not only technically qualified but also well-prepared for the unique 
-                challenges of remote work in the healthcare industry.
+                challenges of remote work in their respective industries.
               </p>
             </div>
           </div>

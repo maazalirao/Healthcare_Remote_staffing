@@ -6,7 +6,7 @@ export default function Intake() {
     <>
       <Head>
         <title>Client Intake Form | Clearview Staffing Group</title>
-        <meta name="description" content="Submit your healthcare staffing needs through our intake form to start the process of finding qualified remote healthcare professionals." />
+        <meta name="description" content="Submit your staffing needs through our intake form to start the process of finding qualified remote professionals for your organization." />
       </Head>
       
       <div className="bg-blue-600 py-16">
@@ -15,7 +15,7 @@ export default function Intake() {
             Client Intake Form
           </h1>
           <p className="mt-4 max-w-2xl mx-auto text-xl text-blue-100 text-center">
-            Tell us about your staffing needs to get started with our specialized healthcare staffing services.
+            Tell us about your staffing needs to get started with our specialized outsourcing staffing services.
           </p>
         </div>
       </div>

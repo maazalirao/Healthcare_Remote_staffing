@@ -32,12 +32,12 @@ export default function ProblemSolution() {
   }, []);
 
   const problems = [
-    "Tired of turnover and understaffing?",
-    "Need remote medical support without the overhead?",
-    "Struggling to find qualified admin help?"
+    "Struggling with high labor costs and low retention?",
+    "Need specialized talent without the overhead?",
+    "Finding it difficult to scale your team efficiently?"
   ];
 
-  const solution = "We recruit and deliver fully trained remote healthcare staff — vetted, experienced, and HIPAA-compliant — so you can focus on patient care, not staffing headaches.";
+  const solution = "We recruit and deliver fully trained remote professionals — vetted, experienced, and reliable — so you can focus on growing your business, not staffing challenges.";
 
   const containerVariants = {
     hidden: { opacity: 0 },
