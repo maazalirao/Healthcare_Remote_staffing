@@ -72,7 +72,7 @@ export default function Statistics() {
               # By The Numbers
             </span>
             <h2 className="text-4xl md:text-5xl font-bold leading-tight">
-              Healthcare Staffing Statistics Make the Case
+              Outsourcing Staffing Statistics Make the Case
             </h2>
           </motion.div>
         </div>
@@ -91,7 +91,7 @@ export default function Statistics() {
                 {cost}%
               </div>
               <div className="text-lg text-gray-300 flex-grow">
-                cost saving by hiring a remote healthcare professional
+                cost saving by hiring a remote professional
               </div>
             </div>
           </motion.div>
@@ -103,7 +103,7 @@ export default function Statistics() {
                 &gt;<span ref={productivityRef}>{productivity}</span>%
               </div>
               <div className="text-lg text-gray-300 flex-grow">
-                avg. productivity boost from remote healthcare staffing
+                avg. productivity boost from remote staffing
               </div>
             </div>
           </motion.div>
@@ -115,7 +115,7 @@ export default function Statistics() {
                 {companies}%
               </div>
               <div className="text-lg text-gray-300 flex-grow">
-                of U.S. healthcare providers hired 1+ remote staff in 2023
+                of global companies hired 1+ remote staff in 2023
               </div>
             </div>
           </motion.div>
@@ -127,7 +127,7 @@ export default function Statistics() {
                 {employees}%
               </div>
               <div className="text-lg text-gray-300 flex-grow">
-                of remote healthcare staff report higher job satisfaction
+                of remote staff report higher job satisfaction
               </div>
             </div>
           </motion.div>

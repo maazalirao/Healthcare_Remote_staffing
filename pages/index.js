@@ -11,8 +11,8 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Clearview Staffing Group | Remote Healthcare Staffing Solutions</title>
-        <meta name="description" content="Access top-tier healthcare professionals at 80% less cost than local hires. Connect with skilled medical and administrative staff worldwide." />
+        <title>Clearview Staffing Group | Remote Outsourcing Staffing Solutions</title>
+        <meta name="description" content="Access top-tier professionals at 80% less cost than local hires. Connect with skilled staff across various industries worldwide." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

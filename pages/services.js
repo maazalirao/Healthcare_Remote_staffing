@@ -1,10 +1,10 @@
 import Head from 'next/head';
 import ServiceCard from '../components/services/ServiceCard';
 import { 
-  CurrencyDollarIcon,
-  ChatBubbleLeftRightIcon,
-  ShieldCheckIcon,
-  PencilSquareIcon,
+  ComputerDesktopIcon,
+  UsersIcon,
+  ClipboardDocumentCheckIcon,
+  ChartBarIcon,
   QuestionMarkCircleIcon
 } from '@heroicons/react/24/outline';
 import Link from 'next/link';
@@ -13,27 +13,27 @@ export default function Services() {
   const services = [
     {
       id: 1,
-      title: 'Remote Medical Billing',
-      description: 'Experienced billers who understand claims, coding, and collections.',
-      icon: CurrencyDollarIcon,
+      title: 'Professional Services',
+      description: 'Access skilled professionals in business analysis, marketing, finance, and specialized industry roles.',
+      icon: ChartBarIcon,
     },
     {
       id: 2,
-      title: 'Remote Patient Coordinators',
-      description: 'Friendly, organized staff to manage patient communication.',
-      icon: ChatBubbleLeftRightIcon,
+      title: 'Technical Talent',
+      description: 'Build your technical team with experienced developers, engineers, and IT specialists.',
+      icon: ComputerDesktopIcon,
     },
     {
       id: 3,
-      title: 'Remote Insurance Verification',
-      description: 'Professionals who ensure coverage before services are rendered.',
-      icon: ShieldCheckIcon,
+      title: 'Administrative Support',
+      description: 'Streamline operations with virtual assistants, customer support, and data entry specialists.',
+      icon: ClipboardDocumentCheckIcon,
     },
     {
       id: 4,
-      title: 'Remote Medical Scribes',
-      description: 'Trained scribes to handle EHR documentation during appointments.',
-      icon: PencilSquareIcon,
+      title: 'Business Consulting',
+      description: 'Get expert guidance on process optimization, growth strategies, and operational efficiency.',
+      icon: UsersIcon,
     },
   ];
 
@@ -41,7 +41,7 @@ export default function Services() {
     <>
       <Head>
         <title>Our Services | Clearview Staffing Group</title>
-        <meta name="description" content="Explore Clearview Staffing Group's specialized remote healthcare staffing services." />
+        <meta name="description" content="Explore Clearview Staffing Group's specialized remote outsourcing staffing services." />
       </Head>
       
       <div className="bg-blue-600 py-16">
@@ -50,7 +50,7 @@ export default function Services() {
             Our Services
           </h1>
           <p className="mt-4 max-w-2xl mx-auto text-xl text-blue-100 text-center">
-            Specialized remote healthcare staffing solutions tailored to your organization's needs.
+            Specialized remote outsourcing staffing solutions tailored to your organization's needs.
           </p>
         </div>
       </div>
@@ -72,8 +72,8 @@ export default function Services() {
             <div className="px-6 py-8 text-center">
               <h2 className="text-2xl font-bold text-gray-900">Need a custom staffing solution?</h2>
               <p className="mt-4 text-lg text-gray-600">
-                We understand that every healthcare organization has unique staffing needs. 
-                Need something else? We source specialized roles too.
+                We understand that every organization has unique staffing needs. 
+                Need something else? We source specialized roles for any industry.
               </p>
               <div className="mt-6">
                 <Link
@@ -95,7 +95,7 @@ export default function Services() {
               Our Staffing Process
             </h2>
             <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
-              How we ensure you get the right healthcare professionals for your remote positions.
+              How we ensure you get the right professionals for your remote positions.
             </p>
           </div>
           
@@ -117,7 +117,7 @@ export default function Services() {
                 </div>
                 <h3 className="mt-4 text-lg font-medium text-gray-900 text-center">Candidate Selection</h3>
                 <p className="mt-2 text-base text-gray-500">
-                  Our recruiters find, screen, and vet qualified healthcare professionals who match your specific needs.
+                  Our recruiters find, screen, and vet qualified professionals who match your specific needs and industry requirements.
                 </p>
               </div>
               

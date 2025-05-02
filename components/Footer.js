@@ -17,7 +17,7 @@ export default function Footer() {
               <span className="text-xl font-bold">Clearview Staffing</span>
             </Link>
             <p className="text-blue-100 max-w-xs text-sm leading-relaxed">
-              Specialized remote healthcare staffing solutions connecting top organizations with qualified professionals.
+              Specialized remote outsourcing staffing solutions connecting top organizations with qualified professionals across all industries.
             </p>
             <div className="flex space-x-4 pt-2">
               <a href="#" aria-label="LinkedIn" className="text-blue-100 hover:text-white transition-colors hover-lift">
@@ -76,22 +76,22 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link href="/services" className="text-blue-100 hover:text-white transition-colors inline-block py-1 hover-lift">
-                  Remote Medical Billing
+                  Professional Services
                 </Link>
               </li>
               <li>
                 <Link href="/services" className="text-blue-100 hover:text-white transition-colors inline-block py-1 hover-lift">
-                  Remote Patient Coordinators
+                  Technical Talent
                 </Link>
               </li>
               <li>
                 <Link href="/services" className="text-blue-100 hover:text-white transition-colors inline-block py-1 hover-lift">
-                  Remote Insurance Verification
+                  Administrative Support
                 </Link>
               </li>
               <li>
                 <Link href="/services" className="text-blue-100 hover:text-white transition-colors inline-block py-1 hover-lift">
-                  Remote Medical Scribes
+                  Business Consulting
                 </Link>
               </li>
               <li>
