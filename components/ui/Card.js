@@ -1,57 +1,85 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
-const Card = ({
-  children,
+export default function Card({ 
+  children, 
   className = '',
+  variant = 'default',
   hover = false,
-  hoverLift = false,
-  glassMorphism = false,
-  gradient = false,
-  gradientDirection = 'to-r',
-  gradientColors = 'from-blue-50 to-indigo-50',
-  border = false,
-  shadow = 'md',
-  rounded = 'lg',
-  padding = 'p-6',
-  ...props
-}) => {
-  const shadowVariants = {
-    none: '',
-    sm: 'shadow-sm',
-    md: 'shadow-md',
-    lg: 'shadow-lg',
-    xl: 'shadow-xl',
+  bordered = true,
+  animate = true,
+  glassmorphism = false,
+  padding = 'default',
+  as = 'div'
+}) {
+  // Base styles
+  let baseStyles = "rounded-xl transition-all duration-300";
+  
+  // Variant styles
+  const variantStyles = {
+    default: "bg-white",
+    primary: "bg-blue-50",
+    gradient: "bg-gradient-to-br from-white to-blue-50",
+    dark: "bg-gray-800 text-white",
+    glass: "backdrop-filter backdrop-blur-md bg-white/40"
   };
-
-  const roundedVariants = {
-    none: 'rounded-none',
-    sm: 'rounded-sm',
-    md: 'rounded-md',
-    lg: 'rounded-lg',
-    xl: 'rounded-xl',
-    '2xl': 'rounded-2xl',
-    '3xl': 'rounded-3xl',
-    full: 'rounded-full',
+  
+  // Padding styles
+  const paddingStyles = {
+    none: "",
+    sm: "p-3",
+    default: "p-6",
+    lg: "p-8",
+    xl: "p-10"
   };
-
-  const baseClasses = `
-    ${padding}
-    ${roundedVariants[rounded] || 'rounded-lg'}
-    ${shadowVariants[shadow] || 'shadow-md'}
-    ${border ? 'border border-gray-200 dark:border-gray-700' : ''}
-    ${glassMorphism ? 'glass-effect' : 'bg-white dark:bg-gray-800'}
-    ${gradient ? `bg-gradient-${gradientDirection} ${gradientColors}` : ''}
-    ${hover ? 'transition-all duration-300 hover:shadow-lg' : ''}
-    ${hoverLift ? 'hover-lift' : ''}
+  
+  // Hover effects
+  const hoverStyles = hover ? "hover:shadow-xl hover:-translate-y-1" : "";
+  
+  // Border styles
+  const borderStyles = bordered ? "border border-gray-100" : "";
+  
+  // Glassmorphism override
+  if (glassmorphism) {
+    baseStyles += " backdrop-filter backdrop-blur-md bg-white/60 border border-white/20";
+  } else {
+    baseStyles += ` ${variantStyles[variant]} ${borderStyles}`;
+  }
+  
+  // Combined styles
+  const cardStyles = `
+    ${baseStyles}
+    ${paddingStyles[padding]}
+    ${hoverStyles}
     ${className}
   `;
 
-  return (
-    <div className={baseClasses} {...props}>
-      {children}
+  // Animation variants
+  const cardVariants = {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+    hover: hover ? { y: -5, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" } : {}
+  };
+
+  const Component = as;
+
+  return animate ? (
+    <motion.div
+      initial="initial"
+      animate="animate"
+      whileHover="hover"
+      variants={cardVariants}
+      transition={{ duration: 0.3 }}
+      className={cardStyles}
+    >
+      {as === 'div' ? children : <Component className="h-full w-full">{children}</Component>}
+    </motion.div>
+  ) : (
+    <div className={cardStyles}>
+      {as === 'div' ? children : <Component className="h-full w-full">{children}</Component>}
     </div>
   );
-};
+}
 
 export const CardHeader = ({ children, className = '', ...props }) => (
   <div className={`mb-4 ${className}`} {...props}>
@@ -81,6 +109,4 @@ export const CardFooter = ({ children, className = '', ...props }) => (
   <div className={`mt-4 pt-4 border-t border-gray-200 dark:border-gray-700 ${className}`} {...props}>
     {children}
   </div>
-);
-
-export default Card; 
+); 

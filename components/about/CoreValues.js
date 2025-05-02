@@ -20,7 +20,7 @@ export default function CoreValues() {
     },
     {
       name: 'Quality',
-      description: 'We screen thoroughly so you don't waste time.',
+      description: 'We screen thoroughly so you don\'t waste time.',
       icon: StarIcon,
     },
   ];
