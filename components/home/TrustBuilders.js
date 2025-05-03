@@ -1,5 +1,5 @@
 // TrustBuilders component with bullet points highlighting trust factors
-import { ShieldCheckIcon, GlobeAltIcon, BriefcaseIcon, LightBulbIcon, ClipboardDocumentCheckIcon, DocumentCheckIcon } from '@heroicons/react/24/solid';
+import { ShieldCheckIcon, GlobeAltIcon, BriefcaseIcon, LightBulbIcon, ClipboardDocumentCheckIcon } from '@heroicons/react/24/solid';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -187,22 +187,12 @@ export default function TrustBuilders() {
             >
               <Link 
                 href="/contact" 
-                className="inline-flex items-center justify-center w-full sm:w-auto px-4 sm:px-6 py-3 sm:py-4 bg-white text-blue-700 font-bold rounded-lg shadow-md hover:shadow-lg transition-all duration-300 text-sm sm:text-base md:text-lg"
+                className="inline-flex items-center justify-center w-full px-4 sm:px-6 py-3 sm:py-4 bg-white text-blue-700 font-bold rounded-lg shadow-md hover:shadow-lg transition-all duration-300 text-sm sm:text-base md:text-lg"
               >
                 Request Staff Now
                 <svg className="ml-1.5 sm:ml-2 -mr-1 w-4 sm:w-5 h-4 sm:h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                   <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd"></path>
                 </svg>
-              </Link>
-            </motion.div>
-            <motion.div
-              className="relative flex items-center justify-center bg-blue-600 px-4 sm:px-6 py-3 sm:py-4 rounded-lg shadow-md hover:bg-blue-500 transition-colors duration-300 cursor-pointer"
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <Link href="/cv-library" className="inline-flex items-center text-white font-bold text-sm sm:text-base md:text-lg">
-                <DocumentCheckIcon className="w-4 sm:w-5 h-4 sm:h-5 mr-1.5 sm:mr-2" />
-                Browse CV Library
               </Link>
             </motion.div>
           </motion.div>
