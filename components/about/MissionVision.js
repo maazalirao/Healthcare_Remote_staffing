@@ -5,7 +5,7 @@ export default function MissionVision() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-6 sm:mb-8 md:mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900">
-            Our Mission & Vision
+            Our Mission & Vision 
           </h2>
         </div>
         
