@@ -16,7 +16,7 @@ export default function Contact() {
             Contact Us
           </h1>
           <p className="mt-2 sm:mt-3 md:mt-4 max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-blue-100 text-center px-2">
-            We're here to answer your questions about our outsourcing staffing solutions.
+            We&apos;re here to answer your questions about our outsourcing staffing solutions.
           </p>
         </div>
       </div>
@@ -45,7 +45,7 @@ export default function Contact() {
                   <div>
                     <h3 className="text-base sm:text-lg font-medium text-gray-900">Do you offer temporary staffing solutions?</h3>
                     <p className="mt-1 sm:mt-2 text-sm sm:text-base text-gray-600">
-                      Yes, we provide both temporary and permanent staffing solutions based on your organization's needs.
+                      Yes, we provide both temporary and permanent staffing solutions based on your organization&apos;s needs.
                     </p>
                   </div>
                   
@@ -58,10 +58,10 @@ export default function Contact() {
                   </div>
                   
                   <div>
-                    <h3 className="text-base sm:text-lg font-medium text-gray-900">What happens if a placement doesn't work out?</h3>
+                    <h3 className="text-base sm:text-lg font-medium text-gray-900">What happens if a placement doesn&apos;t work out?</h3>
                     <p className="mt-1 sm:mt-2 text-sm sm:text-base text-gray-600">
-                      We offer a satisfaction guarantee with all placements. If a candidate doesn't meet your expectations within the first 30 days, 
-                      we'll find a replacement at no additional cost.
+                      We offer a satisfaction guarantee with all placements. If a candidate doesn&apos;t meet your expectations within the first 30 days, 
+                      we&apos;ll find a replacement at no additional cost.
                     </p>
                   </div>
                 </div>

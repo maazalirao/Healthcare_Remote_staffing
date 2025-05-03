@@ -8,6 +8,7 @@ import TrustBuilders from '../components/home/TrustBuilders';
 import HowItWorks from '../components/home/HowItWorks';
 import WorkEnvironment from '../components/home/WorkEnvironment';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -68,12 +69,12 @@ export default function Home() {
           </div>
           
           <div className="text-center mt-8">
-            <a href="/about" className="inline-flex items-center text-blue-600 font-medium hover:text-blue-800">
+            <Link href="/about" className="inline-flex items-center text-blue-600 font-medium hover:text-blue-800">
               Learn more about our global offices
               <svg className="ml-2 w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                 <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
               </svg>
-            </a>
+            </Link>
           </div>
         </div>
       </section>

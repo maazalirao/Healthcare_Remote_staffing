@@ -68,7 +68,7 @@ export default function ServiceDetail({ service, allServices }) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center px-4">
         <h1 className="text-xl sm:text-2xl font-bold text-gray-900">Service Not Found</h1>
-        <p className="mt-2 sm:mt-4 text-sm sm:text-base text-gray-600 text-center">The service you're looking for doesn't exist or has been moved.</p>
+        <p className="mt-2 sm:mt-4 text-sm sm:text-base text-gray-600 text-center">The service you&apos;re looking for doesn&apos;t exist or has been moved.</p>
         <Link href="/services" className="mt-4 sm:mt-6 inline-flex items-center px-3 sm:px-4 py-1.5 sm:py-2 border border-transparent rounded-md shadow-sm text-xs sm:text-sm font-medium text-white bg-blue-600 hover:bg-blue-700">
           Back to Services
         </Link>
@@ -210,7 +210,7 @@ export default function ServiceDetail({ service, allServices }) {
               {/* Case Study */}
               <div className="mt-6 sm:mt-8 md:mt-10 bg-blue-50 rounded-xl p-3 sm:p-4 md:p-6 lg:p-8 border border-blue-100">
                 <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900">Success Story</h3>
-                <p className="mt-2 sm:mt-3 md:mt-4 text-sm sm:text-base md:text-lg text-gray-700 italic">"{service.caseStudy}"</p>
+                <p className="mt-2 sm:mt-3 md:mt-4 text-sm sm:text-base md:text-lg text-gray-700 italic">&quot;{service.caseStudy}&quot;</p>
                 <div className="mt-3 sm:mt-4 md:mt-6 pt-3 sm:pt-4 md:pt-6 border-t border-blue-200">
                   <h4 className="font-semibold text-gray-900">Key Results</h4>
                   <div className="mt-2 sm:mt-3 md:mt-4 grid grid-cols-1 gap-3 sm:gap-4 md:gap-6 sm:grid-cols-3">
@@ -330,7 +330,7 @@ export default function ServiceDetail({ service, allServices }) {
                   </div>
                   <div className="px-3 sm:px-4 py-2 sm:py-3 border-t border-gray-200">
                     <h4 className="text-xs sm:text-sm font-medium text-gray-900 mb-1">Request Talent</h4>
-                    <p className="text-xs text-gray-600 mb-2">Submit your staffing needs and we'll match you with the right professionals.</p>
+                    <p className="text-xs text-gray-600 mb-2">Submit your staffing needs and we&apos;ll match you with the right professionals.</p>
                     <Link href="/intake" className="inline-flex items-center text-xs sm:text-sm font-medium text-blue-600 hover:text-blue-800">
                       Submit request
                       <svg className="ml-1 w-3 h-3 sm:w-4 sm:h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">

@@ -10,7 +10,7 @@ export default function AboutOffice() {
               Our Work Environment
             </h2>
             <p className="text-lg text-gray-600 mb-6">
-              At Clearview Staffing Group, we're proud of our modern, collaborative workspaces designed to foster innovation and exceptional service delivery across all industries.
+              At Clearview Staffing Group, we&apos;re proud of our modern, collaborative workspaces designed to foster innovation and exceptional service delivery across all industries.
             </p>
             <div className="space-y-4">
               <div className="bg-white p-4 rounded-lg shadow-md">

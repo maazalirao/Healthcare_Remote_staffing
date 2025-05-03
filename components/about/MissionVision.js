@@ -17,7 +17,7 @@ export default function MissionVision() {
             To help organizations run more efficiently by delivering specialized remote staffing solutions — saving them time, money, and resources.
           </p>
           <p className="text-gray-600 text-base sm:text-lg md:text-xl leading-relaxed text-center px-2">
-            With business demands evolving and in-house hiring costs soaring, remote staffing is the future. We're here to make it seamless, efficient, and reliable.
+            With business demands evolving and in-house hiring costs soaring, remote staffing is the future. We&apos;re here to make it seamless, efficient, and reliable.
           </p>
         </div>
       </div>

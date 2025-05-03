@@ -16,7 +16,7 @@ export default function Intake() {
             Request Talent
           </h1>
           <p className="mt-2 sm:mt-3 md:mt-4 max-w-3xl mx-auto text-base sm:text-lg md:text-xl text-blue-100 text-center px-2">
-            Tell us what you're looking for and we'll match you with the perfect professionals for your needs.
+            Tell us what you&apos;re looking for and we&apos;ll match you with the perfect professionals for your needs.
           </p>
         </div>
       </div>

@@ -28,7 +28,7 @@ export default function About() {
             About Clearview Staffing Group
           </h1>
           <p className="mt-3 sm:mt-4 md:mt-6 max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-blue-100 text-center px-2">
-            We're revolutionizing remote staffing with specialized solutions
+            We&apos;re revolutionizing remote staffing with specialized solutions
             tailored to the unique needs of organizations worldwide.
           </p>
         </div>

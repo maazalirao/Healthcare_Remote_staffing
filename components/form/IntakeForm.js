@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { CheckCircleIcon, ExclamationCircleIcon } from '@heroicons/react/24/solid';
 import { ArrowRightIcon, ArrowLeftIcon } from '@heroicons/react/24/outline';
+import Link from 'next/link';
 
 export default function IntakeForm() {
   // Simplified industry options
@@ -588,7 +589,7 @@ export default function IntakeForm() {
               Thank You!
             </h2>
             <p className="text-xl text-gray-600 mb-8 max-w-md mx-auto">
-              We've received your staffing request and will contact you within 1 business day.
+              We&apos;ve received your staffing request and will contact you within 1 business day.
             </p>
             {formMessage && (
               <div className="p-4 rounded-md bg-green-50 text-green-700 mb-8 max-w-md mx-auto border border-green-100">
@@ -596,18 +597,18 @@ export default function IntakeForm() {
               </div>
             )}
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a
+              <Link
                 href="/"
                 className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 shadow-sm transition-colors duration-150"
               >
                 Return to Homepage
-              </a>
-              <a 
+              </Link>
+              <Link 
                 href="/services"
                 className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 border border-blue-300 text-base font-medium rounded-md text-blue-700 bg-white hover:bg-blue-50 shadow-sm transition-colors duration-150"
               >
                 View Our Services
-              </a>
+              </Link>
             </div>
           </div>
         );

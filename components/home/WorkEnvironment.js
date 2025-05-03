@@ -36,7 +36,7 @@ export default function WorkEnvironment() {
               Our Professional Work Environment
             </h2>
             <p className="text-base sm:text-lg text-gray-600 mb-4 sm:mb-6">
-              At Clearview Staffing Group, we've created modern, collaborative workspaces that enable our team to deliver exceptional staffing solutions across various industries.
+              At Clearview Staffing Group, we&apos;ve created modern, collaborative workspaces that enable our team to deliver exceptional staffing solutions across various industries.
             </p>
             <div className="space-y-3 sm:space-y-4">
               <div className="bg-white p-3 sm:p-4 rounded-lg shadow-md">

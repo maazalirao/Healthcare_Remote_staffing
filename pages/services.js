@@ -92,7 +92,7 @@ export default function Services() {
             Our Services
           </h1>
           <p className="mt-2 sm:mt-3 md:mt-4 max-w-3xl mx-auto text-base sm:text-lg md:text-xl text-white text-center px-2">
-            Comprehensive remote staffing solutions tailored to your organization's unique needs across every industry and specialization.
+            Comprehensive remote staffing solutions tailored to your organization&apos;s unique needs across every industry and specialization.
           </p>
           
           {/* Trust Badges Section */}
@@ -154,7 +154,7 @@ export default function Services() {
               <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900">Need a custom staffing solution?</h2>
               <p className="mt-2 sm:mt-3 md:mt-4 text-sm sm:text-base md:text-lg text-gray-600">
                 We understand that every organization has unique staffing needs. 
-                Don't see exactly what you're looking for? We source specialized roles for any industry.
+                Don&apos;t see exactly what you&apos;re looking for? We source specialized roles for any industry.
               </p>
               <div className="mt-3 sm:mt-4 md:mt-6">
                 <Link
@@ -177,7 +177,7 @@ export default function Services() {
               What Our Clients Say
             </h2>
             <p className="mt-2 sm:mt-3 md:mt-4 max-w-2xl mx-auto text-sm sm:text-base md:text-lg lg:text-xl text-gray-500 px-2">
-              Don't just take our word for it. See what organizations like yours have achieved with our staffing services.
+              Don&apos;t just take our word for it. See what organizations like yours have achieved with our staffing services.
             </p>
           </div>
           
@@ -253,7 +253,7 @@ export default function Services() {
               Frequently Asked Questions
             </h2>
             <p className="mt-2 sm:mt-3 md:mt-4 max-w-2xl mx-auto text-sm sm:text-base md:text-lg text-gray-500 px-2">
-              Have questions about our staffing services? We've got answers.
+              Have questions about our staffing services? We&apos;ve got answers.
             </p>
           </div>
           
@@ -281,7 +281,7 @@ export default function Services() {
                 <h3 className="text-base sm:text-lg md:text-xl font-medium text-gray-900">What are the cost benefits of your staffing solutions?</h3>
                 <p className="mt-1 sm:mt-2 md:mt-3 text-sm sm:text-base text-gray-600">
                   Organizations typically save 40-70% on staffing costs compared to local hiring. Beyond direct salary savings, 
-                  you'll eliminate expenses related to office space, equipment, benefits administration, and recruitment costs. 
+                  you&apos;ll eliminate expenses related to office space, equipment, benefits administration, and recruitment costs. 
                   We provide a detailed cost comparison during your consultation.
                 </p>
               </div>
