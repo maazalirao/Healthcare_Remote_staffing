@@ -51,6 +51,14 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
 }
 
+/* Mobile navigation drawer - ensure solid background and visible text */
+.mobile-drawer {
+  background-color: white !important;
+  color: var(--foreground) !important;
+  opacity: 1 !important;
+  backdrop-filter: none !important;
+}
+
 /* Animation utilities */
 @keyframes fadeIn {
   from {

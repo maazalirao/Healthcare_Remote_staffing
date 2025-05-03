@@ -57,7 +57,7 @@ export default function Header() {
             : 'py-4'
         }`}
         style={{
-          backgroundColor: scrolled ? 'rgba(255, 255, 255, 0.95)' : 'rgba(0, 0, 0, 0.85)', 
+          backgroundColor: scrolled ? 'rgba(255, 255, 255, 0.8)' : 'rgba(0, 0, 0, 0.6)', 
           backdropFilter: scrolled ? 'blur(8px)' : 'blur(3px)'
         }}
       >
@@ -130,11 +130,15 @@ export default function Header() {
 
         {/* Mobile menu slide panel without overlay */}
         <div 
-          className={`md:hidden fixed right-0 top-0 z-50 w-64 h-full bg-white shadow-xl transform transition-transform duration-300 ease-in-out ${
+          className={`md:hidden fixed right-0 top-0 z-50 w-64 h-full bg-white shadow-xl transform transition-transform duration-300 ease-in-out mobile-drawer ${
             isMenuOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
+          style={{
+            backgroundColor: 'white',  // Ensure solid white background
+            boxShadow: '0 0 20px rgba(0, 0, 0, 0.15)'  // Add visible shadow for better definition
+          }}
         >
-          <div className="p-5 border-b border-gray-200 flex justify-between items-center bg-white">
+          <div className="p-5 border-b border-gray-200 flex justify-between items-center">
             <div className="font-bold text-lg text-blue-600">Menu</div>
             <button 
               className="text-gray-500 hover:text-gray-700 focus:outline-none"
@@ -143,7 +147,7 @@ export default function Header() {
               <XIcon className="h-6 w-6" />
             </button>
           </div>
-          <div className="pt-4 pb-3 space-y-1 px-4">
+          <div className="pt-4 pb-3 space-y-1 px-4 bg-white">
             <Link 
               href="/" 
               className={`block px-3 py-3 rounded-lg font-medium text-base hover:bg-blue-50 flex items-center ${router.pathname === '/' ? 'text-blue-600 bg-blue-50' : 'text-gray-700'}`}
@@ -182,17 +186,17 @@ export default function Header() {
               </Link>
             </div>
           </div>
-          <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-gray-200">
+          <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-gray-200 bg-white">
             <div className="text-sm text-gray-500 text-center">
               &copy; {new Date().getFullYear()} Clearview Staffing
             </div>
           </div>
         </div>
         
-        {/* Semi-transparent overlay for better visibility */}
+        {/* Transparent overlay for click handling only */}
         {isMenuOpen && (
           <div 
-            className="md:hidden fixed inset-0 z-40 bg-black bg-opacity-50"
+            className="md:hidden fixed inset-0 z-40 bg-transparent"
             onClick={() => setIsMenuOpen(false)}
           />
         )}
