@@ -1,6 +1,7 @@
 // HowItWorks component showing the three-step process
 import { ClipboardDocumentListIcon, UserGroupIcon, CheckBadgeIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function HowItWorks() {
   const steps = [
@@ -73,9 +74,9 @@ export default function HowItWorks() {
             </div>
             
             <div className="mt-6 sm:mt-8 md:mt-10">
-              <a href="/intake" className="inline-flex items-center justify-center px-4 sm:px-5 py-2.5 sm:py-3 border border-transparent text-sm sm:text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700">
+              <Link href="/intake" className="inline-flex items-center justify-center px-4 sm:px-5 py-2.5 sm:py-3 border border-transparent text-sm sm:text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700">
                 Get Started Today
-              </a>
+              </Link>
             </div>
           </div>
         </div>

@@ -41,7 +41,7 @@ export default function ServiceCard({ title, description, icon, iconName, specia
         {caseStudy && (
           <div className="mt-4 sm:mt-5 pt-3 sm:pt-4 border-t border-gray-100">
             <h4 className="text-xs sm:text-sm font-semibold text-gray-700 mb-2">Success Story:</h4>
-            <p className="text-xs text-gray-600 italic">"{caseStudy}"</p>
+            <p className="text-xs text-gray-600 italic">&quot;{caseStudy}&quot;</p>
           </div>
         )}
         
