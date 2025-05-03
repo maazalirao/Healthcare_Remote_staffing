@@ -1,6 +1,7 @@
 // MissionVision component displaying company mission and vision
 import { motion } from 'framer-motion';
 import { LightBulbIcon, EyeIcon, SparklesIcon } from '@heroicons/react/24/outline';
+import Link from 'next/link';
 
 export default function MissionVision() {
   return (
@@ -95,9 +96,9 @@ export default function MissionVision() {
               With business demands evolving and in-house hiring costs soaring, remote staffing is the future. We&apos;re here to make it seamless, efficient, and reliable.
             </p>
             <div className="mt-10 flex justify-center">
-              <a href="/services" className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-blue-800 bg-white hover:bg-blue-50 transition-colors duration-300 max-w-xs mx-auto">
+              <Link href="/services" className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-blue-800 bg-white hover:bg-blue-50 transition-colors duration-300 max-w-xs mx-auto">
                 Explore Our Services
-              </a>
+              </Link>
             </div>
           </div>
         </motion.div>

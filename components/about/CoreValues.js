@@ -1,6 +1,7 @@
 // CoreValues component listing core company values
 import { BriefcaseIcon, ShieldCheckIcon, ClockIcon, StarIcon, UserGroupIcon, GlobeAltIcon, ChartBarIcon, HeartIcon } from '@heroicons/react/24/outline';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 export default function CoreValues() {
   const values = [
@@ -30,7 +31,7 @@ export default function CoreValues() {
     },
     {
       name: 'Quality First',
-      description: 'We thoroughly screen candidates so you don\'t waste time, ensuring only the best talent reaches your consideration.',
+      description: 'We thoroughly screen candidates so you don&apos;t waste time, ensuring only the best talent reaches your consideration.',
       icon: StarIcon,
       color: 'bg-pink-100',
       iconColor: 'text-pink-600',
@@ -122,21 +123,21 @@ export default function CoreValues() {
               Living Our Values Every Day
             </h3>
             <p className="text-gray-700 mb-6">
-              Our values aren't just words on a page — they're the foundation of how we operate. Every team member at Clearview Staffing Group embodies these principles in their daily work, ensuring we deliver consistent, exceptional service to both clients and candidates.
+              Our values aren&apos;t just words on a page — they&apos;re the foundation of how we operate. Every team member at Clearview Staffing Group embodies these principles in their daily work, ensuring we deliver consistent, exceptional service to both clients and candidates.
             </p>
             <div className="flex flex-col sm:flex-row justify-center sm:space-x-4 space-y-3 sm:space-y-0">
-              <a 
+              <Link 
                 href="/testimonials" 
                 className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 transition-colors duration-300"
               >
                 See Client Testimonials
-              </a>
-              <a 
+              </Link>
+              <Link 
                 href="/contact" 
                 className="inline-flex items-center justify-center px-5 py-3 border border-gray-300 text-base font-medium rounded-md shadow-sm text-gray-700 bg-white hover:bg-gray-50 transition-colors duration-300"
               >
                 Talk to Our Team
-              </a>
+              </Link>
             </div>
           </div>
         </motion.div>
