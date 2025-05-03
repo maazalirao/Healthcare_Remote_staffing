@@ -305,7 +305,7 @@ export default async function handler(req, res) {
 
     const { data, error } = await resend.emails.send({
       from: 'Clearview Staffing Group <contact@maazali.site>', // Changed from onboarding@resend.dev to domain
-      to: 'maazaltaf1027@gmail.com', // Single string instead of array for simplicity
+      to: 'info@clearviewstaffinggrp.com', // Single string instead of array for simplicity
       subject: subject,
       html: emailHtml,
       reply_to: email // Set reply-to to the user's email
