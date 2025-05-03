@@ -14,7 +14,7 @@ export default function ContactInfo() {
             </div>
             <div className="ml-3">
               <p className="text-lg font-medium text-gray-900">Email</p>
-              <a href="mailto:gitty@clearviewstaffinggrp.com" className="text-blue-600 hover:text-blue-800 hover:underline">gitty@clearviewstaffinggrp.com</a>
+              <a href="mailto:info@clearviewstaffinggrp.com" className="text-blue-600 hover:text-blue-800 hover:underline">info@clearviewstaffinggrp.com</a>
             </div>
           </li>
           

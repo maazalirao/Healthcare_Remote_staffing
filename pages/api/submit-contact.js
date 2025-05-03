@@ -5,6 +5,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 // Define the sender email from environment variables 
 const fromEmail = process.env.EMAIL_FROM;
 // Define the recipient email from environment variables
+// NOTE: Update this in your environment variables to info@clearviewstaffinggrp.com
 const toEmail = process.env.EMAIL_TO;
 
 export default async function handler(req, res) {

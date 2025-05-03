@@ -25,10 +25,6 @@ export default function WorkEnvironment() {
               <p className="text-lg sm:text-xl md:text-2xl font-bold">4</p>
               <p className="text-xs sm:text-sm">Global Offices</p>
             </div>
-            <div className="absolute -bottom-4 sm:-bottom-6 -left-4 sm:-left-6 bg-blue-600 rounded-lg shadow-lg p-2 sm:p-3 md:p-4 text-white">
-              <p className="text-lg sm:text-xl md:text-2xl font-bold">500+</p>
-              <p className="text-xs">Industry Pros</p>
-            </div>
           </div>
           
           <div className="order-1 lg:order-2">
