@@ -1,61 +1,53 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { MapPinIcon, PhoneIcon, EnvelopeIcon, CalendarIcon, ClockIcon, BuildingOffice2Icon, GlobeAltIcon } from '@heroicons/react/24/outline';
+import { CheckCircleIcon, UserGroupIcon, LightBulbIcon, HeartIcon, ClockIcon, BuildingOffice2Icon, GlobeAltIcon } from '@heroicons/react/24/outline';
 
 export default function OfficeLocations() {
-  const offices = [
+  const workEthics = [
     {
       id: 1,
-      location: "New York, USA",
-      address: "1325 Avenue of the Americas, 28th Floor, New York, NY 10019",
-      phone: "+1 (212) 897-5962",
-      email: "ny@clearviewstaffing.com",
-      website: "/locations/usa",
+      title: "Excellence & Quality",
+      description: "We hold ourselves to the highest standards in every interaction, placement, and service we provide. Our commitment to excellence drives us to continuously improve and deliver exceptional results.",
+      keyPoint: "Commitment to the highest standards",
+      principleOne: "Thorough vetting and quality assurance",
+      principleTwo: "Continuous improvement in all processes",
       image: "/images/jason-goodman-Oalh2MojUuk-unsplash.jpg",
-      description: "Our North American headquarters manages U.S. operations and serves clients throughout North and South America.",
-      businessHours: "Monday-Friday: 8:30 AM - 6:00 PM ET",
-      established: "Established 2012",
-      districtInfo: "Located in Midtown Manhattan's business district"
+      established: "Core Value",
+      icon: CheckCircleIcon
     },
     {
       id: 2,
-      location: "London, UK",
-      address: "30 St Mary Axe (The Gherkin), 24th Floor, London EC3A 8BF",
-      phone: "+44 20 7123 4567",
-      email: "london@clearviewstaffing.com",
-      website: "/locations/uk",
+      title: "Transparency & Integrity",
+      description: "We believe that honest communication and ethical practices are the foundation of lasting relationships. We are straightforward about our processes and maintain confidentiality in all client interactions.",
+      keyPoint: "Open and honest communication",
+      principleOne: "Full disclosure on processes and expectations",
+      principleTwo: "Ethical handling of sensitive information",
       image: "/images/austin-distel-wawEfYdpkag-unsplash.jpg",
-      description: "Our European headquarters specializing in staffing across the United Kingdom and European Union countries.",
-      businessHours: "Monday-Friday: 9:00 AM - 5:30 PM GMT",
-      established: "Established 2014",
-      districtInfo: "Located in London's financial district"
+      established: "Core Value",
+      icon: HeartIcon
     },
     {
       id: 3,
-      location: "Singapore",
-      address: "One Raffles Place, Tower 2, Level 19, Singapore 048616",
-      phone: "+65 6808 7300",
-      email: "singapore@clearviewstaffing.com",
-      website: "/locations/asia",
+      title: "Innovation & Adaptability",
+      description: "In a rapidly changing work environment, we stay ahead of trends and embrace new technologies and methods to ensure our staffing solutions remain cutting-edge and effective for our clients' evolving needs.",
+      keyPoint: "Forward-thinking approach",
+      principleOne: "Embracing new staffing technologies",
+      principleTwo: "Adapting to changing market conditions",
       image: "/images/christina-wocintechchat-com-Q80LYxv_Tbs-unsplash.jpg",
-      description: "Our Asia-Pacific hub provides specialized staffing solutions throughout Southeast Asia and Oceania.",
-      businessHours: "Monday-Friday: 9:00 AM - 6:00 PM SGT",
-      established: "Established 2017",
-      districtInfo: "Located in Singapore's central business district"
+      established: "Core Value",
+      icon: LightBulbIcon
     },
     {
       id: 4,
-      location: "Dubai, UAE",
-      address: "Emirates Towers, Level 41, Sheikh Zayed Road, Dubai, UAE",
-      phone: "+971 4 330 0000",
-      email: "dubai@clearviewstaffing.com",
-      website: "/locations/middle-east",
+      title: "Client Partnership",
+      description: "We see ourselves as an extension of your team, not just a service provider. Our collaborative approach ensures we understand your unique needs and become a trusted partner in your organization's success.",
+      keyPoint: "True partnership mentality",
+      principleOne: "Collaborative approach to staffing solutions",
+      principleTwo: "Long-term relationship building",
       image: "/images/campaign-creators-gMsnXqILjp4-unsplash.jpg",
-      description: "Our Middle East office specializing in staffing solutions for the GCC region and broader MENA markets.",
-      businessHours: "Sunday-Thursday: 8:00 AM - 5:00 PM GST",
-      established: "Established 2019",
-      districtInfo: "Located in Dubai's prestigious business district"
+      established: "Core Value",
+      icon: UserGroupIcon
     }
   ];
 
@@ -70,15 +62,15 @@ export default function OfficeLocations() {
           className="text-center mb-12 md:mb-16"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900">
-            Our Global Offices
+            Our Work Ethics
           </h2>
           <div className="w-20 h-1 bg-blue-600 mx-auto mt-4 mb-6"></div>
           <p className="mt-4 max-w-3xl mx-auto text-lg md:text-xl text-gray-600">
-            With locations across 4 continents, we provide staffing solutions worldwide
+            The principles and values that guide how we operate and deliver excellence to our clients
           </p>
           <div className="mt-4 inline-flex items-center px-4 py-2 bg-blue-50 text-blue-700 text-sm rounded-full">
             <ClockIcon className="h-4 w-4 mr-2" />
-            Office visits by appointment only | Virtual meetings available
+            These values shape every aspect of our staffing solutions
           </div>
         </motion.div>
         
@@ -88,9 +80,9 @@ export default function OfficeLocations() {
           
           <div className="relative">
             <div className="flex flex-wrap justify-center gap-4 sm:gap-8 mb-8">
-              {['Americas', 'Europe', 'Asia Pacific', 'Middle East'].map((region, index) => (
+              {['Respect', 'Trust', 'Diligence', 'Client-Focus'].map((value, index) => (
                 <motion.div 
-                  key={region}
+                  key={value}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.1 * index }}
@@ -101,8 +93,8 @@ export default function OfficeLocations() {
                     <BuildingOffice2Icon className="h-5 w-5 text-blue-700" />
                   </div>
                   <div>
-                    <p className="font-bold text-gray-900">{region}</p>
-                    <p className="text-sm text-gray-500">Regional Office</p>
+                    <p className="font-bold text-gray-900">{value}</p>
+                    <p className="text-sm text-gray-500">Guiding Principle</p>
                   </div>
                 </motion.div>
               ))}
@@ -112,27 +104,27 @@ export default function OfficeLocations() {
               <div className="inline-flex items-center justify-center h-20 w-20 rounded-full bg-blue-600 text-white mb-4">
                 <GlobeAltIcon className="h-10 w-10" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Global Presence, Local Expertise</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">Professional Ethics in Everything We Do</h3>
               <p className="text-gray-600 max-w-2xl mx-auto">
-                Our strategically located offices allow us to serve clients in over 30 countries with specialized staffing solutions tailored to local markets while maintaining global standards.
+                Our commitment to ethical practices and professional standards underpins every staffing solution we deliver, ensuring that both clients and candidates benefit from a transparent and trustworthy partnership.
               </p>
               
               <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto">
                 <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-100">
-                  <p className="text-3xl font-bold text-blue-600">30+</p>
-                  <p className="text-sm text-gray-600">Countries Served</p>
+                  <p className="text-3xl font-bold text-blue-600">100%</p>
+                  <p className="text-sm text-gray-600">Ethical Compliance</p>
                 </div>
                 <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-100">
-                  <p className="text-3xl font-bold text-blue-600">4</p>
-                  <p className="text-sm text-gray-600">Regional Hubs</p>
+                  <p className="text-3xl font-bold text-blue-600">7+</p>
+                  <p className="text-sm text-gray-600">Years Experience</p>
                 </div>
                 <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-100">
-                  <p className="text-3xl font-bold text-blue-600">12+</p>
-                  <p className="text-sm text-gray-600">Industries</p>
+                  <p className="text-3xl font-bold text-blue-600">98%</p>
+                  <p className="text-sm text-gray-600">Client Satisfaction</p>
                 </div>
                 <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-100">
                   <p className="text-3xl font-bold text-blue-600">24/7</p>
-                  <p className="text-sm text-gray-600">Global Support</p>
+                  <p className="text-sm text-gray-600">Ethical Support</p>
                 </div>
               </div>
             </div>
@@ -140,9 +132,9 @@ export default function OfficeLocations() {
         </div>
         
         <div className="grid gap-8 md:grid-cols-2">
-          {offices.map((office, index) => (
+          {workEthics.map((ethic, index) => (
             <motion.div 
-              key={office.id}
+              key={ethic.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 * index }}
@@ -151,8 +143,8 @@ export default function OfficeLocations() {
             >
               <div className="relative h-64 w-full">
                 <Image 
-                  src={office.image} 
-                  alt={`${office.location} Office`} 
+                  src={ethic.image} 
+                  alt={`${ethic.title}`} 
                   layout="fill" 
                   objectFit="cover"
                   className="w-full h-full hover:scale-105 transition-transform duration-700"
@@ -160,45 +152,37 @@ export default function OfficeLocations() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/30 to-transparent"></div>
                 <div className="absolute top-4 right-4 bg-blue-600 text-white text-xs px-3 py-1.5 rounded-full font-semibold tracking-wide">
-                  {office.established}
+                  {ethic.established}
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <h3 className="text-2xl font-bold text-white mb-1">{office.location}</h3>
-                  <p className="text-blue-100 text-sm">{office.districtInfo}</p>
+                  <h3 className="text-2xl font-bold text-white mb-1">{ethic.title}</h3>
+                  <p className="text-blue-100 text-sm">{ethic.keyPoint}</p>
                 </div>
               </div>
               <div className="p-6">
-                <p className="text-gray-700 mb-5 leading-relaxed">{office.description}</p>
+                <p className="text-gray-700 mb-5 leading-relaxed">{ethic.description}</p>
                 <div className="space-y-3 text-sm text-gray-600">
                   <div className="flex items-start">
-                    <MapPinIcon className="h-5 w-5 text-blue-500 mr-3 flex-shrink-0 mt-0.5" />
+                    <ethic.icon className="h-5 w-5 text-blue-500 mr-3 flex-shrink-0 mt-0.5" />
                     <div>
-                      <p>{office.address}</p>
+                      <p className="font-medium">{ethic.principleOne}</p>
                     </div>
                   </div>
                   <div className="flex items-center">
-                    <PhoneIcon className="h-5 w-5 text-blue-500 mr-3 flex-shrink-0" />
-                    <p>{office.phone}</p>
-                  </div>
-                  <div className="flex items-center">
-                    <EnvelopeIcon className="h-5 w-5 text-blue-500 mr-3 flex-shrink-0" />
-                    <p>{office.email}</p>
-                  </div>
-                  <div className="flex items-center">
-                    <CalendarIcon className="h-5 w-5 text-blue-500 mr-3 flex-shrink-0" />
-                    <p>{office.businessHours}</p>
+                    <ethic.icon className="h-5 w-5 text-blue-500 mr-3 flex-shrink-0" />
+                    <p className="font-medium">{ethic.principleTwo}</p>
                   </div>
                 </div>
                 <div className="mt-6">
                   <Link 
-                    href={office.website}
+                    href="/contact"
                     className="w-full inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors duration-300 shadow-sm"
                   >
-                    Contact This Office
+                    Learn How We Apply This
                   </Link>
                 </div>
                 <p className="mt-3 text-xs text-center text-gray-400">
-                  Due to security protocols, all office visits require prior appointment
+                  These ethics guide our approach to every client relationship
                 </p>
               </div>
             </motion.div>
@@ -214,14 +198,14 @@ export default function OfficeLocations() {
         >
           <div className="flex flex-col md:flex-row md:items-center md:justify-between text-white">
             <div className="mb-6 md:mb-0">
-              <h3 className="text-2xl font-bold text-white">Need to meet with our team?</h3>
-              <p className="text-blue-100 mt-2">Schedule a video call or in-person appointment at one of our global offices</p>
+              <h3 className="text-2xl font-bold text-white">Experience our ethics in action</h3>
+              <p className="text-blue-100 mt-2">Schedule a consultation to see how our values translate to outstanding staffing solutions</p>
             </div>
             <Link 
               href="/contact"
               className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-blue-700 bg-white hover:bg-blue-50 transition-colors duration-300 shadow-md"
             >
-              Schedule a Meeting
+              Schedule a Consultation
             </Link>
           </div>
         </motion.div>
