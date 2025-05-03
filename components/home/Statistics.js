@@ -59,26 +59,26 @@ export default function Statistics() {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-b from-gray-900 to-indigo-900 text-white overflow-hidden">
+    <section className="py-10 sm:py-12 md:py-16 bg-gradient-to-b from-gray-900 to-indigo-900 text-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-8 sm:mb-10 md:mb-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <span className="inline-block px-3 py-1 text-xs font-semibold bg-indigo-500 bg-opacity-30 rounded-full text-indigo-200 mb-4">
+            <span className="inline-block px-3 py-1 text-xs font-semibold bg-indigo-500 bg-opacity-30 rounded-full text-indigo-200 mb-2 sm:mb-3">
               # By The Numbers
             </span>
-            <h2 className="text-4xl md:text-5xl font-bold leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight px-2">
               Outsourcing Staffing Statistics Make the Case
             </h2>
           </motion.div>
         </div>
         
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 text-center"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 text-center"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -86,11 +86,11 @@ export default function Statistics() {
         >
           <motion.div className="relative" variants={itemVariants}>
             <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg opacity-75 blur-xl"></div>
-            <div className="relative bg-gray-900 p-8 rounded-lg border border-indigo-500 border-opacity-20 h-full flex flex-col">
-              <div ref={costRef} className="text-6xl lg:text-7xl font-bold text-blue-400 mb-4">
+            <div className="relative bg-gray-900 p-4 sm:p-5 md:p-6 rounded-lg border border-indigo-500 border-opacity-20 h-full flex flex-col">
+              <div ref={costRef} className="text-3xl sm:text-4xl md:text-5xl font-bold text-blue-400 mb-2">
                 {cost}%
               </div>
-              <div className="text-lg text-gray-300 flex-grow">
+              <div className="text-sm sm:text-base text-gray-300 flex-grow">
                 cost saving by hiring a remote professional
               </div>
             </div>
@@ -98,11 +98,11 @@ export default function Statistics() {
           
           <motion.div className="relative" variants={itemVariants}>
             <div className="absolute -inset-0.5 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg opacity-75 blur-xl"></div>
-            <div className="relative bg-gray-900 p-8 rounded-lg border border-indigo-500 border-opacity-20 h-full flex flex-col">
-              <div className="text-6xl lg:text-7xl font-bold text-indigo-400 mb-4">
+            <div className="relative bg-gray-900 p-4 sm:p-5 md:p-6 rounded-lg border border-indigo-500 border-opacity-20 h-full flex flex-col">
+              <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-indigo-400 mb-2">
                 &gt;<span ref={productivityRef}>{productivity}</span>%
               </div>
-              <div className="text-lg text-gray-300 flex-grow">
+              <div className="text-sm sm:text-base text-gray-300 flex-grow">
                 avg. productivity boost from remote staffing
               </div>
             </div>
@@ -110,11 +110,11 @@ export default function Statistics() {
           
           <motion.div className="relative" variants={itemVariants}>
             <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg opacity-75 blur-xl"></div>
-            <div className="relative bg-gray-900 p-8 rounded-lg border border-indigo-500 border-opacity-20 h-full flex flex-col">
-              <div ref={companiesRef} className="text-6xl lg:text-7xl font-bold text-purple-400 mb-4">
+            <div className="relative bg-gray-900 p-4 sm:p-5 md:p-6 rounded-lg border border-indigo-500 border-opacity-20 h-full flex flex-col">
+              <div ref={companiesRef} className="text-3xl sm:text-4xl md:text-5xl font-bold text-purple-400 mb-2">
                 {companies}%
               </div>
-              <div className="text-lg text-gray-300 flex-grow">
+              <div className="text-sm sm:text-base text-gray-300 flex-grow">
                 of global companies hired 1+ remote staff in 2023
               </div>
             </div>
@@ -122,11 +122,11 @@ export default function Statistics() {
           
           <motion.div className="relative" variants={itemVariants}>
             <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-red-600 rounded-lg opacity-75 blur-xl"></div>
-            <div className="relative bg-gray-900 p-8 rounded-lg border border-indigo-500 border-opacity-20 h-full flex flex-col">
-              <div ref={employeesRef} className="text-6xl lg:text-7xl font-bold text-pink-400 mb-4">
+            <div className="relative bg-gray-900 p-4 sm:p-5 md:p-6 rounded-lg border border-indigo-500 border-opacity-20 h-full flex flex-col">
+              <div ref={employeesRef} className="text-3xl sm:text-4xl md:text-5xl font-bold text-pink-400 mb-2">
                 {employees}%
               </div>
-              <div className="text-lg text-gray-300 flex-grow">
+              <div className="text-sm sm:text-base text-gray-300 flex-grow">
                 of remote staff report higher job satisfaction
               </div>
             </div>

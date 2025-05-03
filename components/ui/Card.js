@@ -60,7 +60,7 @@ export const CardHeader = ({ children, className = '', ...props }) => (
 );
 
 export const CardTitle = ({ children, className = '', ...props }) => (
-  <h3 className={`text-lg font-bold text-gray-800 dark:text-white ${className}`} {...props}>
+  <h3 className={`text-lg font-bold text-gray-800 dark:text-gray-100 ${className}`} {...props}>
     {children}
   </h3>
 );
