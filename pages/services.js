@@ -5,7 +5,19 @@ import {
   UsersIcon,
   ClipboardDocumentCheckIcon,
   ChartBarIcon,
-  QuestionMarkCircleIcon
+  BuildingOfficeIcon,
+  AcademicCapIcon,
+  PresentationChartLineIcon,
+  ShoppingBagIcon,
+  CurrencyDollarIcon,
+  DevicePhoneMobileIcon,
+  BriefcaseIcon,
+  GlobeAltIcon,
+  ChatBubbleLeftRightIcon,
+  WrenchScrewdriverIcon,
+  UserGroupIcon,
+  ChartPieIcon,
+  CalendarIcon
 } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 
@@ -14,26 +26,104 @@ export default function Services() {
     {
       id: 1,
       title: 'Professional Services',
-      description: 'Access skilled professionals in business analysis, marketing, finance, and specialized industry roles.',
+      description: 'Access skilled professionals in business analysis, marketing, finance, project management, and specialized industry roles.',
       icon: ChartBarIcon,
     },
     {
       id: 2,
       title: 'Technical Talent',
-      description: 'Build your technical team with experienced developers, engineers, and IT specialists.',
+      description: 'Build your technical team with experienced developers, engineers, IT specialists, and cybersecurity professionals.',
       icon: ComputerDesktopIcon,
     },
     {
       id: 3,
       title: 'Administrative Support',
-      description: 'Streamline operations with virtual assistants, customer support, and data entry specialists.',
+      description: 'Streamline operations with virtual assistants, customer support, data entry specialists, and administrative coordinators.',
       icon: ClipboardDocumentCheckIcon,
     },
     {
       id: 4,
       title: 'Business Consulting',
-      description: 'Get expert guidance on process optimization, growth strategies, and operational efficiency.',
+      description: 'Get expert guidance on process optimization, growth strategies, and operational efficiency from industry specialists.',
+      icon: BriefcaseIcon,
+    },
+    {
+      id: 5,
+      title: 'Healthcare & Medical',
+      description: 'Staff your organization with qualified healthcare professionals, medical administrators, and billing specialists.',
       icon: UsersIcon,
+    },
+    {
+      id: 6,
+      title: 'Education & Training',
+      description: 'Find skilled educators, instructional designers, and training specialists for your educational initiatives.',
+      icon: AcademicCapIcon,
+    },
+    {
+      id: 7,
+      title: 'Financial Services',
+      description: 'Access financial analysts, accountants, bookkeepers, and advisors to strengthen your financial operations.',
+      icon: CurrencyDollarIcon,
+    },
+    {
+      id: 8,
+      title: 'Marketing & Creative',
+      description: 'Connect with marketing strategists, content creators, designers, and digital marketing specialists.',
+      icon: PresentationChartLineIcon,
+    },
+    {
+      id: 9,
+      title: 'Real Estate & Property',
+      description: 'Staff your property management operations with administrators, agents, and property managers.',
+      icon: BuildingOfficeIcon,
+    },
+    {
+      id: 10,
+      title: 'Retail & E-commerce',
+      description: 'Find specialists in inventory management, e-commerce operations, and customer experience.',
+      icon: ShoppingBagIcon,
+    },
+    {
+      id: 11,
+      title: 'Digital & Mobile',
+      description: 'Hire app developers, UX/UI designers, and mobile specialists for your digital products.',
+      icon: DevicePhoneMobileIcon,
+    },
+    {
+      id: 12,
+      title: 'Global Business Services',
+      description: 'Access multilingual support staff, international business consultants, and global operations specialists.',
+      icon: GlobeAltIcon,
+    },
+    {
+      id: 13,
+      title: 'Customer Service & Support',
+      description: 'Build dedicated customer service teams with call center agents, chat support, and customer success specialists.',
+      icon: ChatBubbleLeftRightIcon,
+    },
+    {
+      id: 14,
+      title: 'Engineering & Architecture',
+      description: 'Connect with remote engineering professionals, CAD specialists, architects, and technical drafters.',
+      icon: WrenchScrewdriverIcon,
+    },
+    {
+      id: 15,
+      title: 'HR & Recruitment',
+      description: 'Strengthen your HR department with talent acquisition specialists, benefits coordinators, and HR administrators.',
+      icon: UserGroupIcon,
+    },
+    {
+      id: 16,
+      title: 'Data & Analytics',
+      description: 'Find data analysts, business intelligence specialists, and analytics experts to power your data-driven decisions.',
+      icon: ChartPieIcon,
+    },
+    {
+      id: 17,
+      title: 'Virtual Events & Coordination',
+      description: 'Staff your virtual events with coordinators, producers, technical support, and engagement specialists.',
+      icon: CalendarIcon,
     },
   ];
 
@@ -41,7 +131,7 @@ export default function Services() {
     <>
       <Head>
         <title>Our Services | Clearview Staffing Group</title>
-        <meta name="description" content="Explore Clearview Staffing Group's specialized remote outsourcing staffing services." />
+        <meta name="description" content="Explore Clearview Staffing Group's comprehensive remote staffing services across multiple industries and specializations." />
       </Head>
       
       <div className="bg-blue-600 py-16">
@@ -49,15 +139,15 @@ export default function Services() {
           <h1 className="text-4xl font-extrabold tracking-tight text-white text-center">
             Our Services
           </h1>
-          <p className="mt-4 max-w-2xl mx-auto text-xl text-blue-100 text-center">
-            Specialized remote outsourcing staffing solutions tailored to your organization's needs.
+          <p className="mt-4 max-w-3xl mx-auto text-xl text-blue-100 text-center">
+            Comprehensive remote staffing solutions tailored to your organization's needs across every industry and specialization.
           </p>
         </div>
       </div>
       
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {services.map((service) => (
               <ServiceCard 
                 key={service.id}
@@ -73,7 +163,7 @@ export default function Services() {
               <h2 className="text-2xl font-bold text-gray-900">Need a custom staffing solution?</h2>
               <p className="mt-4 text-lg text-gray-600">
                 We understand that every organization has unique staffing needs. 
-                Need something else? We source specialized roles for any industry.
+                Don't see exactly what you're looking for? We source specialized roles for any industry.
               </p>
               <div className="mt-6">
                 <Link
