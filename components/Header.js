@@ -57,7 +57,7 @@ export default function Header() {
             : 'py-4'
         }`}
         style={{
-          backgroundColor: scrolled ? 'rgba(255, 255, 255, 0.8)' : 'rgba(0, 0, 0, 0.6)', 
+          backgroundColor: scrolled ? 'rgba(255, 255, 255, 0.95)' : 'rgba(0, 0, 0, 0.85)', 
           backdropFilter: scrolled ? 'blur(8px)' : 'blur(3px)'
         }}
       >
@@ -134,7 +134,7 @@ export default function Header() {
             isMenuOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
         >
-          <div className="p-5 border-b border-gray-200 flex justify-between items-center">
+          <div className="p-5 border-b border-gray-200 flex justify-between items-center bg-white">
             <div className="font-bold text-lg text-blue-600">Menu</div>
             <button 
               className="text-gray-500 hover:text-gray-700 focus:outline-none"
@@ -189,10 +189,10 @@ export default function Header() {
           </div>
         </div>
         
-        {/* Transparent overlay for click handling only */}
+        {/* Semi-transparent overlay for better visibility */}
         {isMenuOpen && (
           <div 
-            className="md:hidden fixed inset-0 z-40 bg-transparent"
+            className="md:hidden fixed inset-0 z-40 bg-black bg-opacity-50"
             onClick={() => setIsMenuOpen(false)}
           />
         )}
