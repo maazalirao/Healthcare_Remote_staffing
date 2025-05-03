@@ -1,5 +1,15 @@
 // ServiceCard component for displaying individual service information
-export default function ServiceCard({ title, description, icon: Icon, specializations, caseStudy }) {
+import Link from 'next/link';
+import { iconMapping } from '../../data/services';
+
+export default function ServiceCard({ title, description, icon, iconName, specializations, caseStudy, id }) {
+  // Create a URL-friendly slug from the service title
+  const slug = title ? title.toLowerCase().replace(/[^a-z0-9]+/g, '-') : '';
+  
+  // Get the icon component from either the direct icon prop (for backward compatibility)
+  // or from the iconName using the mapping
+  const Icon = icon || (iconName ? iconMapping[iconName] : null);
+  
   return (
     <div className="group bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-lg border border-gray-100">
       <div className="px-5 py-6 sm:px-6 sm:py-8">
@@ -35,14 +45,17 @@ export default function ServiceCard({ title, description, icon: Icon, specializa
           </div>
         )}
         
-        {/* Learn More */}
+        {/* Learn More - Now links to the service detail page */}
         <div className="mt-6">
-          <button className="text-blue-600 hover:text-blue-800 text-sm font-medium transition-colors duration-200 flex items-center justify-center w-full">
-            Learn more
+          <Link 
+            href={`/services/${slug}`}
+            className="text-blue-600 hover:text-blue-800 text-sm font-medium transition-colors duration-200 flex items-center justify-center w-full"
+          >
+            View Details
             <svg className="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
-          </button>
+          </Link>
         </div>
       </div>
     </div>

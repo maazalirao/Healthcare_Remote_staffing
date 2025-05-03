@@ -25,123 +25,9 @@ import {
 } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import Image from 'next/image';
+import services from '../data/services';
 
 export default function Services() {
-  const services = [
-    {
-      id: 1,
-      title: 'Professional Services',
-      description: 'Access skilled professionals in business analysis, marketing, finance, project management, and specialized industry roles.',
-      icon: ChartBarIcon,
-      specializations: ['Business Analysts', 'Marketing Specialists', 'Financial Advisors', 'Project Managers', 'Industry Consultants'],
-      caseStudy: 'Helped a Fortune 500 company reduce operational costs by 23% through strategic staffing solutions.'
-    },
-    {
-      id: 2,
-      title: 'Technical Talent',
-      description: 'Build your technical team with experienced developers, engineers, IT specialists, and cybersecurity professionals.',
-      icon: ComputerDesktopIcon,
-      specializations: ['Software Developers', 'DevOps Engineers', 'IT System Administrators', 'Cybersecurity Experts', 'QA Specialists'],
-      caseStudy: 'Assembled a remote development team for a healthcare startup, launching their product 2 months ahead of schedule.'
-    },
-    {
-      id: 3,
-      title: 'Administrative Support',
-      description: 'Streamline operations with virtual assistants, customer support, data entry specialists, and administrative coordinators.',
-      icon: ClipboardDocumentCheckIcon,
-      specializations: ['Virtual Executive Assistants', 'Customer Support Representatives', 'Data Entry Specialists', 'Administrative Coordinators', 'Office Managers'],
-      caseStudy: 'Provided virtual administrative support that increased executive productivity by 35% for a growing financial services firm.'
-    },
-    {
-      id: 4,
-      title: 'Business Consulting',
-      description: 'Get expert guidance on process optimization, growth strategies, and operational efficiency from industry specialists.',
-      icon: BriefcaseIcon,
-      specializations: ['Process Optimization Consultants', 'Growth Strategists', 'Operational Efficiency Experts', 'Change Management Specialists', 'Business Analysts'],
-      caseStudy: 'Delivered strategic consulting that helped a retail client increase revenue by 28% within 6 months.'
-    },
-    {
-      id: 5,
-      title: 'Healthcare & Medical',
-      description: 'Staff your organization with qualified healthcare professionals, medical administrators, and billing specialists.',
-      icon: UsersIcon,
-      specializations: ['Medical Billing Specialists', 'Healthcare Administrators', 'Medical Records Technicians', 'Patient Care Coordinators', 'Telehealth Support'],
-      caseStudy: 'Staffed a telemedicine platform with specialized support personnel, improving patient satisfaction scores by 42%.'
-    },
-    {
-      id: 6,
-      title: 'Education & Training',
-      description: 'Find skilled educators, instructional designers, and training specialists for your educational initiatives.',
-      icon: AcademicCapIcon,
-    },
-    {
-      id: 7,
-      title: 'Financial Services',
-      description: 'Access financial analysts, accountants, bookkeepers, and advisors to strengthen your financial operations.',
-      icon: CurrencyDollarIcon,
-    },
-    {
-      id: 8,
-      title: 'Marketing & Creative',
-      description: 'Connect with marketing strategists, content creators, designers, and digital marketing specialists.',
-      icon: PresentationChartLineIcon,
-    },
-    {
-      id: 9,
-      title: 'Real Estate & Property',
-      description: 'Staff your property management operations with administrators, agents, and property managers.',
-      icon: BuildingOfficeIcon,
-    },
-    {
-      id: 10,
-      title: 'Retail & E-commerce',
-      description: 'Find specialists in inventory management, e-commerce operations, and customer experience.',
-      icon: ShoppingBagIcon,
-    },
-    {
-      id: 11,
-      title: 'Digital & Mobile',
-      description: 'Hire app developers, UX/UI designers, and mobile specialists for your digital products.',
-      icon: DevicePhoneMobileIcon,
-    },
-    {
-      id: 12,
-      title: 'Global Business Services',
-      description: 'Access multilingual support staff, international business consultants, and global operations specialists.',
-      icon: GlobeAltIcon,
-    },
-    {
-      id: 13,
-      title: 'Customer Service & Support',
-      description: 'Build dedicated customer service teams with call center agents, chat support, and customer success specialists.',
-      icon: ChatBubbleLeftRightIcon,
-    },
-    {
-      id: 14,
-      title: 'Engineering & Architecture',
-      description: 'Connect with remote engineering professionals, CAD specialists, architects, and technical drafters.',
-      icon: WrenchScrewdriverIcon,
-    },
-    {
-      id: 15,
-      title: 'HR & Recruitment',
-      description: 'Strengthen your HR department with talent acquisition specialists, benefits coordinators, and HR administrators.',
-      icon: UserGroupIcon,
-    },
-    {
-      id: 16,
-      title: 'Data & Analytics',
-      description: 'Find data analysts, business intelligence specialists, and analytics experts to power your data-driven decisions.',
-      icon: ChartPieIcon,
-    },
-    {
-      id: 17,
-      title: 'Virtual Events & Coordination',
-      description: 'Staff your virtual events with coordinators, producers, technical support, and engagement specialists.',
-      icon: CalendarIcon,
-    },
-  ];
-
   const testimonials = [
     {
       id: 1,
@@ -241,9 +127,10 @@ export default function Services() {
             {services.map((service) => (
               <ServiceCard 
                 key={service.id}
+                id={service.id}
                 title={service.title}
                 description={service.description}
-                icon={service.icon}
+                iconName={service.iconName}
                 specializations={service.specializations}
                 caseStudy={service.caseStudy}
               />
