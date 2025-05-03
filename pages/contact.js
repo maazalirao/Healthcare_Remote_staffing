@@ -32,7 +32,7 @@ export default function Contact() {
                 Get in Touch
               </h1>
               <p className="mt-6 max-w-2xl mx-auto text-xl text-blue-100">
-                We're here to answer your questions and provide the staffing solutions your business needs.
+                We&apos;re here to answer your questions and provide the staffing solutions your business needs.
               </p>
               <div className="mt-10 max-w-sm mx-auto sm:max-w-none sm:flex sm:justify-center">
                 <div className="space-y-4 sm:space-y-0 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5">
@@ -121,7 +121,7 @@ export default function Contact() {
                     </div>
                   </div>
                   
-                  <p className="text-gray-600 mb-4 italic">"{testimonial.quote}"</p>
+                  <p className="text-gray-600 mb-4 italic">&quot;{testimonial.quote}&quot;</p>
                   
                   <div className="flex items-center">
                     {[...Array(5)].map((_, i) => (
@@ -165,7 +165,7 @@ export default function Contact() {
                 </div>
                 
                 <div className="mt-8 text-center">
-                  <p className="text-gray-600 mb-4">Still have questions? We're here to help!</p>
+                  <p className="text-gray-600 mb-4">Still have questions? We&apos;re here to help!</p>
                   <a
                     href="mailto:info@clearviewstaffinggrp.com"
                     className="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700"
@@ -234,15 +234,15 @@ const faqs = [
   },
   {
     question: "Do you offer temporary staffing solutions?",
-    answer: "Yes, we provide both temporary and permanent staffing solutions based on your organization's needs."
+    answer: "Yes, we provide both temporary and permanent staffing solutions based on your organization&apos;s needs."
   },
   {
     question: "How do you ensure data security for remote staff?",
     answer: "All our candidates undergo thorough security training and verification. We also verify their remote work environment meets security standards for handling sensitive information."
   },
   {
-    question: "What happens if a placement doesn't work out?",
-    answer: "We offer a satisfaction guarantee with all placements. If a candidate doesn't meet your expectations within the first 30 days, we'll find a replacement at no additional cost."
+    question: "What happens if a placement doesn&apos;t work out?",
+    answer: "We offer a satisfaction guarantee with all placements. If a candidate doesn&apos;t meet your expectations within the first 30 days, we&apos;ll find a replacement at no additional cost."
   },
   {
     question: "What industries do you specialize in?",
