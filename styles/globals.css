@@ -19,12 +19,21 @@
   }
 }
 
+/* Disable automatic dark mode to fix transparent navbar background issues */
+/* Only apply dark mode class if explicitly set, not based on system preference */
+.dark:root {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+}
+
+/* Commented out automatic dark mode detection
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
 }
+*/
 
 /* Base styling */
 body {
