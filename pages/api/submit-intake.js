@@ -1,13 +1,11 @@
 import { Resend } from 'resend';
 
-// Instantiate Resend with API key from environment variables
-const resend = new Resend(process.env.RESEND_API_KEY);
-// Debug line to check if the API key is being loaded
-console.log("API KEY EXISTS:", !!process.env.RESEND_API_KEY, "KEY STARTS WITH:", process.env.RESEND_API_KEY ? process.env.RESEND_API_KEY.substring(0, 5) : "N/A");
-// Define the sender email from environment variables 
-const fromEmail = process.env.EMAIL_FROM; // e.g., 'noreply@yourverifieddomain.com'
-// Define the recipient emails
-const toEmails = [process.env.EMAIL_TO, 'david@clearviewstaffinggrp.com']; // Adding David's email as a recipient
+// Hardcoded configuration - avoiding environment variables as requested
+const resend = new Resend('re_4asYFm5z_AGcf2vN9dF2mwgpAjsRmQrtx'); // IMPORTANT: Replace with your actual Resend API key
+// Define recipient email directly - using the same value as in submit-contact.js
+const toEmails = ['maazaltaf1027@gmail.com'];
+// Define the "from" email address - ensure this domain is verified in Resend
+const fromEmail = 'Clearview Staffing Group <no-reply@maazali.site>';
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -34,11 +32,6 @@ export default async function handler(req, res) {
   // Simple email format validation
   if (!/\S+@\S+\.\S+/.test(email)) {
     return res.status(400).json({ message: 'Invalid email format' });
-  }
-  
-  if (!process.env.RESEND_API_KEY) {
-      console.error('Missing required environment variable for email sending: RESEND_API_KEY');
-      return res.status(500).json({ message: 'Server configuration error.' });
   }
 
   // --- Sending Email with Resend --- 
@@ -376,17 +369,17 @@ export default async function handler(req, res) {
     `;
 
     const { data, error } = await resend.emails.send({
-      from: 'Clearview Staffing Group <contact@maazali.site>',
+      from: fromEmail,
       to: toEmails,
       subject: subject,
       html: emailHtml,
-      reply_to: email // Set reply-to to the user's email
+      reply_to: email // Set reply-to to the sender's email
     });
 
     if (error) {
       console.error('Resend detailed sending error (Intake):', JSON.stringify(error, null, 2));
       // Provide a more user-friendly message 
-      let errorMessage = 'Failed to send email notification.';
+      let errorMessage = 'Failed to send staffing request.';
       if (error.message && error.message.includes('domain is not verified')) {
           errorMessage = 'Email sending domain is not verified. Please contact support.';
       } else if (error.message && error.message.includes('Invalid API Key')) {
@@ -395,12 +388,12 @@ export default async function handler(req, res) {
       return res.status(500).json({ message: errorMessage, details: error.message });
     }
 
-    console.log('Intake request email sent via Resend for:', orgName, 'ID:', data?.id);
-    return res.status(200).json({ message: 'Request submitted successfully! We will be in touch soon.' }); // Keep success message concise
+    console.log('Intake form message sent via Resend from:', email, 'ID:', data?.id);
+    return res.status(200).json({ message: 'Your staffing request has been submitted successfully! We will contact you shortly to discuss your needs.' });
 
   } catch (error) {
     // Catch any other unexpected errors
-    console.error('Error processing intake request (Resend):', error);
+    console.error('Error processing intake form:', error);
     return res.status(500).json({ message: 'An unexpected error occurred processing your request.' });
   }
 } 

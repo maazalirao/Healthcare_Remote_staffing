@@ -1,18 +1,18 @@
 import { Resend } from 'resend';
 
-// Instantiate Resend with API key from environment variables
-const resend = new Resend(process.env.RESEND_API_KEY);
-// Define the sender email from environment variables 
-const fromEmail = process.env.EMAIL_FROM;
-// Define the recipient emails
-const toEmails = [process.env.EMAIL_TO, 'david@clearviewstaffinggrp.com'];
+// Hardcoded configuration - avoiding environment variables as requested
+const resend = new Resend('re_4asYFm5z_AGcf2vN9dF2mwgpAjsRmQrtx'); // IMPORTANT: Replace with your actual Resend API key
+// Define recipient email directly
+const toEmails = ['maazaltaf1027@gmail.com'];
+// Define the "from" email address - ensure this domain is verified in Resend
+const fromEmail = 'Clearview Staffing Group <no-reply@maazali.site>'; // IMPORTANT: Update if your verified domain is different
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ message: 'Method Not Allowed' });
   }
 
-  // --- Basic Server-Side Validation --- 
+  // --- Basic Server-Side Validation ---
   const { name, email, message, subject, company } = req.body;
 
   if (!name || !email || !message) {
@@ -24,16 +24,11 @@ export default async function handler(req, res) {
     return res.status(400).json({ message: 'Invalid email format' });
   }
 
-  if (!process.env.RESEND_API_KEY) {
-      console.error('Missing required environment variable for email sending: RESEND_API_KEY');
-      return res.status(500).json({ message: 'Server configuration error.' });
-  }
-  
-  // --- Sending Email with Resend --- 
+  // --- Sending Email with Resend ---
   try {
     const emailSubject = subject ? `New Contact Message from ${name}: ${subject}` : `New Contact Message from ${name}`;
     const formattedMessage = message.replace(/\n/g, '<br>'); // Replace newlines for HTML
-    
+
     const emailHtml = `
       <!DOCTYPE html>
       <html lang="en">
@@ -304,7 +299,7 @@ export default async function handler(req, res) {
     `;
 
     const { data, error } = await resend.emails.send({
-      from: 'Clearview Staffing Group <contact@maazali.site>',
+      from: fromEmail,
       to: toEmails,
       subject: emailSubject,
       html: emailHtml,
