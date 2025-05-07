@@ -43,10 +43,10 @@ const services = [
   {
     id: 1,
     title: 'Professional Services',
-    description: 'Access skilled professionals in business analysis, marketing, finance, project management, and specialized industry roles.',
+    description: 'Access skilled professionals in business analysis, marketing, project management, and specialized industry roles.',
     iconName: 'ChartBarIcon',
     slug: 'professional-services',
-    specializations: ['Business Analysts', 'Marketing Specialists', 'Financial Advisors', 'Project Managers', 'Industry Consultants'],
+    specializations: ['Business Analysts', 'Marketing Specialists', 'Remote Team Leads', 'Project Managers', 'Operations Support'],
     caseStudy: 'Helped a Fortune 500 company reduce operational costs by 23% through strategic staffing solutions.',
     fullDescription: 'Our Professional Services staffing solutions connect your organization with experienced business professionals who deliver immediate value. From strategic planning to operational execution, our carefully vetted professionals bring extensive industry knowledge and proven expertise to help your organization achieve its objectives.',
     benefits: [
@@ -192,13 +192,13 @@ const services = [
   },
   {
     id: 4,
-    title: 'Business Consulting',
-    description: 'Get expert guidance on process optimization, growth strategies, and operational efficiency from industry specialists.',
+    title: 'Business Support',
+    description: 'Get expert assistance on process optimization, growth initiatives, and operational efficiency from remote professionals.',
     iconName: 'BriefcaseIcon',
-    slug: 'business-consulting',
-    specializations: ['Process Optimization Consultants', 'Growth Strategists', 'Operational Efficiency Experts', 'Change Management Specialists', 'Business Analysts'],
-    caseStudy: 'Delivered strategic consulting that helped a retail client increase revenue by 28% within 6 months.',
-    fullDescription: 'Our Business Consulting staffing solutions connect your organization with seasoned consultants who provide strategic guidance and tactical execution support. From process optimization to growth strategy development, our consultants bring proven methodologies and industry expertise to help you achieve measurable business improvements.',
+    slug: 'business-support',
+    specializations: ['Process Improvement Specialists', 'Remote Team Coordinators', 'Operational Efficiency Experts', 'Change Management Support', 'Business Analysts'],
+    caseStudy: 'Delivered strategic support that helped a retail client increase revenue by 28% within 6 months.',
+    fullDescription: 'Our Business Support staffing solutions connect your organization with skilled professionals who provide operational guidance and implementation support. From process optimization to growth initiative implementation, our team members bring proven methodologies and expertise to help you achieve measurable business improvements.',
     benefits: [
       'Gain objective, expert perspectives on your business challenges',
       'Access specialized knowledge without the cost of full-time executives',

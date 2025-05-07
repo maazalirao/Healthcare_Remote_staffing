@@ -47,14 +47,13 @@ export default function IntakeForm() {
       ]
     },
     {
-      category: 'Business & Professional',
+      category: 'Business & Operations',
       roles: [
         'Project Manager',
         'Business Analyst',
-        'Financial Analyst',
-        'Accountant',
-        'Consultant',
-        'Operations Manager',
+        'Operations Specialist',
+        'Remote Team Coordinator',
+        'Process Improvement Specialist',
         'Other Business Role',
       ]
     },
@@ -105,7 +104,7 @@ export default function IntakeForm() {
         'Data Analyst',
         'Business Intelligence Specialist',
         'Data Engineer',
-        'Analytics Consultant',
+        'Reporting Specialist',
         'Other Data Role',
       ]
     },

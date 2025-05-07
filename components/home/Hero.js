@@ -13,7 +13,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative pt-20 md:pt-24 flex items-center overflow-hidden" style={{ minHeight: 'calc(100vh - 0px)' }}>
+    <section className="relative flex items-center overflow-hidden" style={{ minHeight: '100vh' }}>
       {/* Background with image */}
       <div className="absolute inset-0 w-full h-full">
         {/* Enhanced overlay with more sophisticated gradient */}
@@ -36,7 +36,7 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20 py-12 md:py-20">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20 py-12 md:py-20 mt-24">
         <div className="max-w-4xl mx-auto text-center p-6 sm:p-8 md:p-12 rounded-xl relative">
           {/* Glassy background with subtle border */}
           <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-white/5 rounded-xl border border-white/10 backdrop-filter backdrop-blur-sm z-[-1]"></div>
