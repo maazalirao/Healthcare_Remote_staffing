@@ -5,6 +5,7 @@ import OfficeLocations from '../components/about/OfficeLocations';
 import AboutOffice from '../components/about/AboutOffice';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import LeadershipTeam from '../components/about/NewLeadership/LeadershipTeam';
 
 export default function About() {
   return (
@@ -68,6 +69,8 @@ export default function About() {
       </div>
       
       <AboutOffice />
+      
+      <LeadershipTeam />
       
       <div id="values">
         <CoreValues />

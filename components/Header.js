@@ -126,10 +126,10 @@ export default function Header() {
               Request Staff
             </Link>
             
-            {/* Mobile menu button */}
+            {/* Mobile menu button - improved visibility */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 text-gray-500 hover:text-blue-600 bg-gray-50 hover:bg-gray-100"
+              className="inline-flex items-center justify-center p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 text-blue-600 hover:text-blue-800 bg-blue-100 hover:bg-blue-200 shadow-sm border border-blue-200"
               aria-expanded={isMenuOpen}
             >
               <span className="sr-only">Open main menu</span>
@@ -143,21 +143,21 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile menu slide panel */}
+      {/* Mobile menu slide panel - with improved styling */}
       <div 
         className={`md:hidden fixed right-0 top-0 z-50 w-72 h-full transform transition-transform duration-300 ease-in-out mobile-drawer ${
           isMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
         style={{
-          backgroundColor: 'white',
-          boxShadow: '-4px 0 20px rgba(0, 0, 0, 0.15)',
-          borderLeft: '1px solid rgba(59, 130, 246, 0.1)',
+          backgroundColor: '#ffffff',
+          boxShadow: '-4px 0 20px rgba(0, 0, 0, 0.2)',
+          borderLeft: '1px solid rgba(59, 130, 246, 0.2)',
         }}
       >
-        <div className="p-5 border-b border-gray-100 flex justify-between items-center bg-blue-50/50">
+        <div className="p-5 border-b border-gray-200 flex justify-between items-center bg-blue-100">
           <div className="flex items-center">
             <div className="relative w-auto h-9">
-              <div className="absolute -left-2 -top-2 w-14 h-14 bg-blue-100/70 rounded-full opacity-70"></div>
+              <div className="absolute -left-2 -top-2 w-14 h-14 bg-blue-200 rounded-full opacity-80"></div>
               <Image 
                 src="/images/careviews logo.png" 
                 alt="CareViews Logo"
@@ -169,7 +169,7 @@ export default function Header() {
             </div>
           </div>
           <button 
-            className="w-8 h-8 flex items-center justify-center rounded-full bg-white text-blue-600 hover:text-blue-800 shadow-sm border border-blue-100 focus:outline-none transform transition-transform duration-200 hover:scale-105"
+            className="w-9 h-9 flex items-center justify-center rounded-full bg-white text-blue-600 hover:text-blue-800 shadow-md border border-blue-200 focus:outline-none transform transition-transform duration-200 hover:scale-105"
             onClick={() => setIsMenuOpen(false)}
             aria-label="Close menu"
           >
@@ -177,32 +177,32 @@ export default function Header() {
           </button>
         </div>
         
-        <div className="py-6 px-5 overflow-y-auto h-[calc(100%-80px)]">
+        <div className="py-6 px-5 overflow-y-auto h-[calc(100%-80px)] bg-white">
           <nav className="space-y-2">
             <Link 
               href="/" 
-              className={`block px-3 py-3 rounded-lg font-medium text-base hover:bg-blue-50 flex items-center ${router.pathname === '/' ? 'text-blue-600 bg-blue-50/70' : 'text-gray-700'}`}
+              className={`block px-3 py-3 rounded-lg font-medium text-base hover:bg-blue-50 flex items-center ${router.pathname === '/' ? 'text-blue-600 bg-blue-50' : 'text-gray-700'}`}
               onClick={handleNavLinkClick}
             >
               <span className={`border-l-4 pl-3 ${router.pathname === '/' ? 'border-blue-600' : 'border-transparent'}`}>Home</span>
             </Link>
             <Link 
               href="/about" 
-              className={`block px-3 py-3 rounded-lg font-medium text-base hover:bg-blue-50 flex items-center ${router.pathname === '/about' ? 'text-blue-600 bg-blue-50/70' : 'text-gray-700'}`}
+              className={`block px-3 py-3 rounded-lg font-medium text-base hover:bg-blue-50 flex items-center ${router.pathname === '/about' ? 'text-blue-600 bg-blue-50' : 'text-gray-700'}`}
               onClick={handleNavLinkClick}
             >
               <span className={`border-l-4 pl-3 ${router.pathname === '/about' ? 'border-blue-600' : 'border-transparent'}`}>About</span>
             </Link>
             <Link 
               href="/services" 
-              className={`block px-3 py-3 rounded-lg font-medium text-base hover:bg-blue-50 flex items-center ${router.pathname === '/services' ? 'text-blue-600 bg-blue-50/70' : 'text-gray-700'}`}
+              className={`block px-3 py-3 rounded-lg font-medium text-base hover:bg-blue-50 flex items-center ${router.pathname === '/services' ? 'text-blue-600 bg-blue-50' : 'text-gray-700'}`}
               onClick={handleNavLinkClick}
             >
               <span className={`border-l-4 pl-3 ${router.pathname === '/services' ? 'border-blue-600' : 'border-transparent'}`}>Services</span>
             </Link>
             <Link 
               href="/intake" 
-              className={`block px-3 py-3 rounded-lg font-medium text-base hover:bg-blue-50 flex items-center ${router.pathname === '/intake' ? 'text-blue-600 bg-blue-50/70' : 'text-gray-700'}`}
+              className={`block px-3 py-3 rounded-lg font-medium text-base hover:bg-blue-50 flex items-center ${router.pathname === '/intake' ? 'text-blue-600 bg-blue-50' : 'text-gray-700'}`}
               onClick={handleNavLinkClick}
             >
               <span className={`border-l-4 pl-3 ${router.pathname === '/intake' ? 'border-blue-600' : 'border-transparent'}`}>Intake Form</span>
@@ -223,26 +223,32 @@ export default function Header() {
             </div>
             
             {/* Additional content for the mobile menu */}
-            <div className="pt-6 border-t border-gray-100">
-              <div className="px-3 py-3">
+            <div className="pt-6 border-t border-gray-200">
+              <div className="px-4 py-4 bg-blue-50 rounded-lg">
                 <h4 className="text-sm font-semibold text-gray-900 mb-3">Remote Staffing Benefits</h4>
-                <ul className="space-y-2 text-sm">
+                <ul className="space-y-3 text-sm">
                   <li className="flex items-center text-gray-700">
-                    <svg className="h-4 w-4 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
+                    <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-green-100 mr-3">
+                      <svg className="h-4 w-4 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
                     <span>80% cost reduction</span>
                   </li>
                   <li className="flex items-center text-gray-700">
-                    <svg className="h-4 w-4 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
+                    <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-green-100 mr-3">
+                      <svg className="h-4 w-4 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
                     <span>Access to global talent</span>
                   </li>
                   <li className="flex items-center text-gray-700">
-                    <svg className="h-4 w-4 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
+                    <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-green-100 mr-3">
+                      <svg className="h-4 w-4 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
                     <span>24/7 operational support</span>
                   </li>
                 </ul>
@@ -251,8 +257,8 @@ export default function Header() {
           </nav>
         </div>
         
-        <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-gray-100 bg-white/80 backdrop-blur-sm">
-          <div className="text-sm text-gray-500 text-center">
+        <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-gray-200 bg-white shadow-inner">
+          <div className="text-sm text-gray-600 text-center font-medium">
             &copy; {new Date().getFullYear()} CareViews Staffing
           </div>
         </div>
@@ -261,7 +267,7 @@ export default function Header() {
       {/* Dark overlay for mobile menu */}
       {isMenuOpen && (
         <div 
-          className="md:hidden fixed inset-0 z-40 bg-black/40 backdrop-blur-sm"
+          className="md:hidden fixed inset-0 z-40 bg-black/60 backdrop-blur-sm"
           onClick={() => setIsMenuOpen(false)}
         />
       )}
