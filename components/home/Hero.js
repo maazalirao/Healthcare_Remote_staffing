@@ -5,12 +5,78 @@ import Button from '../ui/Button';
 import Image from 'next/image';
 import { FiChevronDown } from 'react-icons/fi'; // Import for scroll indicator
 
+// Custom hook for counting animation
+const useCountUp = (end, duration = 2000, delay = 0) => {
+  const [count, setCount] = useState(0);
+  
+  useEffect(() => {
+    if (!end) return;
+    
+    let startTime;
+    let animationFrame;
+    
+    const startCount = () => {
+      const step = (timestamp) => {
+        if (!startTime) startTime = timestamp;
+        const progress = Math.min((timestamp - startTime) / duration, 1);
+        
+        setCount(Math.floor(progress * end));
+        
+        if (progress < 1) {
+          animationFrame = requestAnimationFrame(step);
+        }
+      };
+      
+      animationFrame = requestAnimationFrame(step);
+    };
+    
+    const timer = setTimeout(() => {
+      startCount();
+    }, delay);
+    
+    return () => {
+      clearTimeout(timer);
+      cancelAnimationFrame(animationFrame);
+      setCount(0);
+    };
+  }, [end, duration, delay]);
+  
+  return count;
+};
+
 export default function Hero() {
   const [isVisible, setIsVisible] = useState(false);
   
   useEffect(() => {
     setIsVisible(true);
   }, []);
+  
+  // Count-up values
+  const remoteEmployees = useCountUp(1200, 2500, 1000);
+  const officeSpace = useCountUp(30, 2500, 1500);
+  const costSavings = useCountUp(73, 2500, 2000);
+
+  // Animation variants for staggered reveals
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+        delayChildren: 0.8,
+      }
+    }
+  };
+  
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20, scale: 0.95 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      scale: 1,
+      transition: { duration: 0.7 }
+    }
+  };
 
   return (
     <section className="relative flex items-center overflow-hidden" style={{ minHeight: '100vh' }}>
@@ -99,25 +165,69 @@ export default function Hero() {
             </Button>
           </motion.div>
           
-          {/* Stats section */}
+          {/* Stats section - with enhanced animations */}
           <motion.div 
             className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
-            transition={{ duration: 0.7, delay: 0.8 }}
+            variants={containerVariants}
+            initial="hidden"
+            animate={isVisible ? "visible" : "hidden"}
           >
-            <div className="text-center mb-4 sm:mb-0">
-              <p className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-blue-200 to-white bg-clip-text text-transparent">100+</p>
-              <p className="text-white/70 text-xs sm:text-sm">Industry Professionals</p>
-            </div>
-            <div className="text-center mb-4 sm:mb-0">
-              <p className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-blue-200 to-white bg-clip-text text-transparent">24/7</p>
-              <p className="text-white/70 text-xs sm:text-sm">Support Available</p>
-            </div>
-            <div className="text-center">
-              <p className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-blue-200 to-white bg-clip-text text-transparent">15+</p>
-              <p className="text-white/70 text-xs sm:text-sm">Years Experience</p>
-            </div>
+            <motion.div 
+              className="text-center mb-4 sm:mb-0 relative group"
+              variants={itemVariants}
+              whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+            >
+              <motion.div 
+                className="absolute inset-0 bg-blue-400/5 rounded-xl -z-10"
+                animate={{ 
+                  boxShadow: ['0 0 0px rgba(59, 130, 246, 0)', '0 0 15px rgba(59, 130, 246, 0.3)', '0 0 0px rgba(59, 130, 246, 0)'],
+                  scale: [1, 1.03, 1]
+                }}
+                transition={{ duration: 4, repeat: Infinity, repeatType: "reverse" }}
+              />
+              <p className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-blue-200 to-white bg-clip-text text-transparent">
+                {remoteEmployees}+
+              </p>
+              <p className="text-white/70 text-xs sm:text-sm relative z-10">Remote Employees</p>
+            </motion.div>
+            
+            <motion.div 
+              className="text-center mb-4 sm:mb-0 relative group"
+              variants={itemVariants}
+              whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+            >
+              <motion.div 
+                className="absolute inset-0 bg-blue-400/5 rounded-xl -z-10"
+                animate={{ 
+                  boxShadow: ['0 0 0px rgba(59, 130, 246, 0)', '0 0 15px rgba(59, 130, 246, 0.3)', '0 0 0px rgba(59, 130, 246, 0)'],
+                  scale: [1, 1.03, 1]
+                }}
+                transition={{ duration: 4, repeat: Infinity, repeatType: "reverse", delay: 1 }}
+              />
+              <p className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-blue-200 to-white bg-clip-text text-transparent">
+                {officeSpace}K+
+              </p>
+              <p className="text-white/70 text-xs sm:text-sm relative z-10">Square Feet Office Space</p>
+            </motion.div>
+            
+            <motion.div 
+              className="text-center relative group"
+              variants={itemVariants}
+              whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+            >
+              <motion.div 
+                className="absolute inset-0 bg-blue-400/5 rounded-xl -z-10"
+                animate={{ 
+                  boxShadow: ['0 0 0px rgba(59, 130, 246, 0)', '0 0 15px rgba(59, 130, 246, 0.3)', '0 0 0px rgba(59, 130, 246, 0)'],
+                  scale: [1, 1.03, 1]
+                }}
+                transition={{ duration: 4, repeat: Infinity, repeatType: "reverse", delay: 2 }}
+              />
+              <p className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-blue-200 to-white bg-clip-text text-transparent">
+                {costSavings}%
+              </p>
+              <p className="text-white/70 text-xs sm:text-sm relative z-10">Cost Savings</p>
+            </motion.div>
           </motion.div>
         </div>
       </div>
