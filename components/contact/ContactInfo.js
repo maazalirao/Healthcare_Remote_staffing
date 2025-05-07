@@ -14,8 +14,8 @@ export default function ContactInfo() {
     {
       icon: PhoneIcon,
       title: "Phone",
-      value: "(555) 123-4567",
-      link: "tel:+15551234567",
+      value: "(347) 668-6917",
+      link: "tel:+13476686917",
       description: "Monday to Friday, 9am-5pm EST"
     },
     {
