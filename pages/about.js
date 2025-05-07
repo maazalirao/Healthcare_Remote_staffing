@@ -3,6 +3,7 @@ import MissionVision from '../components/about/MissionVision';
 import CoreValues from '../components/about/CoreValues';
 import OfficeLocations from '../components/about/OfficeLocations';
 import AboutOffice from '../components/about/AboutOffice';
+import GhanaOffice from '../components/GhanaOffice';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import LeadershipTeam from '../components/about/NewLeadership/LeadershipTeam';
@@ -75,6 +76,8 @@ export default function About() {
       <div id="values">
         <CoreValues />
       </div>
+      
+      <GhanaOffice />
       
       <OfficeLocations />
       
