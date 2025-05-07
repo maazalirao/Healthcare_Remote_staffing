@@ -264,13 +264,26 @@ export default function Header() {
         </div>
       </div>
       
-      {/* Dark overlay for mobile menu */}
-      {isMenuOpen && (
-        <div 
-          className="md:hidden fixed inset-0 z-40 bg-black/60 backdrop-blur-sm"
-          onClick={() => setIsMenuOpen(false)}
-        />
-      )}
+      {/* Mobile menu backdrop - adds semi-transparent overlay when menu is open */}
+      <div 
+        onClick={() => setIsMenuOpen(false)}
+        className={`fixed inset-0 bg-black/50 backdrop-blur-sm md:hidden z-40 transition-opacity duration-300 ${
+          isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        }`}
+        aria-hidden="true"
+      ></div>
+
+      <style jsx global>{`
+        .mobile-drawer {
+          width: 85%;
+          max-width: 320px;
+          height: 100vh;
+          overflow-y: auto;
+          -webkit-overflow-scrolling: touch;
+          will-change: transform;
+          overscroll-behavior: contain;
+        }
+      `}</style>
     </header>
   );
 } 

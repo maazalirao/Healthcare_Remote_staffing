@@ -6,8 +6,8 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 console.log("API KEY EXISTS:", !!process.env.RESEND_API_KEY, "KEY STARTS WITH:", process.env.RESEND_API_KEY ? process.env.RESEND_API_KEY.substring(0, 5) : "N/A");
 // Define the sender email from environment variables 
 const fromEmail = process.env.EMAIL_FROM; // e.g., 'noreply@yourverifieddomain.com'
-// Define the recipient email from environment variables
-const toEmail = process.env.EMAIL_TO; // e.g., 'maazaltaf1027@gmail.com'
+// Define the recipient emails
+const toEmails = [process.env.EMAIL_TO, 'david@clearviewstaffinggrp.com']; // Adding David's email as a recipient
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -377,7 +377,7 @@ export default async function handler(req, res) {
 
     const { data, error } = await resend.emails.send({
       from: 'Clearview Staffing Group <contact@maazali.site>',
-      to: 'info@clearviewstaffinggrp.com',
+      to: toEmails,
       subject: subject,
       html: emailHtml,
       reply_to: email // Set reply-to to the user's email
