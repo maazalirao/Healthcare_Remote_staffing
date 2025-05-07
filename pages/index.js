@@ -7,7 +7,6 @@ import ProcessSteps from '../components/home/ProcessSteps';
 import TrustBuilders from '../components/home/TrustBuilders';
 import HowItWorks from '../components/home/HowItWorks';
 import WorkEnvironment from '../components/home/WorkEnvironment';
-import GhanaOffice from '../components/GhanaOffice';
 import Image from 'next/image';
 import Link from 'next/link';
 import { CheckCircleIcon, UserGroupIcon } from '@heroicons/react/24/outline';
@@ -28,7 +27,6 @@ export default function Home() {
       <WorkEnvironment />
       <HowItWorks />
       <ProblemSolution />
-      <GhanaOffice />
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">

@@ -65,6 +65,8 @@ export default function About() {
         </div>
       </div>
       
+      <GhanaOffice />
+      
       <div id="mission">
         <MissionVision />
       </div>
@@ -76,8 +78,6 @@ export default function About() {
       <div id="values">
         <CoreValues />
       </div>
-      
-      <GhanaOffice />
       
       <OfficeLocations />
       
