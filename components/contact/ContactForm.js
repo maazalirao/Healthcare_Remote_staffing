@@ -32,9 +32,20 @@ export default function ContactForm() {
     const apiUrl = "/api/submit-contact"; // Our backend endpoint
 
     try {
-      // In a real application, this would send data to the backend
-      // For demonstration, we'll simulate a successful response after a delay
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      // Send the actual data to the backend API
+      const response = await fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+      
+      if (!response.ok) {
+        throw new Error(data.message || 'Failed to send message');
+      }
       
       setFormStatus('success');
       const successText = `Thank you for reaching out! Our team will get back to you within 1 business day. Alternatively, you can schedule a 30-minute call directly here: `;

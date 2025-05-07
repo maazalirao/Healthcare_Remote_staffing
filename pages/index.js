@@ -43,9 +43,8 @@ export default function Home() {
               <Image 
                 src="/images/campaign-creators-gMsnXqILjp4-unsplash.jpg" 
                 alt="Client Partnership"
-                layout="fill"
-                objectFit="cover"
-                className="w-full h-full"
+                fill
+                className="w-full h-full object-cover"
                 priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent flex flex-col justify-end p-6">
@@ -61,9 +60,8 @@ export default function Home() {
               <Image 
                 src="/images/jason-goodman-Oalh2MojUuk-unsplash.jpg" 
                 alt="Excellence & Quality"
-                layout="fill"
-                objectFit="cover"
-                className="w-full h-full"
+                fill
+                className="w-full h-full object-cover"
                 priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent flex flex-col justify-end p-6">

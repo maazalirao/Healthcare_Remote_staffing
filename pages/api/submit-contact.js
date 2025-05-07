@@ -5,7 +5,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 // Define the sender email from environment variables 
 const fromEmail = process.env.EMAIL_FROM;
 // Define the recipient emails
-const toEmails = [process.env.EMAIL_TO, 'david@clearviewstaffinggrp.com']; // Adding David's email as a recipient
+const toEmails = [process.env.EMAIL_TO, 'david@clearviewstaffinggrp.com'];
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -13,7 +13,7 @@ export default async function handler(req, res) {
   }
 
   // --- Basic Server-Side Validation --- 
-  const { name, email, message } = req.body;
+  const { name, email, message, subject, company } = req.body;
 
   if (!name || !email || !message) {
     return res.status(400).json({ message: 'Missing required fields (Name, Email, Message)' });
@@ -31,7 +31,7 @@ export default async function handler(req, res) {
   
   // --- Sending Email with Resend --- 
   try {
-    const subject = `New Contact Message from ${name}`;
+    const emailSubject = subject ? `New Contact Message from ${name}: ${subject}` : `New Contact Message from ${name}`;
     const formattedMessage = message.replace(/\n/g, '<br>'); // Replace newlines for HTML
     
     const emailHtml = `
@@ -258,6 +258,7 @@ export default async function handler(req, res) {
               <div class="sender-info">
                 <p class="sender-name">${name}</p>
                 <p class="sender-email"><a href="mailto:${email}">${email}</a></p>
+                ${company ? `<p class="text-gray-700 mt-1">Company: ${company}</p>` : ''}
               </div>
             </div>
             
@@ -270,7 +271,7 @@ export default async function handler(req, res) {
               </div>
               
               <div class="message-container">
-                <div class="message-title">Original Message</div>
+                <div class="message-title">${subject ? `Subject: ${subject}` : 'Original Message'}</div>
                 <div class="message-content">${formattedMessage}</div>
               </div>
             </div>
@@ -305,7 +306,7 @@ export default async function handler(req, res) {
     const { data, error } = await resend.emails.send({
       from: 'Clearview Staffing Group <contact@maazali.site>',
       to: toEmails,
-      subject: subject,
+      subject: emailSubject,
       html: emailHtml,
       reply_to: email // Set reply-to to the sender's email
     });

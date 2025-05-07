@@ -42,9 +42,8 @@ export default function HowItWorks() {
             <Image
               src="/images/christina-wocintechchat-com-Q80LYxv_Tbs-unsplash.jpg"
               alt="Professionals working remotely"
-              layout="fill"
-              objectFit="cover"
-              className="w-full h-full"
+              fill
+              className="w-full h-full object-cover"
               priority
             />
             <div className="absolute inset-0 bg-gradient-to-t from-blue-900/70 to-transparent flex items-end">

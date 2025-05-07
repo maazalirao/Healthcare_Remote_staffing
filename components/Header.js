@@ -77,7 +77,7 @@ export default function Header() {
                   alt="CareViews Logo"
                   width={150}
                   height={45}
-                  priority
+                  fetchpriority="high"
                   className="object-contain w-auto h-full relative z-10"
                 />
               </div>
@@ -164,7 +164,7 @@ export default function Header() {
                 width={130}
                 height={36}
                 className="object-contain w-auto h-full relative z-10"
-                priority
+                fetchpriority="high"
               />
             </div>
           </div>

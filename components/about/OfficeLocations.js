@@ -145,9 +145,8 @@ export default function OfficeLocations() {
                 <Image 
                   src={ethic.image} 
                   alt={`${ethic.title}`} 
-                  layout="fill" 
-                  objectFit="cover"
-                  className="w-full h-full hover:scale-105 transition-transform duration-700"
+                  fill
+                  className="w-full h-full hover:scale-105 transition-transform duration-700 object-cover"
                   priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/30 to-transparent"></div>

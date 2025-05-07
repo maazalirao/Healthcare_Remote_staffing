@@ -93,8 +93,8 @@ export default function Hero() {
           <Image
             src="/images/austin-distel-wawEfYdpkag-unsplash.jpg"
             alt="Professionals in a meeting"
-            layout="fill"
-            objectFit="cover"
+            fill
+            className="object-cover"
             quality={100}
             priority
           />

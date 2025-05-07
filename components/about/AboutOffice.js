@@ -126,9 +126,8 @@ export default function AboutOffice() {
                 <Image 
                   src="/images/christina-wocintechchat-com-Q80LYxv_Tbs-unsplash.jpg" 
                   alt="Collaborative workspace" 
-                  layout="fill"
-                  objectFit="cover"
-                  className="hover:scale-105 transition-transform duration-500"
+                  fill
+                  className="hover:scale-105 transition-transform duration-500 object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/70 to-transparent flex items-end p-4">
                   <p className="text-white text-sm font-medium">Singapore Hub</p>
@@ -138,9 +137,8 @@ export default function AboutOffice() {
                 <Image 
                   src="/images/campaign-creators-gMsnXqILjp4-unsplash.jpg" 
                   alt="Meeting room" 
-                  layout="fill"
-                  objectFit="cover"
-                  className="hover:scale-105 transition-transform duration-500"
+                  fill
+                  className="hover:scale-105 transition-transform duration-500 object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/70 to-transparent flex items-end p-4">
                   <p className="text-white text-sm font-medium">New York Office</p>
