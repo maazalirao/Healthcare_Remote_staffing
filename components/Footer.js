@@ -1,5 +1,6 @@
 // Footer component with contact information, links, and copyright notice
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -10,11 +11,17 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {/* Company info */}
           <div className="space-y-3 sm:space-y-4">
-            <Link href="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white flex items-center justify-center">
-                <span className="font-bold text-base sm:text-lg text-blue-600">CV</span>
+            <Link href="/" className="flex items-center">
+              <div className="relative w-auto h-10 sm:h-12">
+                <Image 
+                  src="/images/careviews logo.png" 
+                  alt="CareViews Logo"
+                  width={160}
+                  height={48}
+                  priority
+                  className="object-contain w-auto h-full brightness-125 contrast-110"
+                />
               </div>
-              <span className="text-lg sm:text-xl font-bold">Clearview Staffing</span>
             </Link>
             <p className="text-blue-100 max-w-xs text-xs sm:text-sm leading-relaxed">
               Specialized remote outsourcing staffing solutions connecting top organizations with qualified professionals across all industries.
@@ -117,7 +124,7 @@ export default function Footer() {
                 <svg className="h-5 w-5 sm:h-6 sm:w-6 text-blue-300 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                <a href="mailto:info@clearviewstaffinggrp.com" className="text-xs sm:text-sm hover:text-white hover:underline transition-colors">info@clearviewstaffinggrp.com</a>
+                <a href="mailto:info@careviewsstaffinggrp.com" className="text-xs sm:text-sm hover:text-white hover:underline transition-colors">info@careviewsstaffinggrp.com</a>
               </li>
               <li className="flex items-start space-x-2 sm:space-x-3">
                 <svg className="h-5 w-5 sm:h-6 sm:w-6 text-blue-300 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -132,7 +139,7 @@ export default function Footer() {
         <div className="mt-6 sm:mt-8 md:mt-10 pt-6 sm:pt-8 border-t border-blue-800">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-3 md:space-y-0">
             <p className="text-xs sm:text-sm text-blue-200">
-              &copy; {currentYear} Clearview Staffing Group. All rights reserved.
+              &copy; {currentYear} CareViews Staffing Group. All rights reserved.
             </p>
             <div className="flex space-x-4 sm:space-x-6">
               <Link href="/privacy" className="text-xs sm:text-sm text-blue-200 hover:text-white transition-colors">

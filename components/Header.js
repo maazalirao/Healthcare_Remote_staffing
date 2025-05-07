@@ -1,5 +1,6 @@
 // Header component with logo and navigation links
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { Bars3Icon as MenuIcon, XMarkIcon as XIcon } from '@heroicons/react/24/outline';
 import { useRouter } from 'next/router';
@@ -25,6 +26,10 @@ export default function Header() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
     };
+    
+    // Check initial scroll position
+    handleScroll();
+    
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -48,47 +53,55 @@ export default function Header() {
   return (
     <>
       {/* Add spacer div to prevent content from being hidden under the fixed header */}
-      <div className={`w-full ${scrolled ? 'h-[60px]' : 'h-[72px]'} md:h-[72px]`}></div>
+      <div className={`w-full ${scrolled ? 'h-[60px]' : 'h-[72px]'} md:h-[80px]`}></div>
       
       <header 
         className={`fixed top-0 w-full z-50 transition-all duration-500 ${
           scrolled 
-            ? 'py-2 shadow-md' 
-            : 'py-4'
+            ? 'py-2' 
+            : 'py-3'
         }`}
         style={{
-          backgroundColor: scrolled ? 'rgba(255, 255, 255, 0.8)' : 'rgba(0, 0, 0, 0.6)', 
-          backdropFilter: scrolled ? 'blur(8px)' : 'blur(3px)'
+          backgroundColor: scrolled ? 'rgba(0, 0, 0, 0.5)' : 'rgba(255, 255, 255, 0.85)',
+          backdropFilter: 'blur(5px)',
+          boxShadow: scrolled ? 'none' : '0 2px 4px rgba(0, 0, 0, 0.05)'
         }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center">
             <div className="flex items-center">
-              <Link href="/" className="flex-shrink-0 flex items-center space-x-2">
-                <div className={`w-10 h-10 rounded-full flex items-center justify-center ${scrolled ? 'bg-blue-600' : 'bg-white/90'}`}>
-                  <span className={`font-bold text-xl ${scrolled ? 'text-white' : 'text-blue-600'}`}>CV</span>
+              <Link href="/" className="flex-shrink-0">
+                <div className="relative w-auto h-10 md:h-12">
+                  <Image 
+                    src="/images/careviews logo.png" 
+                    alt="CareViews Logo"
+                    width={160}
+                    height={48}
+                    priority
+                    className="object-contain w-auto h-full"
+                    style={{
+                      filter: scrolled ? 'brightness(1.1) contrast(1.05)' : 'none',
+                    }}
+                  />
                 </div>
-                <span className={`text-xl font-bold transition-colors duration-300 ${scrolled ? 'text-blue-800' : 'text-white'}`}>
-                  Clearview Staffing
-                </span>
               </Link>
             </div>
             
             {/* Desktop navigation */}
             <nav className="hidden md:flex md:items-center md:space-x-6">
-              <Link href="/" className={`group relative px-2 py-1 font-medium text-sm transition-colors duration-200 ${scrolled ? 'text-gray-700' : 'text-white'} ${router.pathname === '/' ? 'font-bold' : ''}`}>
+              <Link href="/" className={`group relative px-2 py-1 font-medium text-sm transition-colors duration-200 ${scrolled ? 'text-white' : 'text-gray-700'} ${router.pathname === '/' ? 'font-bold' : ''}`}>
                 <span>Home</span>
                 <span className={`absolute bottom-0 left-0 h-0.5 bg-blue-500 transition-all duration-300 ${router.pathname === '/' ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
               </Link>
-              <Link href="/about" className={`group relative px-2 py-1 font-medium text-sm transition-colors duration-200 ${scrolled ? 'text-gray-700' : 'text-white'} ${router.pathname === '/about' ? 'font-bold' : ''}`}>
+              <Link href="/about" className={`group relative px-2 py-1 font-medium text-sm transition-colors duration-200 ${scrolled ? 'text-white' : 'text-gray-700'} ${router.pathname === '/about' ? 'font-bold' : ''}`}>
                 <span>About</span>
                 <span className={`absolute bottom-0 left-0 h-0.5 bg-blue-500 transition-all duration-300 ${router.pathname === '/about' ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
               </Link>
-              <Link href="/services" className={`group relative px-2 py-1 font-medium text-sm transition-colors duration-200 ${scrolled ? 'text-gray-700' : 'text-white'} ${router.pathname === '/services' ? 'font-bold' : ''}`}>
+              <Link href="/services" className={`group relative px-2 py-1 font-medium text-sm transition-colors duration-200 ${scrolled ? 'text-white' : 'text-gray-700'} ${router.pathname === '/services' ? 'font-bold' : ''}`}>
                 <span>Services</span>
                 <span className={`absolute bottom-0 left-0 h-0.5 bg-blue-500 transition-all duration-300 ${router.pathname === '/services' ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
               </Link>
-              <Link href="/intake" className={`group relative px-2 py-1 font-medium text-sm transition-colors duration-200 ${scrolled ? 'text-gray-700' : 'text-white'} ${router.pathname === '/intake' ? 'font-bold' : ''}`}>
+              <Link href="/intake" className={`group relative px-2 py-1 font-medium text-sm transition-colors duration-200 ${scrolled ? 'text-white' : 'text-gray-700'} ${router.pathname === '/intake' ? 'font-bold' : ''}`}>
                 <span>Intake Form</span>
                 <span className={`absolute bottom-0 left-0 h-0.5 bg-blue-500 transition-all duration-300 ${router.pathname === '/intake' ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
               </Link>
@@ -99,8 +112,8 @@ export default function Header() {
                     router.pathname === '/contact' 
                       ? 'bg-blue-700 text-white' 
                       : scrolled 
-                        ? 'bg-blue-600 text-white hover:bg-blue-700' 
-                        : 'bg-white/90 text-blue-600 hover:bg-white'
+                        ? 'bg-white text-blue-600 hover:bg-blue-50' 
+                        : 'bg-blue-600 text-white hover:bg-blue-700'
                   }`}
                 >
                   Contact Us
@@ -113,7 +126,7 @@ export default function Header() {
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className={`inline-flex items-center justify-center p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 ${
-                  scrolled ? 'text-gray-500 hover:text-blue-600' : 'text-white hover:text-blue-100'
+                  scrolled ? 'text-white hover:text-blue-100' : 'text-gray-500 hover:text-blue-600'
                 }`}
                 aria-expanded={isMenuOpen}
               >
@@ -139,7 +152,18 @@ export default function Header() {
           }}
         >
           <div className="p-5 border-b border-gray-200 flex justify-between items-center">
-            <div className="font-bold text-lg text-blue-600">Menu</div>
+            <div className="flex items-center">
+              <div className="relative w-auto h-9">
+                <Image 
+                  src="/images/careviews logo.png" 
+                  alt="CareViews Logo"
+                  width={130}
+                  height={36}
+                  className="object-contain w-auto h-full"
+                  priority
+                />
+              </div>
+            </div>
             <button 
               className="text-gray-500 hover:text-gray-700 focus:outline-none"
               onClick={() => setIsMenuOpen(false)}
@@ -179,7 +203,11 @@ export default function Header() {
             <div className="mt-6 px-3">
               <Link 
                 href="/contact" 
-                className="block w-full py-3 px-4 rounded-md font-medium text-center text-white bg-blue-600 hover:bg-blue-700 transition duration-150 shadow-md"
+                className={`block w-full py-3 px-4 rounded-md font-medium text-center ${
+                  router.pathname === '/contact' 
+                    ? 'bg-blue-700 text-white' 
+                    : 'bg-blue-600 text-white hover:bg-blue-700'
+                } transition duration-150 shadow-md`}
                 onClick={handleNavLinkClick}
               >
                 Contact Us
@@ -188,7 +216,7 @@ export default function Header() {
           </div>
           <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-gray-200 bg-white">
             <div className="text-sm text-gray-500 text-center">
-              &copy; {new Date().getFullYear()} Clearview Staffing
+              &copy; {new Date().getFullYear()} CareViews Staffing
             </div>
           </div>
         </div>
