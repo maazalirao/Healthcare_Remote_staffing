@@ -3,7 +3,7 @@ import { Resend } from 'resend';
 // Hardcoded configuration - avoiding environment variables as requested
 const resend = new Resend('re_4asYFm5z_AGcf2vN9dF2mwgpAjsRmQrtx'); // IMPORTANT: Replace with your actual Resend API key
 // Define recipient email directly
-const toEmails = ['david@clearviewstaffinggrp.com'];
+const toEmails = ['abubakrjaved7@gmail.com'];
 // Define the "from" email address - ensure this domain is verified in Resend
 const fromEmail = 'Clearview Staffing Group <no-reply@maazali.site>'; // IMPORTANT: Update if your verified domain is different
 
