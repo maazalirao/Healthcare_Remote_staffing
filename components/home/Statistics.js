@@ -31,7 +31,7 @@ const useCountAnimation = (end, duration = 2, startOnView = true) => {
 };
 
 export default function Statistics() {
-  const [cost, costRef] = useCountAnimation(78);
+  const [cost, costRef] = useCountAnimation(73);
   const [productivity, productivityRef] = useCountAnimation(13);
   const [companies, companiesRef] = useCountAnimation(67);
   const [employees, employeesRef] = useCountAnimation(59);

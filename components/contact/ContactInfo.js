@@ -7,8 +7,8 @@ export default function ContactInfo() {
     {
       icon: EnvelopeIcon,
       title: "Email",
-      value: "info@clearviewstaffinggrp.com",
-      link: "mailto:info@clearviewstaffinggrp.com",
+      value: "david@clearviewstaffinggrp.com",
+      link: "mailto:david@clearviewstaffinggrp.com",
       description: "For general inquiries and support requests"
     },
     {
