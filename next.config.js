@@ -4,6 +4,10 @@ module.exports = {
   images: {
     domains: [],
   },
+  // Disable font optimization to avoid Google Fonts connection issues
+  experimental: {
+    optimizeFonts: false,
+  },
   async headers() {
     return [
       {
