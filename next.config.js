@@ -5,9 +5,7 @@ module.exports = {
     domains: [],
   },
   // Disable font optimization to avoid Google Fonts connection issues
-  experimental: {
-    optimizeFonts: false,
-  },
+  optimizeFonts: false,
   async headers() {
     return [
       {

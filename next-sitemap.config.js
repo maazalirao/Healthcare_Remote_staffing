@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.SITE_URL || 'https://clearviewstaffing.vercel.app',
+  siteUrl: process.env.SITE_URL || 'https://clearviewstaffinggrp.com',
   generateRobotsTxt: true,
   robotsTxtOptions: {
     policies: [
