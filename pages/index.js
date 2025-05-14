@@ -18,7 +18,9 @@ export default function Home() {
         <title>Clearview Staffing Group | Remote Outsourcing Staffing Solutions</title>
         <meta name="description" content="Access top-tier professionals at 80% less cost than local hires. Connect with skilled staff across various industries worldwide." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.ico?v=3" />
+        <meta name="google" content="notranslate" />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
       </Head>
       
       <Hero />
