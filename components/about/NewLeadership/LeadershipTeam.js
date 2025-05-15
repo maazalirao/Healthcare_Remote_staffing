@@ -25,6 +25,13 @@ export default function LeadershipTeam() {
       imageSrc: "/images/profile-placeholder.jpg"
     },
     {
+      name: "Volvy Leifer",
+      title: "VP of Sales",
+      bgColor: "from-red-500 to-red-700",
+      borderColor: "border-red-300",
+      imageSrc: "/images/profile-placeholder.jpg"
+    },
+    {
       name: "Muhammad Abubakar",
       title: "Director of Operations, Pakistan Branch",
       bgColor: "from-indigo-500 to-indigo-700",
